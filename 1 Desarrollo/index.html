@@ -2,6 +2,30 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
         <link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.8.16.custom.css">     
+
+        
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!--<script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>-->
+        <script type="text/javascript" src="scripts/jquery-ui-1.8.16.custom.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.overscroll.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.linq.min.js"></script>
+        
+		<script type="text/javascript" src="scripts/util.date.js"></script>
+        <script type="text/javascript" src="scripts/util.roman_numeral.js"></script>
+        <script type="text/javascript" src="scripts/util.controles.js"></script>
+        
+        <script type="text/javascript" src="scripts/timeline.filtro.js"></script>
+		<script type="text/javascript" src="scripts/timeline.eventos.js"></script>
+        <script type="text/javascript" src="scripts/timeline.regla.js"></script>    
+		<script type="text/javascript" src="scripts/timeline.linea.js"></script>   
+    	
+		<script type="text/javascript">
+			$(document).ready(function () {
+				Linea.init();
+				Filtros.init();				
+			});
+		</script>
 	</head>
 	
 	<body>        
@@ -49,28 +73,5 @@
         	<div id="timeline-regla"></div>            	
 			<div id="timeline-lineas"></div>
         </div></div>
-        
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <!--<script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>-->
-        <script type="text/javascript" src="scripts/jquery-ui-1.8.16.custom.min.js"></script>
-        <script type="text/javascript" src="scripts/jquery.mousewheel.min.js"></script>
-		<script type="text/javascript" src="scripts/jquery.overscroll.min.js"></script>
-        <script type="text/javascript" src="scripts/jquery.linq.min.js"></script>
-        
-		<script type="text/javascript" src="scripts/util.date.js"></script>
-        <script type="text/javascript" src="scripts/util.roman_numeral.js"></script>
-        <script type="text/javascript" src="scripts/util.controles.js"></script>
-        
-        <script type="text/javascript" src="scripts/timeline.filtro.js"></script>
-		<script type="text/javascript" src="scripts/timeline.eventos.js"></script>
-        <script type="text/javascript" src="scripts/timeline.regla.js"></script>    
-		<script type="text/javascript" src="scripts/timeline.linea.js"></script>   
-    	
-		<script type="text/javascript">
-			$(document).ready(function () {
-				Linea.init();
-				Filtros.init();				
-			});
-		</script>
 	</body>
 </html>
