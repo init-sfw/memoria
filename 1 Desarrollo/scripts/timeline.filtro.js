@@ -27,12 +27,24 @@ var Filtros = {
 		});
 		
 		// Agrega funcionalidad al botón que abre/cierra el panel de filtros
-		$('#filtros a:first').toggle(
+		
+		/*$('#filtros-panel').click(function(){
+		$('#filtros a:last').toggle(
 			function () {
-				Filtros.$contenedor.slideDown();	
+				Filtros.$contenedor.slideUp();	
 			},
 			function () {						
+				Filtros.$contenedor.slideDown();	
+			}
+		);	
+		});*/	
+	
+		$('#filtros a:last').toggle(
+			function () {
 				Filtros.$contenedor.slideUp();	
+			},
+			function () {						
+				Filtros.$contenedor.slideDown();	
 			}
 		);
 		
