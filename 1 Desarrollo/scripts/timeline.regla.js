@@ -133,7 +133,7 @@ var Regla = {
 	mostrarRegla: function (animado) {
 		if(animado) {
 			Regla.$regla.children('div:hidden').each(function (ind, val) {
-			   setTimeout(function () { $(val).show('puff', 'slow'); }, ind * 100);	
+			   setTimeout(function () { $(val).show("slow","swing"); }, ind * 100);	
 			});			
 		}
 		else {
@@ -202,6 +202,7 @@ var Regla = {
 		// Agrego los segmentos
 		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.izquierda);
 		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.izquierda, Regla.cantidad_segmentos);
+		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.derecha);
 		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.derecha, Regla.cantidad_segmentos);
 		
 		// Setea las fechas de inicio y fin de la regla
@@ -476,13 +477,19 @@ var Regla = {
 	},
 	
 	navegar : function() {
+		
 		var fechaNav = new Date ($("#FechaNavegar").val());
-		if (!fechaNav) {
-			alert('Error en el formato de fecha')
+		//var fechaNav=new Date();
+		//fechaNav=fechaNav.getFullYear();
+			if (!fechaNav) {
+				alert('Error en el formato de fecha')
+			}
+			else {
+				Regla.crearRegla(fechaNav);
+				Linea.actualizarTodas();
+			}
+		
 		}
-		else {
-			Regla.crearRegla(fechaNav);
-			Linea.actualizarTodas();
-		}
-	}
+
+	
 };
