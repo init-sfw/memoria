@@ -47,7 +47,7 @@ var Linea = {
 		Linea.redimensionarLineas();
 		
 		// Muestra las líneas y les agrega un borde punteado a la parte superior para distinguirla del resto
-		Linea.$lineas.children('div.timeline-eventos:hidden').show('slide', 'slow', function () {
+		Linea.$lineas.children('div.timeline-eventos:hidden').show('slow', 'swing' , function () {
 			$(this).css('border-top', '#000 1px dashed');
 		});
 	},

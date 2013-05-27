@@ -63,8 +63,8 @@ var Regla = {
 		});
 		
 		// Scroll de la linea
-		Regla.$scroll.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal' });
-		Regla.inicializarEventosScroll();
+		//Regla.$scroll.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal' });
+		//Regla.inicializarEventosScroll();
 	},
 	
 	// Carga por demanda una vez que llega al final de la línea

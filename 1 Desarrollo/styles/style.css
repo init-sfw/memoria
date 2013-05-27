@@ -19,6 +19,7 @@ body {
 	position: absolute;
     top: 70px;
     width: 100%;
+	
 }
 
 #timeline-lineas .timeline-eventos {
@@ -152,6 +153,7 @@ body {
 #timeline-regla {
 	position: relative;
 	height: 100%;
+	
 }
 
 #timeline-regla .periodo-odd, #timeline-scroll .periodo-even {
