@@ -485,8 +485,11 @@ var Regla = {
 				alert('Error en el formato de fecha')
 			}
 			else {
-				Regla.crearRegla(fechaNav);
-				Linea.actualizarTodas();
+				if($("#FechaNavegar").val()!="") //El if fue incluído acá para que no alerte en el caso de textbox vacío. Este cambio no es definitivo.
+				{
+					Regla.crearRegla(fechaNav);
+					Linea.actualizarTodas();
+				}
 			}
 		
 		}
