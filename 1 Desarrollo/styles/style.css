@@ -24,7 +24,7 @@ body {
 
 #timeline-lineas .timeline-eventos {
 	width: 100%;
-	min-height: 140px;
+	min-height: 100px;
 	background: url("../images/linea.png") repeat-x scroll 0 70px transparent;
 }
 
