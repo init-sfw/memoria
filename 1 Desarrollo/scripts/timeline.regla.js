@@ -227,6 +227,9 @@ var Regla = {
 
 		// Muestra la regla aplicandole un efecto visual
 		Regla.mostrarRegla(true);
+		
+		//Revisa las lineas generadas por el filtro y las agrega (mismo metodo que el asignado al click del boton generar en timeline.filtro
+		Filtros.generarLineas()
 	},
 	
 	obtenerSegmentoOrigen: function (direccion) {
