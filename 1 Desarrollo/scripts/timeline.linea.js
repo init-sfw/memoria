@@ -18,13 +18,11 @@ var Linea = {
 
 	init: function () {
 		Linea.$lineas = $('#timeline-lineas');
+		//Linea.$lineas = $('#timeline-regla');
 		
 		Regla.init();		
 		Regla.crearRegla();
 		
-		Linea.crearLinea();
-		Linea.mostrarLineas();
-		Linea.actualizarTodas();
 	},
 	
 	crearLinea: function (filtro) {

@@ -43,6 +43,7 @@ var Regla = {
 	
 	// Inicializa las instancias de los componentes html usados (div) y agrega los eventos necesarios a la regla
 	init: function () {		
+			
 		Regla.$scroll = $('#timeline-scroll');
 		Regla.$regla = $('#timeline-regla');
 		
@@ -133,11 +134,11 @@ var Regla = {
 	mostrarRegla: function (animado) {
 		if(animado) {
 			Regla.$regla.children('div:hidden').each(function (ind, val) {
-			   setTimeout(function () { $(val).show("slow","swing"); }, ind * 100);	
+			   setTimeout(function () { $(val).show('slow','swing'); }, ind * 100);	
 			});			
 		}
 		else {
-			Regla.$regla.children('div:hidden').show();
+			Regla.$regla.children('div:hidden').show('slow','swing');
 		}
 	},
 	
@@ -207,11 +208,19 @@ var Regla = {
 		
 		// Setea las fechas de inicio y fin de la regla
 		Regla.fecha_inicio = Regla.$regla.children("div:first").data('fecha_inicio');
-		Regla.fecha_fin = Regla.$regla.children("div:last").data('fecha_fin');
+		Regla.fecha_fin = Regla.$regla.children("div:last").data('fecha_fin');	
+
+		// Creo las líneas dentro de la regla para que no sean borradas en el limpiado
+		Linea.crearLinea();
+		Linea.mostrarLineas();
+		Linea.actualizarTodas();
 		
 		// Actualiza el tama�o de la regla de acuerdo a la cantidad de segmentos que se han cargado
-		Regla.redimensionarRegla();		
+		Regla.redimensionarRegla();	
 		
+		// Inserto el DIV de las Líneas dentro de la Regla
+		$('#timeline-regla').append($('#timeline-lineas'));
+
 		// Muestra la regla aplicandole un efecto visual
 		Regla.mostrarRegla(true);
 	},
