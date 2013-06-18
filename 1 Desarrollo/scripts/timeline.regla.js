@@ -198,7 +198,11 @@ var Regla = {
 	crearRegla: function (fecha_foco) {
 		Regla.fecha_foco = fecha_foco || Regla.fecha_foco;
 
+		//TODO: REFACTORIZAR los métodos de manejo de regla, líneas y filtros
+		//Limpio la regla
 		Regla.$regla.html('');
+		//Limpio las líneas
+		Linea.$lineas.html('');
 		
 		// Agrego los segmentos
 		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.izquierda);
@@ -219,7 +223,7 @@ var Regla = {
 		Regla.redimensionarRegla();	
 		
 		// Inserto el DIV de las Líneas dentro de la Regla
-		$('#timeline-regla').append($('#timeline-lineas'));
+		$('#timeline-regla').append(Linea.$lineas);
 
 		// Muestra la regla aplicandole un efecto visual
 		Regla.mostrarRegla(true);
