@@ -17,27 +17,19 @@ var Filtros = {
 		Filtros.$filtros = $('#timeline-filtros');
 		
 		// Recupera las categorias de un archivo y las carga en el combo
-		$.getJSON('datos/paises.json', {}, function (paises) {
+		// FIXME: este método está fallando en Google Chrome
+		$.getJSON('datos/paises.json', function (paises) {
 			$('#filtroPaises').cargarCombo(paises, 'id', 'nombre');
 		});
+
 		
 		// Recupera las paises de un archivo y los carga en el combo
-		$.getJSON('datos/categorias.json', {}, function (categorias) {
+		$.getJSON('datos/categorias.json', function (categorias) {
 			$('#filtroCategorias').cargarCombo(categorias, 'id', 'nombre');
 		});
 		
 		// Agrega funcionalidad al botón que abre/cierra el panel de filtros
-		
-		/*$('#filtros-panel').click(function(){
-		$('#filtros a:last').toggle(
-			function () {
-				Filtros.$contenedor.slideUp();	
-			},
-			function () {						
-				Filtros.$contenedor.slideDown();	
-			}
-		);	
-		});*/	
+	
 	
 		$('#filtros a:last').toggle(
 			function () {

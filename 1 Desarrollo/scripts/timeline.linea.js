@@ -19,6 +19,7 @@ var Linea = {
 	init: function () {
 		Linea.$lineas = $('#timeline-lineas');
 		
+		
 		Regla.init();		
 		Regla.crearRegla();
 		
