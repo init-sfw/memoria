@@ -11,21 +11,21 @@ var Regla = {
 	fecha_foco: new Date(),
 	// Fecha de inicio del primer segmento de la regla
 	fecha_inicio: new Date(),
-	// Fecha de fin del ï¿½ltimo segmento de la regla
+	// Fecha de fin del ultimo segmento de la regla
 	fecha_fin: new Date(), 
 		
 	meses: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-	dias: ['Domingo', 'Lunes', 'Martes', 'Miï¿½rcoles', 'Jueves', 'Viernes', 'Sï¿½bado'],
+	dias: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
 	
 	// Nivel de zoom por defecto
 	zoom: 2,
 	// Nombre de los niveles de zoom
-	nombre_zoom: ['Siglo', 'Dï¿½cada', 'Aï¿½o', 'Mes', 'Dï¿½a'],
+	nombre_zoom: ['Siglo', 'Decada', 'Año', 'Mes', 'Dia'],
 	// Array que contiene las referencias a las funciones que generan los segmentos para los distintos niveles de zoom
 	funcion_zoom: [],
 		
 	// Cantidad de segmentos a mostrar a cada lado de la fecha_foco, y la cantidad que se agregarï¿½ por demanda
-	cantidad_segmentos: 20,
+	cantidad_segmentos: 6,
 	// Ancho en px de cada unos de los segmentos
 	ancho_segmento: 135,
 	// Posiciï¿½n del scroll en la que se realizara la carga de segmentos del lado izquierdo de la lï¿½nea
