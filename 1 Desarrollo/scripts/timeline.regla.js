@@ -85,7 +85,14 @@ var Regla = {
 	// Mï¿½todo que llama a la carga de segmentos una vez que se acerca la navegaciï¿½n a los extremos
 	cargarSegmentosADemanda: function () {		
 		var posicion = Regla.$scroll.scrollLeft();
-		
+		/* TODO: Creemos que el valor del lado izquierdo es positivo, mientras que del lado derecho es negativo. 
+		La condicion que crea los segmentos derechos no se cumple en ningun momento.
+		No sabemos que hace la funcion regla.offset().left. 
+		El valor de posicion empieza en 0 apenas arranca la linea y el valor de limite izquierdo es de 2000 px. 
+		La condicion de posicion del limite izquierdo hace que aunque exista un solo segmento del lado izquierdo, no cree nuevos segmentos. Provocando la ralentizacion del efecto de la linea.
+		Pensamos que la condicion esta mal planteada y habría que evaluar alguna forma más óptima para hacerlo. 
+		Si el funcionamiento que suponemos del método es correcto, pensamos que seria más factible realizar un nuevo método
+		para que quede más claro y más simple para nosotros.*/
 		// Carga en el extremo izquierdo
 		if(posicion <= Regla.posicion_scroll_limite_izquierdo) {
 			Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
