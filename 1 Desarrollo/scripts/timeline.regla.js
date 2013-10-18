@@ -29,7 +29,7 @@ var Regla = {
 	// Ancho en px de cada unos de los segmentos
 	ancho_segmento: 135,
 	// Posiciï¿½n del scroll en la que se realizara la carga de segmentos del lado izquierdo de la lï¿½nea
-	posicion_scroll_limite_izquierdo:  2000,
+	posicion_scroll_limite_izquierdo:  -2000,
 	
 	// Html del div que representa a un segmento
 	html_segmento: '<div class="periodo-{clase}" style="display:none;"><div class="periodo-titulo">{etiqueta}</div></div>',
@@ -93,6 +93,16 @@ var Regla = {
 		Pensamos que la condicion esta mal planteada y habría que evaluar alguna forma más óptima para hacerlo. 
 		Si el funcionamiento que suponemos del método es correcto, pensamos que seria más factible realizar un nuevo método
 		para que quede más claro y más simple para nosotros.*/
+
+		/* TODO (fede): Hagan los cambios que proponen y prueben el funcionamiento. 
+		   No se queden en el análisis de las cosas, pasen a la acción en esta etapa.
+		   El objetivo es hacer andar la navegabilidad de la regla, sin errores.
+			
+		   offset() : http://api.jquery.com/offset/
+
+		   Borren comments y ataquen el problema. Si chocan o demoran laburando de a dos, busquen otro issue para mejorar la app y divídanse. La mejor documentación es código andando.
+		*/
+
 		// Carga en el extremo izquierdo
 		if(posicion <= Regla.posicion_scroll_limite_izquierdo) {
 			Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
