@@ -29,7 +29,7 @@ var Regla = {
 	// Ancho en px de cada unos de los segmentos
 	ancho_segmento: 135,
 	// Posici�n del scroll en la que se realizara la carga de segmentos del lado izquierdo de la l�nea
-	posicion_scroll_limite_izquierdo:  -2000,
+	posicion_scroll_limite_izquierdo:  2000,
 	
 	// Html del div que representa a un segmento
 	html_segmento: '<div class="periodo-{clase}" style="display:none;"><div class="periodo-titulo">{etiqueta}</div></div>',
@@ -104,7 +104,7 @@ var Regla = {
 		*/
 
 		// Carga en el extremo izquierdo
-		if(posicion <= Regla.posicion_scroll_limite_izquierdo) {
+	/*	if(posicion <= Regla.posicion_scroll_limite_izquierdo) {
 			Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
 							
 			// Obtiene el primer/�ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
@@ -114,17 +114,19 @@ var Regla = {
 				//Sumo a la posici�n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posici�n.
 				Regla.$scroll.scrollLeft(posicion + (Regla.cantidad_segmentos * Regla.ancho_segmento));
 			}
-		}
+		}*/
 		
 		// Carga en el extremo derecho
 		if(posicion >= Regla.$regla.offset().left) {
 			Regla.cargarSegmentos(Regla.direccion_segmento.derecha);
 		}
+			
 	},
 	
 	// Calcula el ancho de la regla multiplicando la cantidad de segmentos por el ancho en px de los mismos
 	calcularAnchoRegla: function () {
 		return Regla.$regla.children('div').length * Regla.ancho_segmento;
+		Console.log($regla.children('div').length)
 	},
 	
 	// Calcula el ancho en px de un d�a, dividiendo el ancho total de la regla por la cantidad de dias representadas en ella
@@ -187,17 +189,21 @@ var Regla = {
 	// Mueve el �rea visible de la regla hacia la derecha y carga una nueva porci�n de la regla en el caso que corresponda
 	scrollAvanzar: function () {
 		var posicion = Regla.$scroll.scrollLeft() + 700;
-		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
 		
+		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
 		Regla.cargarSegmentosADemanda();
+		
 	},
 	
 	// Mueve el �rea visible de la regla hacia la izquierda y carga una nueva porci�n de la regla en el caso que corresponda
 	scrollRetroceder: function () {
 		var posicion = Regla.$scroll.scrollLeft() - 700;
+		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
 		
 		Regla.cargarSegmentosADemanda();
+		
+		
 	},
 	
 	// Agrega segmentos a la izquierda de la regla
@@ -240,7 +246,7 @@ var Regla = {
 		Regla.redimensionarRegla();	
 		
 		// Inserto el DIV de las Líneas dentro de la Regla
-		$('#timeline-regla').append(Linea.$lineas);
+		//$('#timeline-regla').append(Linea.$lineas);
 
 		// Muestra la regla aplicandole un efecto visual
 		Regla.mostrarRegla(true);
