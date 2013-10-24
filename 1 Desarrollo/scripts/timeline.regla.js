@@ -2,6 +2,8 @@ var Regla = {
 	
 	// Instancia del contenedor (scrollable) de la regla
 	$scroll: null,
+	// Instancia mística
+	$contenedor: null,
 	// Instancia del contenedor (no scrollable) del conjunto de segmentos de la regla
 	$regla: null,
 	// Instancia del segmento sobre el cual esta posicionado el puntero del mouse
@@ -45,6 +47,7 @@ var Regla = {
 	init: function () {		
 			
 		Regla.$scroll = $('#timeline-scroll');
+		Regla.$contenedor = $('#timeline-contenedor');
 		Regla.$regla = $('#timeline-regla');
 		
 		Regla.funcion_zoom = [ Regla.crearSiglos, Regla.crearDecadas, Regla.crearAnios, Regla.crearMeses, Regla.crearDias ];
@@ -85,26 +88,9 @@ var Regla = {
 	// Mï¿½todo que llama a la carga de segmentos una vez que se acerca la navegaciï¿½n a los extremos
 	cargarSegmentosADemanda: function () {		
 		var posicion = Regla.$scroll.scrollLeft();
-		/* TODO: Creemos que el valor del lado izquierdo es positivo, mientras que del lado derecho es negativo. 
-		La condicion que crea los segmentos derechos no se cumple en ningun momento.
-		No sabemos que hace la funcion regla.offset().left. 
-		El valor de posicion empieza en 0 apenas arranca la linea y el valor de limite izquierdo es de 2000 px. 
-		La condicion de posicion del limite izquierdo hace que aunque exista un solo segmento del lado izquierdo, no cree nuevos segmentos. Provocando la ralentizacion del efecto de la linea.
-		Pensamos que la condicion esta mal planteada y habría que evaluar alguna forma más óptima para hacerlo. 
-		Si el funcionamiento que suponemos del método es correcto, pensamos que seria más factible realizar un nuevo método
-		para que quede más claro y más simple para nosotros.*/
-
-		/* TODO (fede): Hagan los cambios que proponen y prueben el funcionamiento. 
-		   No se queden en el análisis de las cosas, pasen a la acción en esta etapa.
-		   El objetivo es hacer andar la navegabilidad de la regla, sin errores.
-			
-		   offset() : http://api.jquery.com/offset/
-
-		   Borren comments y ataquen el problema. Si chocan o demoran laburando de a dos, busquen otro issue para mejorar la app y divídanse. La mejor documentación es código andando.
-		*/
 
 		// Carga en el extremo izquierdo
-	/*	if(posicion <= Regla.posicion_scroll_limite_izquierdo) {
+	  if(posicion <= Regla.posicion_scroll_limite_izquierdo) {
 			Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
 							
 			// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
@@ -114,7 +100,7 @@ var Regla = {
 				//Sumo a la posiciï¿½n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posiciï¿½n.
 				Regla.$scroll.scrollLeft(posicion + (Regla.cantidad_segmentos * Regla.ancho_segmento));
 			}
-		}*/
+		}
 		
 		// Carga en el extremo derecho
 		if(posicion >= Regla.$regla.offset().left) {
@@ -245,8 +231,8 @@ var Regla = {
 		// Actualiza el tamaï¿½o de la regla de acuerdo a la cantidad de segmentos que se han cargado
 		Regla.redimensionarRegla();	
 		
-		// Inserto el DIV de las LÃ­neas dentro de la Regla
-		//$('#timeline-regla').append(Linea.$lineas);
+		// Inserto el DIV de las Líneas dentro de la Regla
+		$('#timeline-regla').append(Linea.$lineas);
 
 		// Muestra la regla aplicandole un efecto visual
 		Regla.mostrarRegla(true);
@@ -255,8 +241,17 @@ var Regla = {
 		Filtros.generarLineas()
 	},
 	
-	obtenerSegmentoOrigen: function (direccion) {
-		var $origen = Regla.$regla.children('div:' + direccion);
+	obtenerSegmentoOrigen: function (direccion) {		
+		var $origen;
+		// Si estamos navegando hacia la derecha, traer el penúltimo nodo del div, ya que el último es el div de las líneas
+		if (direccion === Regla.direccion_segmento.derecha)
+		{
+			$origen = Regla.$regla.children().eq(-2);
+		}
+		else
+		{
+			$origen = Regla.$regla.children('div:' + direccion);
+		}
 		if($origen.length !== 0) {
 			return {
 				fecha_inicio: $origen.data('fecha_inicio'),
