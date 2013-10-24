@@ -37,7 +37,7 @@ var Regla = {
 	html_segmento: '<div class="periodo-{clase}" style="display:none;"><div class="periodo-titulo">{etiqueta}</div></div>',
 	// Clases que dan estilos a los segmentos segï¿½n sean pares o impares
 	clase_segmento: ['odd', 'even'],
-	// Direccion en la que se agregarï¿½n los nuevos segmentos
+	// Direccion en la que se agregarán los nuevos segmentos
 	direccion_segmento: {
 		izquierda: 'first',
 		derecha: 'last'
@@ -71,42 +71,20 @@ var Regla = {
 		//Regla.inicializarEventosScroll();
 	},
 	
-	// Carga por demanda una vez que llega al final de la lï¿½nea
+	// Carga por demanda una vez que llega al final de la línea
 	inicializarEventosScroll: function () {
 		Regla.$scroll.bind('overscroll:dragstart', function(){ 
 			Linea.$lineas.find('span').css('left', 0).fadeOut();
 		});
 		
+		//Método DEPRECADO
 		Regla.$scroll.bind('overscroll:driftend', function() { 
 			Regla.cargarSegmentosADemanda();
 			
 			// Ubica el titulo de cada lï¿½nea a la izquierda de la pantalla
-			Linea.$lineas.find('span').css('left', Regla.$scroll.scrollLeft()).fadeIn();	
+			Linea.$lineas.find('span').css('left', Regla.$scroll.scrollLeft()).fadeIn();
+			alert("Método deprecado, suponemos que no se usa más. Si te salta este error checkeá el método inicializarEventosScroll() del script timeline.regla.js");	
 		});
-	},
-	
-	// Mï¿½todo que llama a la carga de segmentos una vez que se acerca la navegaciï¿½n a los extremos
-	cargarSegmentosADemanda: function () {		
-		var posicion = Regla.$scroll.scrollLeft();
-
-		// Carga en el extremo izquierdo
-	  if(posicion <= Regla.posicion_scroll_limite_izquierdo) {
-			Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
-							
-			// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
-			var extremo = Regla.obtenerSegmentoOrigen(Regla.direccion_segmento.izquierda);
-			// Si no se llegï¿½ al aï¿½o 0
-			if(extremo.fecha_inicio.getFullYear() > 0) { 
-				//Sumo a la posiciï¿½n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posiciï¿½n.
-				Regla.$scroll.scrollLeft(posicion + (Regla.cantidad_segmentos * Regla.ancho_segmento));
-			}
-		}
-		
-		// Carga en el extremo derecho
-		if(posicion >= Regla.$regla.offset().left) {
-			Regla.cargarSegmentos(Regla.direccion_segmento.derecha);
-		}
-			
 	},
 	
 	// Calcula el ancho de la regla multiplicando la cantidad de segmentos por el ancho en px de los mismos
@@ -177,7 +155,7 @@ var Regla = {
 		var posicion = Regla.$scroll.scrollLeft() + 700;
 		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
-		Regla.cargarSegmentosADemanda();
+		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);
 		
 	},
 	
@@ -186,10 +164,14 @@ var Regla = {
 		var posicion = Regla.$scroll.scrollLeft() - 700;
 		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
-		
-		Regla.cargarSegmentosADemanda();
-		
-		
+	   Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
+		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
+		var extremo = Regla.obtenerSegmentoOrigen(Regla.direccion_segmento.izquierda);
+		// Si no se llegï¿½ al aï¿½o 0
+		if(extremo.fecha_inicio.getFullYear() > 0) { 
+			//Sumo a la posiciï¿½n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posiciï¿½n.
+			Regla.$scroll.scrollLeft(posicion + (Regla.cantidad_segmentos * Regla.ancho_segmento));
+		}		
 	},
 	
 	// Agrega segmentos a la izquierda de la regla
@@ -244,6 +226,7 @@ var Regla = {
 	obtenerSegmentoOrigen: function (direccion) {		
 		var $origen;
 		// Si estamos navegando hacia la derecha, traer el penúltimo nodo del div, ya que el último es el div de las líneas
+		//TODO: Refactorizar el método
 		if (direccion === Regla.direccion_segmento.derecha)
 		{
 			$origen = Regla.$regla.children().eq(-2);
