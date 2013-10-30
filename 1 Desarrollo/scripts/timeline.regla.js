@@ -33,6 +33,9 @@ var Regla = {
 	// Posiciï¿½n del scroll en la que se realizara la carga de segmentos del lado izquierdo de la lï¿½nea
 	posicion_scroll_limite_izquierdo:  2000,
 	
+	//Se crea una variable inicio para saber si se encuentra en el comienzo de la creación de la regla. Sirve en el metodo dibujar Segmentos
+	inicio: 0,
+	
 	// Html del div que representa a un segmento
 	html_segmento: '<div class="periodo-{clase}" style="display:none;"><div class="periodo-titulo">{etiqueta}</div></div>',
 	// Clases que dan estilos a los segmentos segï¿½n sean pares o impares
@@ -41,11 +44,12 @@ var Regla = {
 	direccion_segmento: {
 		izquierda: 'first',
 		derecha: 'last'
+		
 	},
 	
 	// Inicializa las instancias de los componentes html usados (div) y agrega los eventos necesarios a la regla
 	init: function () {		
-			
+		
 		Regla.$scroll = $('#timeline-scroll');
 		Regla.$contenedor = $('#timeline-contenedor');
 		Regla.$regla = $('#timeline-regla');
@@ -69,6 +73,7 @@ var Regla = {
 		// Scroll de la linea
 		//Regla.$scroll.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal' });
 		//Regla.inicializarEventosScroll();
+		
 	},
 	
 	// Carga por demanda una vez que llega al final de la línea
@@ -155,6 +160,7 @@ var Regla = {
 		var posicion = Regla.$scroll.scrollLeft() + 700;
 		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
+		//TODO: crear la condición que falta acá para saber si cargo o no segmentos a la derecha.
 		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);
 		
 	},
@@ -164,6 +170,7 @@ var Regla = {
 		var posicion = Regla.$scroll.scrollLeft() - 700;
 		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
+		//TODO: crear la condición que falta acá para saber si cargo o no segmentos a la izquierda.
 	   Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
 		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(Regla.direccion_segmento.izquierda);
@@ -187,6 +194,9 @@ var Regla = {
 	
 	// General el html correspondiente al conjunto de segmentos a mostrar en la regla teniendo en cuenta el nivel de zoom
 	crearRegla: function (fecha_foco) {
+		//Se setea el valor inicio en 0 para que la funcion dibujar segmentos tenga en cuenta que recien esta creando una regla y no hay una linea creada
+		Regla.inicio = 0;
+		
 		Regla.fecha_foco = fecha_foco || Regla.fecha_foco;
 
 		//TODO: REFACTORIZAR los mÃ©todos de manejo de regla, lÃ­neas y filtros
@@ -219,17 +229,24 @@ var Regla = {
 		// Muestra la regla aplicandole un efecto visual
 		Regla.mostrarRegla(true);
 		
+		//Vuelve a setear el inicio en 1 para dejar registrado que termino de crear la regla		
+		Regla.inicio = 1;
+		
+		
 		//Revisa las lineas generadas por el filtro y las agrega (mismo metodo que el asignado al click del boton generar en timeline.filtro
 		Filtros.generarLineas()
+		
 	},
 	
 	obtenerSegmentoOrigen: function (direccion) {		
 		var $origen;
+		var $linea;
 		// Si estamos navegando hacia la derecha, traer el penúltimo nodo del div, ya que el último es el div de las líneas
 		//TODO: Refactorizar el método
 		if (direccion === Regla.direccion_segmento.derecha)
-		{
-			$origen = Regla.$regla.children().eq(-2);
+		{	
+			if(Regla.inicio === 1){$origen = Regla.$regla.children().eq(-2);}
+			else{$origen = Regla.$regla.children().eq(-1);}
 		}
 		else
 		{
@@ -469,6 +486,16 @@ var Regla = {
 	},
 	
 	dibujarSegmentos: function (segmentos, direccion) {
+		/* ESTE METODO FUE MODIFICADO EL 29/10/2013
+		antes de comenzar con el dibujado de los nuevos div se extrae la linea que se encuentra al final del div "timeline-regla" para que 
+		se pueda llamar al metodo append y se creen a partir del ultimo div de tiempo y no a partir de la linea, después al salir del for se vuelve a poner la linea al final
+		del div "timeline-regla" ej: div div div linea ---> remove(linea) ----> div div div --> append(div) ---> div div div div ---> apend(linea) ---> div div div div linea
+		La validación por regla.inicio = 1 es de una variable que se creo en regla para poder validar que no esta creando la linea sino que esta avanzando o retrocediendo
+		ya que si es el inicio no se ha creado la linea todavía y produce errores y redundancia de divs con el mismo año.		
+		*/
+		if(Regla.inicio === 1){		
+		$linea = $linea = Regla.$regla.children().eq(-1);
+		$linea = Regla.$regla.children().last().remove()}
 		for(var i = 0; i < segmentos.length; i++) {
 			// Reemplaza las claves por los valores correspondientes a la clase y la etiqueta
 			div = Regla.html_segmento
@@ -491,6 +518,7 @@ var Regla = {
 				.data('fecha_inicio', segmentos[i].fecha_inicio)
 				.data('fecha_fin', segmentos[i].fecha_fin);
 		}
+		if(Regla.inicio === 1){Regla.$regla.append($linea);}
 	},
 
 
