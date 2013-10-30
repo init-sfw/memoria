@@ -10,7 +10,7 @@ var Regla = {
 	$segmento: null,
 
 	// Fecha de foco inicial
-	fecha_foco: new Date(),
+	fecha_foco: new Date(2013, 12, 1, 1, 1),
 	// Fecha de inicio del primer segmento de la regla
 	fecha_inicio: new Date(),
 	// Fecha de fin del ultimo segmento de la regla
@@ -369,7 +369,7 @@ var Regla = {
 				clase = 2;
 				
 				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), 0, 1, 0, 0);
-				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), 11, 31, 59, 59);								
+				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), 12, 31, 59, 59);								
 			}
 			else {
 				// Calculo el multiplicador que determinar� si se deben restar o sumar 100 a�os al segmento $extremo
