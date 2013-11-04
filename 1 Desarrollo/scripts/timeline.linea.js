@@ -23,6 +23,7 @@ var Linea = {
 		Regla.init();		
 		Regla.crearRegla();
 		
+		
 	},
 	
 	crearLinea: function (filtro) {

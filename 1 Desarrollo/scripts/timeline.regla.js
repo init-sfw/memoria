@@ -36,8 +36,14 @@ var Regla = {
 	//Se crea una variable inicio para saber si se encuentra en el comienzo de la creación de la regla. Sirve en el metodo dibujar Segmentos
 	inicio: 0,
 	
+	//Estas variables contendran los ide de los segmentos correspondientes al de la izquierda derecha y centro de la regla, con centro se refiere al que se encuentra en el centro de la pantalla no de la regla
+	izquierda: null,
+	derecha: null,
+	centro: null,
+	
 	// Html del div que representa a un segmento
-	html_segmento: '<div class="periodo-{clase}" style="display:none;"><div class="periodo-titulo">{etiqueta}</div></div>',
+	//ACTUALIZACIÓN: se ha agregado en la etiqueta div el id con miID para poder ser reemplazada con el id corresponiente respecto a la ubicación en la regla
+	html_segmento: '<div id="{miID}" class="periodo-{clase}" style="display:none;"><div class="periodo-titulo">{etiqueta}</div></div>',
 	// Clases que dan estilos a los segmentos segï¿½n sean pares o impares
 	clase_segmento: ['odd', 'even'],
 	// Direccion en la que se agregarán los nuevos segmentos
@@ -157,11 +163,15 @@ var Regla = {
 	
 	// Mueve el ï¿½rea visible de la regla hacia la derecha y carga una nueva porciï¿½n de la regla en el caso que corresponda
 	scrollAvanzar: function () {
+		
 		var posicion = Regla.$scroll.scrollLeft() + 700;
 		
+		
+		//Aca condiciona la cracion de segmentos a derecha si el valro absoluto de la diferencia de divs (calculada con los id que tienen) (el valor absouto representa la distancia en divs que hay desde el centro al de la derecha) y si esta distancia es menor a 20 crea sino no
+		if(Math.abs(Regla.derecha-Regla.centro) < 20){		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);}
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
-		//TODO: crear la condición que falta acá para saber si cargo o no segmentos a la derecha.
-		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);
+		Regla.centro += Regla.cantidad_segmentos;
+		
 		
 	},
 	
@@ -169,9 +179,9 @@ var Regla = {
 	scrollRetroceder: function () {
 		var posicion = Regla.$scroll.scrollLeft() - 700;
 		
-		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
-		//TODO: crear la condición que falta acá para saber si cargo o no segmentos a la izquierda.
-	   Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
+		
+		//Realiza el mismo calculo que en avanzar pero para el lado izquierdo
+	   if(Math.abs(Regla.centro - Regla.izquierda) < 20){Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);}
 		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(Regla.direccion_segmento.izquierda);
 		// Si no se llegï¿½ al aï¿½o 0
@@ -179,6 +189,8 @@ var Regla = {
 			//Sumo a la posiciï¿½n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posiciï¿½n.
 			Regla.$scroll.scrollLeft(posicion + (Regla.cantidad_segmentos * Regla.ancho_segmento));
 		}		
+		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
+		Regla.centro -= Regla.cantidad_segmentos;
 	},
 	
 	// Agrega segmentos a la izquierda de la regla
@@ -254,9 +266,11 @@ var Regla = {
 		}
 		if($origen.length !== 0) {
 			return {
+				//aca se agrega el miIDorgen que contiene el id del div que se obtuvo como origen. y esta casteado a int para poder realizar calculos sobre el
+				miIDorigen: parseInt($origen.attr('id')),
 				fecha_inicio: $origen.data('fecha_inicio'),
 				fecha_fin: $origen.data('fecha_fin'),
-				clase: $origen.attr('class').replace('periodo-', '') === Regla.clase_segmento[0] ? 0 : 1 
+				clase: $origen.attr('class').replace('periodo-', '') === Regla.clase_segmento[0] ? 0 : 1 				 
 			};
 		}
 		return {};
@@ -369,14 +383,31 @@ var Regla = {
 				clase = 2;
 				
 				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), 0, 1, 0, 0);
-				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), 12, 31, 59, 59);								
+				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), 12, 31, 59, 59);
+				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0			
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;					
 			}
 			else {
 				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
+				
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				//Esta linea de código hace que se le sume al id del extremo el multiplicador dado que si es un segmento que se dibuja a la izquierda se le restará uno y qudara negativo, y si es para la derecha sumara uno positivo y quedará positivo
+				extremo.miIDorigen += multiplicador; 
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 1, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 1, 'y', false);
 				
+				
+				//En esta validación se pregunta si la direccíon es derecha o izquierda para setear las variables derecha e izquierda segun corresponda con el id que se encuentre al extremo de la regla.
+				//Se podría optimizar este codigo haciendo que se sete solo al final del for para que no se repita todas las veces
+				if(direccion === Regla.direccion_segmento.izquierda)
+				{
+					Regla.izquierda = extremo.miIDorigen;		
+				} 
+				else 
+				{
+						Regla.derecha = extremo.miIDorigen;	
+				}
 				// Si la fecha es igual a false es porque se llego al Siglo 0
 				if(direccion === Regla.direccion_segmento.izquierda && extremo.fecha_inicio.getFullYear() < 0) { break; }
 									
@@ -384,10 +415,13 @@ var Regla = {
 			}
 			
 			segmentos.push({
+				//aca se agrega a segmentos el id que corresponde para dibujar el div
+				miID: extremo.miIDorigen,				
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
 				etiqueta: extremo.fecha_inicio.getFullYear()
+				
 			});
 			
 			clase ++;
@@ -477,7 +511,8 @@ var Regla = {
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
-				etiqueta: Regla.dias[extremo.fecha_inicio.getDay()] + '<br />' + extremo.fecha_inicio.formatDate()
+				etiqueta: Regla.dias[extremo.fecha_inicio.getDay()] + '<br />' + extremo.fecha_inicio.formatDate()			
+				
 			});
 			
 			clase ++;
@@ -500,7 +535,9 @@ var Regla = {
 			// Reemplaza las claves por los valores correspondientes a la clase y la etiqueta
 			div = Regla.html_segmento
 					.replace('{clase}', segmentos[i].clase)
-					.replace('{etiqueta}', segmentos[i].etiqueta);
+					.replace('{etiqueta}', segmentos[i].etiqueta)
+					//Aca se agrega el remplace de la etiqueta por el ide que viene en la bariable de segmentos que le corresponde con la posicion de ese segmento en la regla
+					.replace('{miID}',segmentos[i].miID);
 							
 			// De acuerdo a la direcciï¿½n, se agrega el nuevo segmento a la regla
 			if(direccion === Regla.direccion_segmento.izquierda) {
