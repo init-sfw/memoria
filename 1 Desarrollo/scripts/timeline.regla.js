@@ -36,6 +36,10 @@ var Regla = {
 	//Se crea una variable inicio para saber si se encuentra en el comienzo de la creación de la regla. Sirve en el metodo dibujar Segmentos
 	inicio: 0,
 	
+	
+	//Agrego variable para establecer el limite de divs que debe haber siempre para que se navegue y cargue automaticamente 
+	limiteCargaDiv: 20,
+	
 	//Estas variables contendran los ide de los segmentos correspondientes al de la izquierda derecha y centro de la regla, con centro se refiere al que se encuentra en el centro de la pantalla no de la regla
 	izquierda: null,
 	derecha: null,
@@ -163,12 +167,13 @@ var Regla = {
 	
 	// Mueve el ï¿½rea visible de la regla hacia la derecha y carga una nueva porciï¿½n de la regla en el caso que corresponda
 	scrollAvanzar: function () {
-		
-		var posicion = Regla.$scroll.scrollLeft() + 700;
+		//ACTUALIZACION: Se han modificado el valor de avance del sroll de la regla por un cálculo que consiste en multiplicar la cantidad de segmentos a sumar por el ancho de cada segmento
+		var posicion = Regla.$scroll.scrollLeft() + (Regla.ancho_segmento * Regla.cantidad_segmentos);
 		
 		
 		//Aca condiciona la cracion de segmentos a derecha si el valro absoluto de la diferencia de divs (calculada con los id que tienen) (el valor absouto representa la distancia en divs que hay desde el centro al de la derecha) y si esta distancia es menor a 20 crea sino no
-		if(Math.abs(Regla.derecha-Regla.centro) < 20){		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);}
+		//limiteCargaDiv es la distancia minima que debe haber en el div central y el que se encuentre en el limite de la regla
+		if(Math.abs(Regla.derecha-Regla.centro) < Regla.limiteCargaDiv){		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);}
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
 		Regla.centro += Regla.cantidad_segmentos;
 		
@@ -177,11 +182,13 @@ var Regla = {
 	
 	// Mueve el ï¿½rea visible de la regla hacia la izquierda y carga una nueva porciï¿½n de la regla en el caso que corresponda
 	scrollRetroceder: function () {
-		var posicion = Regla.$scroll.scrollLeft() - 700;
+		//ACTUALIZACION: Se han modificado el valor de avance del sroll de la regla por un cálculo que consiste en multiplicar la cantidad de segmentos a sumar por el ancho de cada segmento
+		var posicion = Regla.$scroll.scrollLeft() - (Regla.ancho_segmento * Regla.cantidad_segmentos);
 		
 		
 		//Realiza el mismo calculo que en avanzar pero para el lado izquierdo
-	   if(Math.abs(Regla.centro - Regla.izquierda) < 20){Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);}
+		//limiteCargaDiv es la distancia minima que debe haber en el div central y el que se encuentre en el limite de la regla
+	   if(Math.abs(Regla.centro - Regla.izquierda) < Regla.limiteCargaDiv){Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);}
 		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(Regla.direccion_segmento.izquierda);
 		// Si no se llegï¿½ al aï¿½o 0
@@ -529,8 +536,8 @@ var Regla = {
 		ya que si es el inicio no se ha creado la linea todavía y produce errores y redundancia de divs con el mismo año.		
 		*/
 		if(Regla.inicio === 1){		
-		$linea = $linea = Regla.$regla.children().eq(-1);
-		$linea = Regla.$regla.children().last().remove()}
+		$linea = Regla.$regla.children().eq(-1);
+		Regla.$regla.children().last().remove()}
 		for(var i = 0; i < segmentos.length; i++) {
 			// Reemplaza las claves por los valores correspondientes a la clase y la etiqueta
 			div = Regla.html_segmento
