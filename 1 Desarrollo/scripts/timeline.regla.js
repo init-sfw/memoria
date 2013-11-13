@@ -224,10 +224,9 @@ var Regla = {
 		//Limpio las lÃ­neas
 		Linea.$lineas.html('');
 		
-		// Agrego los segmentos
+		// Agrego los segmentos, primero el del centro, luego seis a la izquierda y seis a la derecha
 		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.izquierda);
 		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.izquierda, Regla.cantidad_segmentos);
-		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.derecha);
 		Regla.funcion_zoom[Regla.zoom](Regla.direccion_segmento.derecha, Regla.cantidad_segmentos);
 		
 		// Setea las fechas de inicio y fin de la regla
@@ -453,13 +452,30 @@ var Regla = {
 				clase = 2;				
 				
 				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), mes, 1, 0, 0);
-				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), mes + 1, 0, 59, 59);								
+				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), mes + 1, 0, 59, 59);
+				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;
+
+								
 			}
 			else {
 				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				//Esta linea de código hace que se le sume al id del extremo el multiplicador dado que si es un segmento que se dibuja a la izquierda se le restará uno y qudara negativo, y si es para la derecha sumara uno positivo y quedará positivo
+				extremo.miIDorigen += multiplicador;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 1, 'M', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 1, 'M', false);
+				//En esta validación se pregunta si la direccíon es derecha o izquierda para setear las variables derecha e izquierda segun corresponda con el id que se encuentre al extremo de la regla.
+					//Se podría optimizar este codigo haciendo que se sete solo al final del for para que no se repita todas las veces
+					if(direccion === Regla.direccion_segmento.izquierda)
+					{
+						Regla.izquierda = extremo.miIDorigen;
+					}
+					else
+					{
+							Regla.derecha = extremo.miIDorigen;
+					}
 				
 				// Si la fecha es igual a false es porque se llego al Siglo 0
 				if(direccion === Regla.direccion_segmento.izquierda && extremo.fecha_inicio.getFullYear() < 0) { break; }
@@ -468,6 +484,8 @@ var Regla = {
 			}
 			
 			segmentos.push({
+				//aca se agrega a segmentos el id que corresponde para dibujar el div
+				miID: extremo.miIDorigen,
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
@@ -530,10 +548,8 @@ var Regla = {
 	dibujarSegmentos: function (segmentos, direccion) {
 		/* ESTE METODO FUE MODIFICADO EL 29/10/2013
 		antes de comenzar con el dibujado de los nuevos div se extrae la linea que se encuentra al final del div "timeline-regla" para que 
-		se pueda llamar al metodo append y se creen a partir del ultimo div de tiempo y no a partir de la linea, después al salir del for se vuelve a poner la linea al final
-		del div "timeline-regla" ej: div div div linea ---> remove(linea) ----> div div div --> append(div) ---> div div div div ---> apend(linea) ---> div div div div linea
-		La validación por regla.inicio = 1 es de una variable que se creo en regla para poder validar que no esta creando la linea sino que esta avanzando o retrocediendo
-		ya que si es el inicio no se ha creado la linea todavía y produce errores y redundancia de divs con el mismo año.		
+		se pueda llamar al metodo append y se creen a partir del ultimo div de tiempo y no a partir de la linea, después al salir del for se vuelve a poner la linea al final del div "timeline-regla" ej: div div div linea ---> remove(linea) ----> div div div --> append(div) ---> div div div div ---> apend(linea) ---> div div div div linea
+		La validación por regla.inicio = 1 es de una variable que se creo en regla para poder validar que no esta creando la linea sino que esta avanzando o retrocediendo ya que si es el inicio no se ha creado la linea todavía y produce errores y redundancia de divs con el mismo año.		
 		*/
 		if(Regla.inicio === 1){		
 		$linea = Regla.$regla.children().eq(-1);
