@@ -301,11 +301,15 @@ var Regla = {
 				clase = 2;
 				
 				extremo.fecha_inicio = new Date((siglo - 1) * 100, 0, 1, 0, 0);
-				extremo.fecha_fin = new Date((siglo - 1) * 100 + 99, 11, 31, 59, 59);								
+				extremo.fecha_fin = new Date((siglo - 1) * 100 + 99, 11, 31, 59, 59);
+				
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;									
 			}
 			else {
 				// Calculo el multiplicador que determinar� si se deben restar o sumar 100 a�os al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				extremo.miIDorigen += multiplicador;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 100, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 100, 'y', false);
 				
@@ -314,9 +318,18 @@ var Regla = {
 								
 				siglo = parseInt(extremo.fecha_inicio.getFullYear() / 100) + 1;		
 				clase = clase || extremo.clase;
+				if(direccion === Regla.direccion_segmento.izquierda)
+				{
+					Regla.izquierda = extremo.miIDorigen;		
+				} 
+				else 
+				{
+						Regla.derecha = extremo.miIDorigen;	
+				}
 			}
 			
 			segmentos.push({
+				miID: extremo.miIDorigen,	
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
@@ -346,11 +359,15 @@ var Regla = {
 				clase = 2;
 				
 				extremo.fecha_inicio = new Date(mil + decada, 0, 1, 0, 0);
-				extremo.fecha_fin = new Date(mil + decada + 9, 11, 31, 59, 59);								
+				extremo.fecha_fin = new Date(mil + decada + 9, 11, 31, 59, 59);		
+				
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;						
 			}
 			else {
 				// Calculo el multiplicador que determinar� si se deben restar o sumar 100 a�os al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				extremo.miIDorigen += multiplicador;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 10, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 10, 'y', false);
 				
@@ -361,9 +378,18 @@ var Regla = {
 				mil = parseInt(new String(extremo.fecha_inicio.getFullYear()).substring(0, 2) + '00');
 				
 				clase = clase || extremo.clase;
+				if(direccion === Regla.direccion_segmento.izquierda)
+				{
+					Regla.izquierda = extremo.miIDorigen;		
+				} 
+				else 
+				{
+						Regla.derecha = extremo.miIDorigen;	
+				}
 			}
 			
 			segmentos.push({
+				miID: extremo.miIDorigen,	
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
@@ -521,10 +547,14 @@ var Regla = {
 				extremo.fecha_inicio.setMinutes(0);
 				extremo.fecha_fin.setHours(23);
 				extremo.fecha_fin.setMinutes(59);
+				
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;
 			}
 			else {
 				// Calculo el multiplicador que determinar� si se deben restar o sumar 100 a�os al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				extremo.miIDorigen += multiplicador;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 1, 'd', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 1, 'd', false);
 				
@@ -532,9 +562,18 @@ var Regla = {
 				if(direccion === Regla.direccion_segmento.izquierda && extremo.fecha_inicio.getFullYear() < 0) { break; }
 									
 				clase = clase || extremo.clase;
+				if(direccion === Regla.direccion_segmento.izquierda)
+					{
+						Regla.izquierda = extremo.miIDorigen;
+					}
+					else
+					{
+							Regla.derecha = extremo.miIDorigen;
+					}
 			}
 			
 			segmentos.push({
+				miID: extremo.miIDorigen,
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
