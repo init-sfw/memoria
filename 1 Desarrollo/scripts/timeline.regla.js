@@ -393,7 +393,7 @@ var Regla = {
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
-				etiqueta: 'Dï¿½cada \'' + decada + '<br />' + mil
+				etiqueta: 'Déccada \'' + decada + '<br />' + mil
 			});		
 			
 			clase ++;	
