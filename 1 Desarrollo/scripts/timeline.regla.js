@@ -10,7 +10,7 @@ var Regla = {
 	$segmento: null,
 
 	// Fecha de foco inicial
-	fecha_foco: new Date(2013, 12, 1, 1, 1),
+	fecha_foco: new Date(2012, 12, 1, 1, 1),
 	// Fecha de inicio del primer segmento de la regla
 	fecha_inicio: new Date(),
 	// Fecha de fin del ultimo segmento de la regla
@@ -66,16 +66,16 @@ var Regla = {
 		
 		Regla.funcion_zoom = [ Regla.crearSiglos, Regla.crearDecadas, Regla.crearAnios, Regla.crearMeses, Regla.crearDias ];
 				
-		// Efecto ZOOM con la rueda del mouse				
+		// Efecto ZOOM con la rueda del mouse
 		Regla.$regla.mousewheel(function(e, delta) {
 			Regla.$segmento = $(e.target).is('.periodo-titulo') ? $(e.target.parentNode) : $(e.target);
-			Regla.fecha_foco = Regla.$segmento.data('fecha_fin');
+			Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
 			
 			// Si a�n no se han mostrado los segmentos salto de la funci�n
 			if(!Regla.fecha_foco) {
 				return;
 			}
-														   
+											   
 			if(delta > 0) { Regla.zoomAcercar(); }
 			else { Regla.zoomAlejar(); }
 		});
@@ -217,6 +217,8 @@ var Regla = {
 		Regla.inicio = 0;
 		
 		Regla.fecha_foco = fecha_foco || Regla.fecha_foco;
+
+		
 
 		//TODO: REFACTORIZAR los métodos de manejo de regla, líneas y filtros
 		//Limpio la regla
@@ -388,7 +390,7 @@ var Regla = {
 			if(!extremo.fecha_inicio) {
 				clase = 2;
 				
-				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), 0, 1, 0, 0);
+				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), 1, 1, 0, 0);
 				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), 12, 31, 59, 59);
 				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0			
 				extremo.miIDorigen = 0;
