@@ -10,7 +10,7 @@ var Regla = {
 	$segmento: null,
 
 	// Fecha de foco inicial
-	fecha_foco: new Date(2012, 12, 1, 1, 1),
+	fecha_foco: new Date(),
 	// Fecha de inicio del primer segmento de la regla
 	fecha_inicio: new Date(),
 	// Fecha de fin del ultimo segmento de la regla
@@ -216,7 +216,7 @@ var Regla = {
 		//Se setea el valor inicio en 0 para que la funcion dibujar segmentos tenga en cuenta que recien esta creando una regla y no hay una linea creada
 		Regla.inicio = 0;
 		
-		Regla.fecha_foco = fecha_foco || Regla.fecha_foco;
+		Regla.fecha_foco = fecha_foco || Regla.fecha_foco ;
 
 		
 
@@ -393,7 +393,7 @@ var Regla = {
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
-				etiqueta: 'Déccada \'' + decada + '<br />' + mil
+				etiqueta: 'Década \'' + decada + '<br />' + mil
 			});		
 			
 			clase ++;	
@@ -630,7 +630,8 @@ var Regla = {
 		var fechaNav = new Date ($("#FechaNavegar").val());
 		//var fechaNav=new Date();
 		//fechaNav=fechaNav.getFullYear();
-		var expresion =  /([0-9\\]+)/i; //ExpresiÃ³n que evalÃºa lo ingresado al buscar una fecha
+		fechaNav.setFullYear(fechaNav.getFullYear()+1);
+		var expresion =  /([0-9\\]+)/i; //Expresión que evalúa lo ingresado al buscar una fecha
 		if (!expresion.test($("#FechaNavegar").val())){
 				botonBuscar.disabled=true;
 				alert('Busqueda no valida, ingrese fechas');
