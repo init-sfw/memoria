@@ -1,5 +1,38 @@
 ﻿[
 	{ 
+		"fecha": "28/06/1966",
+		"fechaCreacion": "19/11/2013",
+		"titulo": "Revolución argentina",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "Revolución Argentina es el nombre con el que se autodenominó la dictadura militar que derrocó al presidente radical Arturo Illia, mediante un golpe de Estado llevado a cabo el 28 de junio de 1966. La Revolución argentina no se presentó a sí misma como provisional, como en todos los golpes anteriores, sino que pretendió establecerse como un nuevo sistema dictatorial de tipo permanente, posteriormente denominado Estado burocrático autoritario (EBA).",
+		"link": "http://es.wikipedia.org/wiki/Invasiones_Inglesas#Primera_Invasi.C3.B3n_a_Buenos_Aires",
+		"imagen": "imagen.jpg",
+		"ponderacion": "1"
+	},
+	{ 
+		"fecha": "25/05/1968",
+		"fechaCreacion": "19/11/2013",
+		"titulo": "Mayo francés",
+		"categoria": "historia",
+		"pais": "72",
+		"descripcionBreve": "Se conoce como Mayo francés o Mayo del 68 la cadena de protestas que se llevaron a cabo en Francia y, especialmente, en París durante los meses de mayo y junio de 1968. Esta serie de protestas fue iniciada por grupos estudiantiles de izquierdas contrarios a la sociedad de consumo, a los que posteriormente se unieron grupos de obreros industriales, los sindicatos y el Partido Comunista Francés.1 Como resultado, tuvo lugar la mayor revuelta estudiantil y la mayor huelga general de la historia de Francia, y posiblemente de Europa occidental, secundada por más de nueve millones de trabajadores.2 Estuvo vinculado con el movimiento hippie que se extendía entonces.",
+		"link": "http://es.wikipedia.org/wiki/Mayo_de_1968_en_Francia",
+		"imagen": "imagen.jpg",
+		"ponderacion": "1"
+	},
+	{ 
+		"fecha": "25/05/1969",
+		"fechaCreacion": "19/11/2013",
+		"titulo": "Cordobazo",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "Se conoce como Cordobazo a un importante movimiento de protesta ocurrido en Argentina el 29 de mayo de 1969, en la ciudad de Córdoba, una de las ciudades industriales más importantes del país. Su consecuencia más inmediata fue la caída del gobierno de Juan Carlos Onganía, y cuatro años después, el retorno de la democracia.",
+		"link": "http://es.wikipedia.org/wiki/Cordobazo",
+		"imagen": "imagen2.jpg",
+		"ponderacion": "1"
+	},
+	{ 
 		"fecha": "01/01/1806",
 		"fechaCreacion": "28/12/2011",
 		"titulo": "Primer invasión inglesa",
@@ -185,17 +218,6 @@
         "link": "es.wikipedia.org",
         "imagen": "imagen.jpg",
         "ponderacion": "1"
-    },
-    {
-        "fecha": "21/12/1967",
-        "fechaCreacion": "04/08/2013",
-        "titulo": "Declaración de independencia argentina",
-        "categoria": "historia",
-        "pais": "9",
-        "descripcionBreve": "La declaración de independencia de la Argentina fue una decisión tomada por el Congreso de Tucumán que sesionó en la ciudad de San Miguel de Tucumán de las entonces Provincias Unidas en Sudamérica. Fue proclamada el martes 9 de julio de 1816 en la casa propiedad de Francisca Bazán de Laguna, casa declarada Monumento Histórico Nacional en 1941. Con dicha declaración, se rompían los vínculos de dependencia política que los gobiernos locales tenían con la monarquía española.",
-        "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
-        "ponderacion": "2"
     },
     {
         "fecha": "11/12/1877",

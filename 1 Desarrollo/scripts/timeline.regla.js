@@ -626,25 +626,57 @@ var Regla = {
 
 
 	navegar : function() {
-		
-		var fechaNav = new Date ($("#FechaNavegar").val());
-		//var fechaNav=new Date();
-		//fechaNav=fechaNav.getFullYear();
-		fechaNav.setFullYear(fechaNav.getFullYear()+1);
-		var expresion =  /([0-9\\]+)/i; //Expresión que evalúa lo ingresado al buscar una fecha
-		if (!expresion.test($("#FechaNavegar").val())){
-				botonBuscar.disabled=true;
-				alert('Busqueda no valida, ingrese fechas');
+		var n=0;
+		var expresion1 = /^\d{1,2}\/\d{1,2}\/\d{1,4}$/; //valida que se ingresa una fecha en formato DD/MM/AAAA
+		var expresion2 = /^\d{1,4}$/; //valida que se ingresa una fecha en formato AAAA
+		var expresion3 = /^\d{1,2}\/\d{1,4}$/; //valida que se ingresa una fecha en formato MM/AAAA
+
+		if (expresion1.test($("#FechaNavegar").val())){ //se ha ingresado DD/MM/AAAA
+			n = 1;		
 		}
-		else{
+		if (expresion2.test($("#FechaNavegar").val())){ //se ha ingresado AAAA
+			n = 2;		
+		}
+		if (expresion3.test($("#FechaNavegar").val())){ // se ha ingresado MM/AAAA
+			n = 3;		
+		}
+		switch(n)
+		{
+			case 1: fechaNav= new Date ($("#FechaNavegar").val());
+				break;
+			case 2: fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);
+				break;
+			case 3: 
+				var cadena = $("#FechaNavegar").val();
+				var mes="";
+				var anio="";
+				for (var i=0; i<cadena.length; i++)
+				{
+					if (cadena.charAt(i) != '/' && mes.length<2)
+					{
+						mes= mes.concat(cadena.charAt(i));
+					}
+					else
+					{
+						if (cadena.charAt(i) != '/')
+							anio = anio.concat(cadena.charAt(i));
+					}
+				}
+					
+				fechaNav= new Date (anio, mes, 1, 0, 0, 0, 0);
+
+				break;
+	
+			default: alert('Error, ingrese fechas en formato DD/MM/AAAA ó MM/AAAA ó AAAA');
+		}
+
 			if (!fechaNav) {
 				alert('Error en el formato de fecha')
 			}
 			else {
 					Regla.crearRegla(fechaNav);
 					Linea.actualizarTodas();
-			}
-		}
+			}	
 	}
 
 	
