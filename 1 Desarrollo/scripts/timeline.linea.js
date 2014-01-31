@@ -123,7 +123,9 @@ var Linea = {
 		
 		
 		$('body').append(popup);
-		$('#timeline-popup').dialog();     
+		$('#timeline-popup').dialog();
+		$('#timeline-popup').dialog( "option", "width", 800);
+		$('#timeline-popup').dialog( "option", "height", 600);     
 	},
 	
 	mostrarResumen: function() {       

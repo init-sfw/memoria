@@ -241,3 +241,65 @@ body {
     font-size: 13px;
     margin-top: 5px;
 }
+
+
+/* POPUP */
+
+#timeline-popup {
+
+	width: 800px;
+	height: 600px;
+	text-align:center; /*ROX*/
+	
+	
+	border-width:1px;
+	border-style:solid;
+	border-radius:10px;
+	font-size:14px;
+
+	color:#000;
+	border-color:#61380B;
+	
+	/* Color alternativo para versiones que no soporten degradados */
+	background-color:#000;
+	/* Safari 4+ y Chrome 1+ */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fdee6d), color-stop(1, #fcfa9c));
+	/* Safari 5.1+ y Chrome 10+ */
+	background-image:-webkit-linear-gradient(#fdee6d, #fcfa9c);
+	/* Firefox 3.6+ */
+	background-image:-moz-linear-gradient(top, #fdee6d, #fcfa9c);
+	/* Opera 11.10+ */
+	background-image:-o-linear-gradient(top, #fdee6d, #fcfa9c);
+	/* Internet Explorer 5.5+ */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdee6d', EndColorStr='#fcfa9c');
+}
+ 
+#timeline-popup .tipDate {
+    color: #999999;
+    float: right;
+    font-style: italic;
+}
+
+#timeline-popup .tipHeader {
+    clear: left;
+    float: left;
+    font-weight:bold; /*ROX*/
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 5px;
+    width: 200px;
+    /* 38 caracteres de maximo para el titulo */
+}
+
+#timeline-popup .tipImage {
+    float: left;
+    max-height: 200px;
+    max-width: 10px;
+}
+
+#timeline-popup .tipBody {
+    clear: both;
+    float: left;
+    font-size: 13px;
+    margin-top: 5px;
+}
