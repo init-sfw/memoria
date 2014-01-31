@@ -186,12 +186,17 @@ body {
 #timeline-tooltip {
 	position:absolute;
 	z-index:9999;
-	width:190px;    
-	padding: 15px;
-	max-height: 200px;
+	width:200px;
+	text-align:center; /*ROX*/
 	
+	max-height: 200px;
+	border-width:1px;
+	border-style:solid;
+	border-radius:10px;
 	font-size:11px;
+
 	color:#000;
+	border-color:#61380B;
 	
 	/* Color alternativo para versiones que no soporten degradados */
 	background-color:#fcfa9c;
@@ -208,29 +213,31 @@ body {
 }
  
 #timeline-tooltip .tipDate {
-	color: #999999;
-    float: left;
+    color: #999999;
+    float: right;
     font-style: italic;
 }
 
 #timeline-tooltip .tipHeader {
-	clear: left;
+    clear: left;
     float: left;
-    font-size: 14px;
+    font-weight:bold; /*ROX*/
+    font-size: 16px;
     font-style: italic;
     margin-top: 5px;
-    width: 130px;
+    width: 200px;
+    /* 38 caracteres de maximo para el titulo */
 }
 
 #timeline-tooltip .tipImage {
-	background: none repeat scroll 0 0 #EEEEEE;
-    border: 1px solid #000000;
-    float: right;
-    width: 50px;
+    float: left;
+    max-height: 200px;
+    max-width: 10px;
 }
 
 #timeline-tooltip .tipBody {
-	clear: both;
+    clear: both;
     float: left;
-    margin-top: 15px;
+    font-size: 13px;
+    margin-top: 5px;
 }

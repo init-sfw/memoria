@@ -40,7 +40,7 @@
 		"pais": "9",
 		"descripcionBreve": "Primer expedicion militar de la corona británica que atacó el Virreinato del Río de la Plata a principios del siglo XIX.",
 		"link": "http://es.wikipedia.org/wiki/Invasiones_Inglesas#Primera_Invasi.C3.B3n_a_Buenos_Aires",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "1"
 	},
 	{ 
@@ -51,7 +51,7 @@
 		"pais": "9",
 		"descripcionBreve": "Segunda expedicion militar de la corona británica que atacó el Virreinato del Río de la Plata a principios del siglo XIX.",
 		"link": "http://es.wikipedia.org/wiki/Invasiones_Inglesas#Segunda_Invasi.C3.B3n_a_Buenos_Aires",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "1"
 	},
 	{ 
@@ -62,7 +62,7 @@
 		"pais": "9",
 		"descripcionBreve": "Se conoce como Revolución de Mayo a la serie de acontecimientos revolucionarios ocurridos en mayo de 1810 en la ciudad de Buenos Aires, por aquel entonces capital del Virreinato del Río de la Plata, una dependencia colonial de España. Como consecuencia de la revolución fue depuesto el virrey Baltasar Hidalgo de Cisneros y reemplazado por la Primera Junta de Gobierno.",
 		"link": "http://es.wikipedia.org/wiki/Revoluci%C3%B3n_de_Mayo",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "0"
 	},
 	{ 
@@ -73,7 +73,7 @@
 		"pais": "9",
 		"descripcionBreve": "La Constitución Argentina de 1853 fue la primera constitución de la que se dotó a la actual República Argentina tras la finalización del período de Anarquía del Año XX comenzado en 1820",
 		"link": "http://es.wikipedia.org/wiki/Constituci%C3%B3n_Argentina_de_1853",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "1"
 	},
 	{ 
@@ -84,7 +84,7 @@
 		"pais": "-1",
 		"descripcionBreve": "La Primera Guerra Mundial, también llamada la Gran Guerra, se desarrolló entre el 28 de julio de 1914 y el 11 de noviembre de 1918. Involucró a todas las grandes potencias del mundo, que se alinearon en dos bandos enfrentados: por un lado, los Aliados de la Triple Entente, y, por otro, las Potencias Centrales de la Triple Alianza.",
 		"link": "http://es.wikipedia.org/wiki/Primera_Guerra_Mundial",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "0"
 	},
 	{ 
@@ -95,7 +95,7 @@
 		"pais": "9",
 		"descripcionBreve": "La Reforma Universitaria es el nombre que reciben una serie de movimientos político-culturales o de políticas públicas cuya finalidad es la reforma de las estructuras, contenidos y fines de la universidad. En 1918 los estudiantes de la Universidad Nacional de Córdoba iniciaron una huelga universitaria en reclamo de profundas reformas universitarias, que se convirtió rápidamente en un amplio movimiento en todo el país y en América Latina, con cierto impacto también en España y Estados Unidos.",
 		"link": "http://es.wikipedia.org/wiki/Reforma_universitaria",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "1"
 	},
 	{ 
@@ -106,7 +106,7 @@
 		"pais": "-1",
 		"descripcionBreve": "La Primera Guerra Mundial, también llamada la Gran Guerra, se desarrolló entre el 28 de julio de 1914 y el 11 de noviembre de 1918. Involucró a todas las grandes potencias del mundo, que se alinearon en dos bandos enfrentados: por un lado, los Aliados de la Triple Entente, y, por otro, las Potencias Centrales de la Triple Alianza.",
 		"link": "http://es.wikipedia.org/wiki/Primera_Guerra_Mundial",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "0"
 	},
 	{ 
@@ -117,7 +117,7 @@
 		"pais": "Estados Unidos",
 		"descripcionBreve": "Crisis de 1929 es un concepto muy utilizado por la historiografía, la ciencia económica y otras ciencias sociales, cuyo estricto significado varía según la acotación temporal y temática a la que se quiera hacer referencia: Crack del 29 y Jueves negro y posterior Gran depresión.",
 		"link": "http://es.wikipedia.org/wiki/Crisis_de_1929#Jueves_negro_-_crisis_burs.C3.A1til",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "0"
 	},
 	{ 
@@ -128,7 +128,7 @@
 		"pais": "-1",
 		"descripcionBreve": "La Segunda Guerra Mundial fue un conflicto militar global que se desarrolló entre 1939 y 1945. En él se vieron implicadas la mayor parte de las naciones del mundo, incluidas todas las grandes potencias, mediante la creación de dos alianzas militares opuestas: los Aliados y las Potencias del Eje. Fue la mayor guerra de la Historia, con más de 100 millones de militares movilizados y un estado de «guerra total» en que los grandes contendientes destinaron toda su capacidad económica, militar y científica al servicio del esfuerzo de guerra, borrando la distinción entre recursos civiles y militares.",
 		"link": "http://es.wikipedia.org/wiki/Segunda_Guerra_Mundial",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "0"
 	},
 	{ 
@@ -139,7 +139,7 @@
 		"pais": "-1",
 		"descripcionBreve": "La Segunda Guerra Mundial fue un conflicto militar global que se desarrolló entre 1939 y 1945. En él se vieron implicadas la mayor parte de las naciones del mundo, incluidas todas las grandes potencias, mediante la creación de dos alianzas militares opuestas: los Aliados y las Potencias del Eje. Fue la mayor guerra de la Historia, con más de 100 millones de militares movilizados y un estado de «guerra total» en que los grandes contendientes destinaron toda su capacidad económica, militar y científica al servicio del esfuerzo de guerra, borrando la distinción entre recursos civiles y militares.",
 		"link": "http://es.wikipedia.org/wiki/Segunda_Guerra_Mundial",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"ponderacion": "0"
 	},
 	{ 
@@ -149,7 +149,7 @@
 		"categoria": "historia",
 		"pais": "9",
 		"descripcionBreve": "Desde la presidencia, Perón continuó con las políticas sociales que beneficiaron tanto a la clase trabajadora como al empresariado nacional, sobre todo industrial. Luego del triunfo electoral disolvió los tres partidos que se habían creado para sostener su candidatura, Laborista, Unión Cívica Radical Junta Renovadora y el Partido Independiente, para unificarlos en una sola organización política, llamada primero Partido Único de la Revolución y luego simplemente Peronista o Justicialista.",
-		"imagen": "imagen.jpg",
+		"imagen": "150.jpeg",
 		"link": "http://es.wikipedia.org/wiki/Juan_Domingo_Per%C3%B3n#Primer_per.C3.ADodo_.281946.E2.80.931952.29",
 		"ponderacion": "2"
 	},
@@ -161,7 +161,7 @@
         "pais": "9",
         "descripcionBreve": "Provincias Unidas del Río de la Plata es el más recurrente de los nombres utilizados por el estado surgido en la Revolución de Mayo de 1810 en Buenos Aires para suplantar al virreinato del Río de la Plata. Aunque ese estado pretendía tomar el control de todo el territorio del virreinato, debió aceptar la temprana separación de la provincia del Paraguay y el resto de su territorio efectivo varió según los vaivenes de la guerra de la independencia, de las guerras contra los luso-brasileños, y de los conflictos internos, guerras que dieron lugar a la separación de los territorios del Alto Perú y de la Banda Oriental, que formaron los estados de Bolivia y Uruguay. Tras superar períodos de anarquía y guerras civiles las 13 provincias que todavía integraban esta unión entre 1831 y 1832 se agruparon en lo que se denomina Confederación Argentina. El nombre Provincias Unidas del Río de la Plata fue recogido por la Constitución Nacional Argentina de 1853 como uno de los tres nombres oficiales del Estado, junto con República Argentina y Confederación Argentina, permaneciendo en la constitución actualmente vigente en su artículo 35°.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -172,7 +172,7 @@
         "pais": "9",
         "descripcionBreve": "Se conoce como el surgimiento del Estado Argentino al período de la historia de la Argentina durante el cual la autoridad de la monarquía española llega a su fin en el virreinato del Río de la Plata, el cual se disgrega en diversas unidades políticas y se produce la conformación jurídico-política de lo que hoy es la República Argentina. Con el primer antecedente en las invasiones inglesas, este proceso se inicia propiamente con la Revolución de Mayo y culmina con la sanción de la Constitución Nacional en 1853.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -183,7 +183,7 @@
         "pais": "9",
         "descripcionBreve": "Se conoce como Revolución de Mayo a la serie de acontecimientos revolucionarios ocurridos en mayo de 1810 en la ciudad de Buenos Aires, por aquel entonces capital del Virreinato del Río de la Plata, una dependencia colonial de España. Como consecuencia de la revolución fue depuesto el virrey Baltasar Hidalgo de Cisneros y reemplazado por la Primera Junta de Gobierno. Estos eventos de la Revolución de Mayo se sucedieron en una semana conocida como la Semana de Mayo, que transcurrió entre el 18 de mayo, cuando se confirmó de manera oficial la caída de la Junta de Sevilla, hasta el 25 de mayo, fecha de asunción de la Primera Junta. La Revolución de Mayo inició el proceso de surgimiento del Estado Argentino sin proclamación de la independencia formal, ya que la Primera Junta no reconocía la autoridad del Consejo de Regencia de España e Indias, pero aún gobernaba nominalmente en nombre del rey de España Fernando VII, quien había sido depuesto por las Abdicaciones de Bayona y su lugar ocupado por el francés José Bonaparte. Aun así, los historiadores consideran a dicha manifestación de lealtad (conocida como la máscara de Fernando VII) una maniobra política que ocultaba las intenciones independentistas de los revolucionarios. La declaración de independencia de la Argentina tuvo lugar posteriormente durante el Congreso de Tucumán el 9 de julio de 1816.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -194,7 +194,7 @@
         "pais": "9",
         "descripcionBreve": "El Ejército del Norte, denominado en los documentos de su época Ejército del Perú, fue uno de los cuerpos militares desplegados por las Provincias Unidas del Río de la Plata en la Guerra de Independencia de la Argentina. Este ejército fue el encargado de actuar, bajo el mando, entre otros de Manuel Belgrano, en la región noroeste de la actual República Argentina y el Alto Perú, en donde se desarrolló uno de los principales frentes de batalla contra los realistas fieles a la corona de España. Su acción en el frente independentista comenzó en 1810 y concluyó en 1817, con la derrota de las fuerzas comandadas por Gregorio Aráoz de La Madrid en la batalla de Sopachuy, en un último intento de avanzar sobre el Alto Perú. A partir de allí las acciones ofensivas finalizaron, manteniéndose sólo en situación defensiva. La ofensiva ya había sido trasladada al Ejército de los Andes, comandado por José de San Martín, que concibió la idea de llegar por mar hasta Lima, el principal bastión realista, tras liberar Chile. El Ejército del Norte, nuevamente al mando de Belgrano, fue llamado para intervenir en las luchas internas suscitadas por el conflicto entre el gobierno central con sede en Buenos Aires y los caudillos federales del Litoral. El Motín de Arequito, causado por la renuencia de los veteranos del frente independentista a comprometerse en luchas intestinas, puso fin a su existencia. La Expedición Libertadora al Paraguay comandada por Belgrano llevó antes el nombre de Ejército del Norte, pasando luego, tras su fracaso militar, a ser conocido así el que actuaba en el Alto Perú. Durante la Guerra contra la Confederación Perú-Boliviana, un nuevo cuerpo militar recibió el nombre de Ejército del Norte 1837 al mando de Alejandro Heredia, desapareciendo de nuevo tras su asesinato en 1838 al estallar la rebelión conocida como Coalición del Norte, finalizando la guerra en 1839 con la victoria chilena en Yungay y el retiro de los peruano-bolivianos del territorio argentino. Artículo principal: Expediciones Auxiliadoras al Alto Perú.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -205,7 +205,7 @@
         "pais": "9",
         "descripcionBreve": "Se denomina Éxodo Jujeño a la retirada hacia Tucumán emprendida por el Ejército del Norte, comandado por el general Manuel Belgrano en la vanguardia y el mayor general Eustoquio Díaz Vélez en la retaguardia, y la población de San Salvador de Jujuy que evacuó la ciudad completa y sus campos. Tuvo lugar el 23 de agosto de 1812, ante el avance de las tropas realistas provenientes desde el Alto Perú. El rigor de la medida debió respaldarse con la amenaza de fusilar a quienes no cumplieran la orden.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -216,8 +216,19 @@
         "pais": "9",
         "descripcionBreve": "El Primer Triunvirato fue el órgano ejecutivo que reemplazó a la Junta Grande y gobernó las Provincias Unidas del Río de la Plata entre el 23 de septiembre de 1811 y el 8 de octubre de 1812. Originalmente, estaba formado por Feliciano Chiclana, Manuel de Sarratea y Juan José Paso.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
+    },
+    {
+        "fecha": "21/12/1967",
+        "fechaCreacion": "04/08/2013",
+        "titulo": "Declaración de independencia argentina",
+        "categoria": "historia",
+        "pais": "9",
+        "descripcionBreve": "La declaración de independencia de la Argentina fue una decisión tomada por el Congreso de Tucumán que sesionó en la ciudad de San Miguel de Tucumán de las entonces Provincias Unidas en Sudamérica. Fue proclamada el martes 9 de julio de 1816 en la casa propiedad de Francisca Bazán de Laguna, casa declarada Monumento Histórico Nacional en 1941. Con dicha declaración, se rompían los vínculos de dependencia política que los gobiernos locales tenían con la monarquía española.",
+        "link": "es.wikipedia.org",
+        "imagen": "150.jpeg",
+        "ponderacion": "2"
     },
     {
         "fecha": "11/12/1877",
@@ -227,7 +238,7 @@
         "pais": "9",
         "descripcionBreve": "La contrarrevolución de Córdoba tuvo su inicio cuando las autoridades de la Intendencia de Córdoba del Tucumán y el ex virrey del Río de la Plata, Santiago de Liniers, tomaron conocimiento de que había ocurrido la Revolución de Mayo en Buenos Aires, por lo que se dedicaron a organizar en Córdoba un ejército para rechazar la expedición militar enviada por la Primera Junta para hacer reconocer su autoridad en las provincias del interior del ex Virreinato del Río de la Plata. El fracaso de la contrarrevolución encabezada por Liniers culminó con su fusilamiento y el completo control del noroeste de la actual Argentina por la Junta de Buenos Aires.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -238,7 +249,7 @@
         "pais": "9",
         "descripcionBreve": "El Plan de Operaciones es un documento atribuido a Mariano Moreno, que detallaría en forma secreta las operaciones que la Primera Junta, surgida tras la Revolución de Mayo, tomaría para protegerse de sus enemigos partidarios de la monarquía española. La autenticidad del documento es cuestionada por algunos historiadores, que sospechan que podría tratarse de una falsificación literaria, mientras otros sostienen la autenticidad del documento, sino en su redaccion actual, en lineas generales como programa de gobierno revolucionario.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -249,7 +260,7 @@
         "pais": "9",
         "descripcionBreve": "Se conoce con el nombre de Primera Junta de Gobierno, oficialmente la «Junta Provisional Gubernativa de las Provincias del Río de la Plata a nombre del Señor Don Fernando VII», a una Junta de gobierno surgida en Buenos Aires el viernes 25 de mayo de 1810. Tuvo lugar tras la destitución del virrey Baltasar Hidalgo de Cisneros, como consecuencia de la Revolución de Mayo. La sede del gobierno fue fijada en el Fuerte de Buenos Aires, que sirviera desde 1776 como residencia de los virreyes y donde hoy se encuentra la Casa de Gobierno. La Primera Junta existió como tal hasta el 18 de diciembre del mismo año, ya que con la incorporación de diputados del interior se transformó en la Junta Grande. Los principios que proclamó la Revolución de Mayo y por los cuales se guio el accionar de la Primera Junta fueron los de la soberanía popular, el principio representativo y federal, la división de poderes y duración de los mandatos, y la publicidad de los actos de gobierno.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "7"
     },
     {
@@ -260,7 +271,7 @@
         "pais": "9",
         "descripcionBreve": "El general escocés Thomas Maitland diseñó en el año 1800 un \"Plan para capturar Buenos Aires y Chile y luego emancipar Perú y Quito\". En síntesis los puntos principales de este plan consistían en: Ganar el control de Buenos Aires. Tomar posiciones en Mendoza. Coordinar las acciones con un ejército libertador en Chile. Cruzar los Andes. Derrotar a los españoles y controlar Chile. Continuar por mar hacia Perú y liberarlo. José de San Martín pudo haber conocido los pormenores de este plan, durante su estadía en Londres, en 1811. Esta teoría es avalada por Rodolfo Terragno en su libro \"Maitland & San Martín\" editado por la Universidad Nacional de Quilmes. Junto con esta afirmación, Terragno aclara que el gran mérito de San Martín fue y será el haber ejecutado dicho plan.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -271,7 +282,7 @@
         "pais": "9",
         "descripcionBreve": "El Motín de Arequito, fue la sublevación de los oficiales del Ejército del Norte de las Provincias Unidas del Río de la Plata, mediante la cual consiguieron apartarse de la guerra civil contra los federales. Su intención era retornar al frente contra los realistas del Alto Perú, objetivo que no pudo cumplirse. Significó el comienzo de la desintegración final del Directorio y fue una de las principales causas de su derrota en la Batalla de Cepeda. El motín puso fin al Ejército Auxiliar del Perú, conocido después como Ejército del Norte. Simultáneamente, en San Juan se sublevó el Regimiento N° 1 de Cazadores de los Andes.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -282,7 +293,7 @@
         "pais": "9",
         "descripcionBreve": "El Directorio fue la forma de gobierno establecida en 31 de enero de1814 por la Asamblea del Año XIII para las Provincias Unidas del Río de la Plata, de acuerdo al cual un Director Supremo se hacía cargo del poder ejecutivo con un mandato de dos años. Tenía el título oficial de Director Supremo de las Provincias Unidas del Río de la Plata. A diferencia de los gobiernos que tuvieron lugar tras la Revolución de Mayo la autoridad era ejercida por un individuo específico en lugar de un grupo, pero aún no tenía las características propias de un sistema presidencial. La Asamblea procuraba así hacer frente a la amenaza realista, agravada por enfrentamientos internos en el bando patriota. Con el fin de evitar los abusos de poder, el Directorio debía estar integrado además por un Consejo de Estado compuesto por 9 personas, y responder ante un Congreso destinado a ejercer funciones legislativas.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "6"
     },
     {
@@ -293,7 +304,7 @@
         "pais": "9",
         "descripcionBreve": "El Congreso de Tucumán fue una asamblea legislativa y constituyente de las Provincias Unidas del Río de la Plata, actualmente la República Argentina, que sesionó – inicialmente en la ciudad de San Miguel de Tucumán, y posteriormente en la de Buenos Aires – entre los años 1816 y 1820. Se lo recuerda especialmente por haber sancionado la Declaración de independencia de la Argentina y la Constitución Argentina de 1819.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -304,7 +315,7 @@
         "pais": "9",
         "descripcionBreve": "La bandera de la Provincia de Mendoza, en Argentina, fue adoptada el 21 de octubre de 1992 por la ley provincial 5.930. La misma es una reproducción fiel, en caracteres, colores y dimensiones, de la bandera del Ejército de Los Andes, diseñada por el propio José de San Martín con motivo de las expediciones libertadoras a Chile y Perú.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -315,7 +326,7 @@
         "pais": "9",
         "descripcionBreve": "El Segundo Triunvirato fue el órgano ejecutivo de gobierno, que reemplazó al Primer Triunvirato y condujo entre 1812 y 1814 los destinos de las Provincias Unidas del Río de la Plata.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -326,7 +337,7 @@
         "pais": "9",
         "descripcionBreve": "La Gazeta de Buenos Ayres fue un periódico escrito en Buenos Aires, Argentina, entre 1810 y 1821 con el objetivo inicial de publicitar los actos de gobierno de la Primera Junta. Inicialmente fue redactada por Mariano Moreno con la ayuda del sacerdote Manuel Alberti, y contó también con colaboraciones de Manuel Belgrano y Juan José Castelli.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "6"
     },
     {
@@ -337,7 +348,7 @@
         "pais": "9",
         "descripcionBreve": "La Asamblea del Año XIII, también conocida como la Asamblea General Constituyente del Año 1813, fue convocada por el Segundo Triunvirato, en las Provincias Unidas del Río de la Plata, que había accedido al poder en octubre de 1812. El objetivo fue llamar a una Asamblea que representase a los pueblos recién emancipados y que se definiese el sistema institucional de las Provincias Unidas. Aunque no logró contar con algunos representantes del interior, esta Asamblea se inauguró el 31 de enero de 1813. El propósito era proclamar la independencia y redactar la constitución del nuevo estado. Durante su transcurso, los intereses sectoriales dividieron a los diputados, lo que terminó con una postergación de la declaración de la independencia. No obstante, durante esta Asamblea se establecieron una serie de resoluciones importantes.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "6"
     },
     {
@@ -348,7 +359,7 @@
         "pais": "9",
         "descripcionBreve": "La Junta Grande fue el gobierno ejecutivo que se creó en las Provincias Unidas del Río de la Plata el 18 de diciembre de 1810 a partir de la Primera Junta, con la incorporación de los diputados provenientes de las provincias que integraron el ex Virreinato del Río de la Plata. El 18 de diciembre de 1810 se celebró una reunión entre los 7 integrantes de la Primera Junta que se hallaban en Buenos Aires y los 9 diputados de las provincias que habían llegado a la capital, en esa reunión conjunta 13 (Saavedra, Azcuénaga, Alberti, Matheu, Larrea, Manuel Ignacio Molina, Tarragona, García de Cossio, Gurruchaga, Manuel Felipe Molina, Funes, Pérez de Echalar, Olmos de Aguilera y Gorriti) votaron por la incorporación de los diputados a la Junta mientras que Moreno y Paso votaron en contra. La renuncia de Mariano Moreno no fue aceptada y al día siguiente se prestó juramento quedando constituida la Junta Grande que gobernó hasta el 22 de septiembre de 1811, cuando fue reemplazada por un golpe institucional encabezado por el Primer Triunvirato, que volvería a las tendencias centralistas de la Primera Junta.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "3"
     },
     {
@@ -359,7 +370,7 @@
         "pais": "9",
         "descripcionBreve": "Se denomina Guerra de Independencia de la Argentina o de las Provincias Unidas del Río de la Plata al conjunto de combates y campañas militares ocurridos en el marco de las guerras de independencia hispanoamericanas en diversos países de América del sur, en los que participaron fuerzas militares de las Provincias Unidas del Río de la Plata, un estado que sucedió al Virreinato del Río de la Plata y que antecedió a la República Argentina. Los bandos enfrentados suelen ser identificados como patriotas y realistas, ya que se trató de un enfrentamiento entre quienes defendían la independencia de su patria y la creación de los nuevos estados americanos, y aquellos que defendían la continuidad de sus territorios (provincias o reinos) dentro de la monarquía española del rey Fernando VII Sólo una parte menor de estos enfrentamientos tuvo lugar en el territorio de la actual Argentina. La mayoría ocurrió en los territorios del antiguo Virreinato del Río de la Plata que al finalizar la guerra quedaron fuera de las Provincias Unidas, o en otras regiones de América del Sur que nunca pertenecieron a ese virreinato, tales como Chile, Perú y Ecuador. No obstante, en todos los casos se considera que los bandos enfrentados luchaban no solamente por la situación en esos territorios, sino también por la soberanía nacional sobre el territorio que había pertenecido al Virreinato del Río de la Plata. También hubo enfrentamientos en el mar, en algunos casos en aguas muy alejadas del continente americano. Se pueden distinguir tres frentes militares principales: el frente oriental o del litoral, sobre los ríos de la cuenca del Plata, que incluye las campañas en el Paraguay, la Banda Oriental, la Mesopotamia argentina y los combates navales en el Río de la Plata y sus afluentes; el frente norte, con enfrentamientos en las provincias del Alto Perú y la Intendencia de Salta del Tucumán; y el frente de los Andes, que incluye la acción ofensiva sobre posiciones realistas en Chile, Perú y Ecuador. La guerra duró quince años y terminó con la victoria de los independentistas, que lograron consolidar la Independencia de la Argentina y colaboraron en la de otros países de América del Sur.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -370,7 +381,7 @@
         "pais": "9",
         "descripcionBreve": "Regimiento de Artillería de la Patria es el nombre que fue dado al Real Cuerpo de Artillería de las Provincias Unidas del Río de la Plata el 2 de marzo de 1812. Durante toda su existencia este regimiento fue la única unidad de artillería del gobierno nacional de las Provincias Unidas del Río de la Plata. Participó en la Guerra de Independencia de la Argentina, destacando piquetes y compañías en los diversos frentes, pero manteniéndose su jefatura en Buenos Aires, hasta su disolución en 1820 luego del Motín de Arequito.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
 	{
@@ -381,7 +392,7 @@
         "pais": "42",
         "descripcionBreve": "El Taki Unquy, también escrito como Taqui Ongoy, Taqui Onccoy y otras formas más, fue un movimiento indígena de compleja configuración surgido en los andes peruanos durante el siglo XVI contra la reciente invasión española.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -392,7 +403,7 @@
         "pais": "42",
         "descripcionBreve": "Como lo consagra la Constitución Política de 1980, Chile es un Estado unitario, con un territorio dividido en regiones. La soberanía radica esencialmente en la nación, quien la ejerce a través de la elección de sus representantes por medio del sufragio o tomando decisiones particulares a través del plebiscito. El sistema político chileno es la democracia republicana. Pese a existir la división clásica de los poderes, los politólogos concuerdan en que la Constitución de 1980 define otros poderes o funciones, como las del Tribunal Constitucional, el Banco Central, el Consejo de Seguridad Nacional y otros órganos. La forma de gobierno es la República presidencial, lo que se traduce, básicamente, en que el Presidente de la República es a la vez Jefe de Estado y Jefe de Gobierno. Consecuentemente, en esta autoridad se han concentrado amplias facultades, entre las que se cuentan: la iniciativa exclusiva en diversas materias de ley; la imposición de estados de excepción constitucional; la posibilidad de dictar Decretos con Fuerza de Ley (previa ley delegatoria de facultades por parte del Congreso); la convocación a plebiscitos; y naturalmente el nombramiento de los ministros de Estado, y un cuerpo importante de funcionarios que colaboran con él en la administración del Estado, etc.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -403,7 +414,7 @@
         "pais": "42",
         "descripcionBreve": "El Frente Patriótico Manuel Rodríguez (conocido también por la sigla FPMR) fue un grupo guerrillero de ideología marxista leninista y revolucionaria de Chile, que inició sus actividades el 14 de diciembre de 1983. Tomó su nombre del héroe de la independencia chilena Manuel Rodríguez Erdoíza. Inicialmente el FPMR fue el aparato \"militar\" oficial del Partido Comunista de Chile (PCCh) en la lucha armada contra el Gobierno Militar de Augusto Pinochet, dentro de la política de rebelión popular de masas impulsada por el Partido Comunista.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -414,7 +425,7 @@
         "pais": "42",
         "descripcionBreve": "La Contraloría General de la República es un organismo autónomo del Estado, de rango constitucional, encargado de: Ejercer el control de legalidad de los actos de la Administración Pública, esto lo hace - Tomando razón de los decretos y resoluciones, representándolos cuando adolezcan de ilegalidad - Tomando razón de los Decretos con Fuerza de Ley, representándolos cuando excedan o contravengan la ley delegatoria o sean contrarios a la Constitución Política de la República. La toma de razón es el acto jurídico administrativo por el cual la Contraloría General de la República señala que el decreto o resolución se encuentra conforme a la Constitución y a las leyes y la representación que el decreto o resolución contiene o no algún vicio de inconstitucionalidad o de legalidad (similar a un protesto). Fiscalizar el ingreso y la inversion de los fondos fiscales, municipales y de los demás organismos y servicios que determinen las leyes. Examinar y juzgar las cuentas de las personas que tengan a su cargo bienes fiscales, municipales y de los demás organismos y servicios que determinen las leyes. Llevar la contabilidad general de la Nación Desempeñar las demás funciones encomendadas por la Ley Orgánica Constitucional de la Contraloría General de la República.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -425,7 +436,7 @@
         "pais": "42",
         "descripcionBreve": "Cordón industrial fue un órgano colectivista de democracia obrera en la historia de Chile formado por algunos sectores de la clase obrera, con influjo marxista o socialista, durante el gobierno de Salvador Allende. Sus simpatizantes denominaron al proceso «poder popular». Estos órganos de poder popular fueron establecidos por la actividad independiente de la clase obrera. Su formación se extendió y multiplicó en respuesta al sabotaje y a las huelgas organizadas por gremios empresariales que tenían como fin la destabilización del gobierno de la Unidad Popular y el descarrilamiento de la implementación de un programa de tipo socialista. Cada cordón consistía de un grupo de compañías o fábricas que coordinaban el trabajo de los obreros de una misma zona. En el momento del Golpe de Estado del 11 de septiembre de 1973, estaban establecidos y en orden 31 cordones; 8 de ellos en la capital chilena. La naturaleza independiente de estos órganos de poder obrero para las burocracias —tanto del sindicato oficial como del Estado (parlamento y congreso) y del liderazgo de los partidos que formaban la coalición de la Unidad Popular (PS, PCCh, etc. )— crearon situaciones complejas para quienes intentaban implementar un socialismo sin dependencia de los designios de la instituciones democráticas burguesas. Algunas organizaciones políticas —como el MIR, que no era parte de la coalición partidista, el MAPU Garretón y un amplia fracción del Partido Socialista de Chile, de cuyo partido sobresalieron la mayoría de los dirigentes de los cordones— vieron estos órganos del poder obrero como el embrión de los órganos sociales de un sistema de gobierno mucho más democrático e incluso una suerte de poder dual.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "3"
     },
     {
@@ -436,7 +447,7 @@
         "pais": "42",
         "descripcionBreve": " La corrupción en Chile se refiere al mal uso público del poder político y económico, por parte del Estado chileno y entidades privadas, para conseguir una ventaja ilegítima, generalmente secreta y privada, contrario a lo que sería la realización de prácticas transparentes. Si bien el Índice de Percepción de Corrupción en Chile ha sido en general bastante alto, considerándose el país latinoamericano con menor corrupción durante todo lo que va del siglo XXI, igualmente existen prácticas que pueden y han sido calificadas como corrupción política, estando normalmente relacionadas con acuerdos entre el sistema público y la empresa privada. Los casos de corrupción en Chile no suelen ser explícitos ni estar relacionados con el cohecho como en otros países, sino que suelen tomar formas más intrincadas.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -447,7 +458,7 @@
         "pais": "42",
         "descripcionBreve": "La Ley nº 8.987, de Defensa Permanente de la Democracia fue una ley chilena publicada en el Diario Oficial de 3 de septiembre de 1948, conocida también como la Ley maldita, que tuvo por finalidad proscribir la participación política del Partido Comunista de Chile (PCCh). Esta ley dispuso la cancelación de la inscripción del Partido Progresista Nacional (nombre que usaba el PCCh en las elecciones) y el PCCh. Asimismo, el borrado del registro electoral de sus militantes y de las personas sospechosas de participar en dicha organización. Esto significó que los regidores, alcaldes, diputados y senadores electos serían inhabilitados y despojados de sus cargos. Similares sanciones se aplicaban para la administración pública, en las municipalidades y la educación primaria, secundaria y universitaria en la designación, contratación de sus empleados, además de prohibir toda organización, propaganda y toda asociación similar. Se sancionaban todas las reuniones o actos que interrumpieran el normal desarrollo de las actividades productivas (limitación del derecho de huelga). También sancionaba a quienes cooperaran o efectuaran actos contrarios a la misma. Fue derogada por Ley n. º 12.927, sobre Seguridad del Estado, de 6 de agosto de 1958.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -458,7 +469,7 @@
         "pais": "42",
         "descripcionBreve": "El Collasuyo fue el mayor y más austral de los suyos del Imperio incaico o Tawantinsuyu, el mayor de sus territorios. Se extendía al sur del Cuzco hasta las riberas del río Maule, al sur de la actual Santiago de Chile, y desde las costas del Pacífico hasta los llanos de Santiago del Estero, en la actual Argentina. El centro neurálgico del Qullasuyu estaba situado en el altiplano peruano-boliviano, en torno al Lago Titicaca, una de las regiones más densamente pobladas de los Andes desde tiempos del estado Tiahuanaco. El nombre Qullasuyu proviene de los habitantes aimara-hablantes de una serie de reinos independientes de la meseta del Titicaca con fuertes lazos culturales, que eran conocidos por los incas bajo el nombre genérico de qullas debido a que el Reino Qulla, en torno a la orilla norte del Titicaca, era para los incas el más significativo de estos reinos en la época del inicio de la gran expansión territorial del Imperio incaico. Qulla en quechua también significa el punto cardinal del Sur. En la actualidad, el nombre ha sido usado por determinados movimientos nacionalistas indígenas bolivianos para referirse al Estado Plurinacional de Bolivia o a su región andina de mayoría indígena.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -469,7 +480,7 @@
         "pais": "42",
         "descripcionBreve": "Tricontinentalidad es un concepto geopolítico que Chile se auto-adjudica, en el que se caracteriza ejerciendo o reclamando soberanía en tres continentes: América, Oceanía y la Antártida. Considerando el territorio reclamado en la Antártida, la superficie total de Chile tricontinental sería de 2 006 360 km², mientras que su longitud total sobrepasaría los 8000 km entre sus fronteras norte —17º29'57\"S— y sur —90°S o Polo Sur—.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -480,7 +491,7 @@
         "pais": "42",
         "descripcionBreve": "El presidente de la Cámara de Diputados de Chile es la máxima autoridad de la Cámara de Diputados. Se encuentra, tras los Ministros de Estado y el Presidente del Senado, en el tercer lugar en la línea de sucesión del Presidente de la República, en caso de impedimento temporal o vacancia.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -491,7 +502,7 @@
         "pais": "42",
         "descripcionBreve": "El presidente de la República de Chile es el jefe de Estado y de Gobierno de Chile y su máxima autoridad política. Le corresponde, como mandato genérico, el gobierno y la administración del Estado. Si bien su papel y significación ha experimentado cambios a lo largo de la historia, al igual que su posición y relaciones con los demás actores de la organización política nacional, ha sido y es una de las figuras políticas más destacadas. Asimismo, es considerado una de las instituciones que conforman la \"Constitución histórica de Chile\" y una de las claves de la estabilidad política del país. Salvo los períodos de interrupción institucional, se ha desempeñado regularmente como jefe de Estado y de gobierno en Chile; ello fue modificado en la práctica, aunque no constitucionalmente, durante el período 1891-1924 en que existió un régimen pseudoparlamentario –también caracterizado como gobierno de partido bajo formas parlamentarias–, bajo la vigencia de la Constitución Política de 1833, donde su papel quedó reducido al de jefe de Estado. El sistema presidencial, con ciertas peculiaridades, fue restablecido por la Constitución de 1925, y reforzado en la Constitución de 1980. De acuerdo a la constitución vigente, el presidente tiene el deber general de desempeñar fielmente su cargo, mantener la independencia de la nación y guardar y hacer guardar la Constitución y las leyes, tal como lo señala el juramento o promesa que presta al asumir sus funciones. Desde el 11 de marzo de 2010, el presidente de la República de Chile es Sebastián Piñera.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -502,7 +513,7 @@
         "pais": "42",
         "descripcionBreve": "El Poder Judicial de Chile está constituido por los tribunales, autónomos e independientes, establecidos por la ley, a los cuales les corresponde el conocimiento de todos los asuntos que sea su naturaleza o calidad de las personas que en ellos intervengan (sin perjuicio de las excepciones constitucionales o legales). Lo integran, como tribunales ordinarios de justicia, la Corte Suprema, las Cortes de Apelaciones, los Presidentes y Ministros de Corte, los Juzgados de Letras, los Juzgados de Garantía y los Tribunales de Juicio Oral en lo Penal. Asimismo, forman parte de él, como tribunales especiales, los Juzgados de Familia, los Juzgados de Letras del Trabajo, los Juzgados de Cobranza Laboral y Previsional, y los Tribunales Militares en tiempo de paz.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -513,7 +524,7 @@
         "pais": "42",
         "descripcionBreve": "No confundir con la Nacionalización del cobre. La chilenización del cobre se refiere a los efectos de la Ley N° 16.425 publicada el 25 de enero de 1966 promulgada en la presidencia de Eduardo Frei Montalva en la minería del cobre en Chile. La chilenización consistió en la adquisición por parte del Estado de Chile de un porcentaje de acciones de las grandes compañías mineras a través de lo que se llamó contratos ley y luego la nacionalizacion pactada, que fue el proceso —ideado y encabezado por el ministro de Minería Alejandro Hales— que culminó con la compra de la mayoría de las compañías y su control por el Estado de Chile. Posteriormente, en la presidencia de Salvador Allende se realizó la nacionalización y estatización de la gran minería del cobre, por la Ley N° 17.450 publicada el 16 de julio de 1971.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "6"
     },
     {
@@ -524,7 +535,7 @@
         "pais": "42",
         "descripcionBreve": "El Día del Joven Combatiente es la denominación con que se conmemora en Chile el asesinato de los hermanos Rafael y Eduardo Vergara Toledo, perpetrado el 29 de marzo de 1985 por agentes de Carabineros, durante la dictadura del General Augusto Pinochet. La fecha no es una efeméride oficial, pero diversas organizaciones sociales, anarquistas y movimientos políticos de izquierda chilenos realizan diversas actividades culturales, recitales, encuentros políticos y actos memoriales. El epicentro tradicional de estas manifestaciones es la Villa Francia, en Estación Central, lugar donde fueron abatidos los hermanos Vergara Toledo, y que posee una particular historia de resistencia ciudadana durante la última década de la Dictadura. Las protestas se replican en diversos puntos, sin embargo, produciéndose masivamente en las ciudades de Santiago, Antofagasta, Concepción, Iquique, La Serena, Temuco, Valparaíso y Viña del Mar.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "7"
     },
     {
@@ -535,7 +546,7 @@
         "pais": "42",
         "descripcionBreve": "La división electoral de Chile es un sistema de división político-administrativa que establece 60 distritos y 19 circunscripciones a lo largo del país, con fines electorales. Esta división permite la elección de los miembros del Congreso Nacional, eligiendo cada distrito a dos diputados y cada circunscripción a dos senadores.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "7"
     },
     {
@@ -546,7 +557,7 @@
         "pais": "42",
         "descripcionBreve": "El aborto en Chile, referido al aborto inducido o interrupción voluntaria del embarazo, es ilegal sin excepción según el Código Penal de Chile de 1874. La legislación sobre el aborto en Chile está considerada como una de las más restrictivas del mundo.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "3"
     },
     {
@@ -557,7 +568,7 @@
         "pais": "42",
         "descripcionBreve": "Junta de Gobierno de Chile es la denominación de una serie órganos pluripersonales o colegiados que asumieron el mando del país durante los primeros años del proceso emancipador nacional y, posteriormente, durante los periodos de interrupción institucional. Son constante en la historia de Chile y dan cuenta de un último recurso político en donde el poder se detenta en el pueblo soberano (habitualmente la aristocracia en el siglo XIX) y posteriormente en las Fuerzas Armadas.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "3"
     },
     {
@@ -568,7 +579,7 @@
         "pais": "42",
         "descripcionBreve": "La primera dama de Chile es un título protocolar no oficial, generalmente ocupado por la cónyuge del presidente de la República de Chile. Habitualmente dirige o coordina actividades en materia social y acompaña al Presidente en visitas oficiales al extranjero. En el caso de gobernantes sin un cónyuge, como Bernardo O'Higgins o Jorge Alessandri, el título de Primera dama quedaba vacante o era designado a otras personas, como familiares o cónyuges de ministros. Como esta posición ha sido tradicionalmente ocupada por la esposa del presidente, aún no existe claridad en el caso del esposo de una presidenta. En esos casos se propone nombrarlo primer caballero, aunque esto aún no es llevado a la práctica, ya que Michelle Bachelet, la primera y hasta el momento única presidenta de Chile, era soltera. Desde 1990 las fundaciones administradas por la primera dama conforman la Red de Fundaciones de la Presidencia de la República, y el cargo oficial de ésta, quien las administra es el de directora del Área Sociocultural de la Presidencia. Dicho cargo ha sido ocupado sólo en dos oportunidades por personas que no son cónyuge del presidente, ambas durante el período de la presidenta Bachelet.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
 	{
@@ -579,7 +590,7 @@
         "pais": "180",
         "descripcionBreve": "El príncipe Vasili Lukich Dolgorúkov fue un diplomático y ministro ruso, el hombre más poderoso del país en los últimos años del reinado de Pedro II. Descendiente por línea masculina del legendario príncipe Rúrik, Dolgorúkov fue uno de los integrantes de la primera hornada de jóvenes que Pedro el Grande envió al extranjero para que fueran educados. De 1687 a 1700 residió en París, donde aprendió en profundidad los principales idiomas europeos, la elegancia superficial de la corte de Versalles y el sistema moral de los jesuitas. A su regreso a Rusia entró en el servicio diplomático. Desde 1706 a 1707 representó a Rusia en Polonia, y de 1707 a 1720 fue nombrado ministro en Copenhague, donde tuvo éxito en la misión de persuadir al rey Federico IV de entrar en la segunda coalición contra Carlos XII. A finales de 1720 sería transferido a Versalles, con la intención de que buscara la mediación de Francia en las negociaciones proyectadas con Suecia y obtener el reconocimiento del título imperial de Pedro por la corte francesa. En 1724 representó a Rusia en Varsovia y en 1726 en Estocolmo, donde su propósito era hacer que Suecia abandonara la alianza de los Hannover, aunque no tuvo éxito. Durante el reinado de Pedro II, Dolgorúkov fue nombrado miembro del Consejo Secreto Supremo . Tras procurar el destierro de Aleksandr Ménshikov, falsificó una carta que quiso hacer pasar como la última voluntad del emperador, en la que se nombraba a Ekaterina Dolgorúkova como su sucesora. No obstante se daría cuenta poco después de lo poco viable que era su estrategia, y se convertiría en uno de los primeros partidarios del ascenso de Anna Ioánnovna al trono con la condición que previamente firmara nueve \"artículos de limitación\", que dejaban el poder supremo en el consejo ruso. Anna, que repudió los \"artículos\" a la primera oportunidad, nunca se lo perdonó a Dolgorúkov. Fue privado de todos sus cargos y dignidades el 17 de abril de 1730, y acabaría siendo desterrado al Monasterio de Solovetsky. Nueve años más tarde se le acusaría de nuevo de haber falsificado la voluntad de Pedro II, por lo que sería torturado y decapitado en Nóvgorod el 8 de noviembre de 1739.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -590,7 +601,7 @@
         "pais": "180",
         "descripcionBreve": "El bizantinismo o bizantismo es un término usado en ciencia política y filosofía política para designar el sistema político y la cultura del Imperio bizantino, y sus sucesores espirituales, en particular, los países de los Balcanes, el Imperio otomano y la Federación de Rusia. El término, acuñado en el siglo XIX, tiene principalmente connotaciones negativas, que implican el exceso de complejidad y la autocracia. Esta reputación negativa destacó de la confusa complejidad de organización de sus ministerios, las elaborádisimas ceremonias de su corte y la abundancia de títulos honoríficos, así como su supuesta falta de liderazgo en los asuntos de guerra. Asimismo, el sistema bizantino \"sugiere también una predilección por las intrigas, conspiraciones y asesinatos y en general una situación política inestable. \" Otra importante característica del Imperio era el cesaropapismo, o subordinación de la Iglesia al Estado. El término ha sido criticado por los estudiosos modernos por ser una generalización que no es tan representativa de la realidad de la aristocracia y la burocracia bizantina.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -601,7 +612,7 @@
         "pais": "180",
         "descripcionBreve": "La Revuelta Decembrista o el Levantamiento Decembrista fue una sublevación contra la Rusia Imperial por parte de un grupo de oficiales del ejército ruso que dirigieron cerca de 3.000 soldados rusos el 26 de diciembre de 1825. Como este incidente ocurrió en diciembre, los rebeldes fueron denominados Decembristas. Los sublevados tomaron la Plaza del Senado en San Petersburgo. En 1925, para marcar el centenario del evento, dicha plaza fue renombrada como Plaza Decembrista.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -612,7 +623,7 @@
         "pais": "180",
         "descripcionBreve": "La Reforma Emancipadora de 1861 en Rusia fue la primera y más importante de las reformas liberales llevadas a cabo durante el gobierno del zar Alejandro II de Rusia. La reforma significó la liquidación de la dependencia servil anteriormente sufrida por los campesinos rusos. La base legal de la reforma fue el Manifiesto de Emancipación del zar del 3 de marzo de 1861 (19 de febrero de 1861, en el calendario juliano), acompañado por una serie de decretos legislativos bajo el nombre general de Regulaciones concernientes a los campesinos que dejan la dependencia servil (Положения о крестьянах выходящих из крепостной зависимости, Polozheniya o krestyanakh vykhodyashchikh iz krepostnoi zavisimosti). El Manifiesto otorgó derechos completos de ciudadanos libres a los siervos y prescribió que los campesinos serían capaces de comprar las tierras de los propietarios.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -623,7 +634,7 @@
         "pais": "180",
         "descripcionBreve": "El Ucase de Ems, fue un edicto secreto del zar Alejandro II de Rusia promulgado en 1876, por el que se prohibió el uso de la lengua ucraniana en prensa escrita, con la excepción de la reimpresión de antiguos documentos. El ucase también prohibió la importación de publicaciones en ucraniano y la representación de obras de teatro o la enseñanza en ucraniano. Fue llamado así por la ciudad de Bad Ems, Alemania, donde fue firmado por el propio zar.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "0"
     },
     {
@@ -634,7 +645,7 @@
         "pais": "180",
         "descripcionBreve": "Iván Stepánovich Mazepa fue un noble cosaco que luchó por restablecer la independencia política y militar de Ucrania frente al dominio de Rusia.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -645,7 +656,7 @@
         "pais": "180",
         "descripcionBreve": "La Zona de Residencia (En ruso Черта оседлости, chertá osédlosti) fue la región fronteriza occidental del Imperio ruso en la que el asentamiento de judíos estaba permitida, extendiéndose la jurisdicción de la zona a lo largo de la frontera con Europa central. También puede ser traducida como “empalizada de asentamiento”, derivado del concepto “cercado” o “empalizada” como zona fronteriza. Comprende solo el 20% del territorio de la Rusia Europea, la Zona de Residencia corresponde a las fronteras históricas de la República de las Dos Naciones, e incluyendo lo que hoy en día es Lituania, Bielorrusia, Polonia, Moldavia, Ucrania, y partes occidentales de Rusia. Además, varias ciudades dentro de la Zona de Residencia estaban excluidas de la misma. A un número de judíos cualificados se les permitía vivir fuera de la Zona de Residencia.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -656,7 +667,7 @@
         "pais": "180",
         "descripcionBreve": "La rusificación es la adopción de la lengua rusa o de aspectos de la cultura rusa por parte de comunidades no rusas. En un sentido estricto, el término \"rusificación\" se emplea para designar la influencia de la lengua rusa sobre las lenguas eslavas, bálticas y otras lenguas habladas en áreas que controla o controlaba Rusia. En un sentido histórico, el término se refiere a las políticas (tanto oficiales como no oficiales) de la Rusia Imperial y de la Unión Soviética en relación a sus constituyentes nacionales y a las minorías nacionales de Rusia, que tenían como objetivo la dominación rusa. Las principales áreas de influencia de la rusificación son la política y la cultura. En la política, un elemento de la rusificación es la designación de rusos para asumir posiciones administrativas en las instituciones nacionales. En la cultura, la rusificación se pone de relieve principalmente en el fuerte uso del ruso en los asuntos oficiales y en la influencia del ruso sobre las lenguas nacionales. El desplazamiento demográfico en favor de la población rusa también suele considerarse una forma de rusificación. Algunos estudiosos distinguen rusianización (entendida como la expansión de la lengua, cultura y personas rusas en culturas y regiones no rusas), de rusificación (entendida como un proceso de cambio de la pertenencia étnica de alguien o su identidad de no rusa a rusa). En ese sentido, la expansión de la lengua, cultura, y personas rusas (rusianización) no deberían compararse con la asimilación cultural de no rusos (rusificación). A pesar de que muchas personas mezclan estos dos procesos, uno no lleva necesariamente al otro.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -667,7 +678,7 @@
         "pais": "180",
         "descripcionBreve": "Serguéi Gennádievich Necháyev Серге́й Генна́диевич Неча́ев (1847 - 1882), también transcrito como Nechaev, figura revolucionaria rusa popularmente asociada con los movimientos nihilista y anarquista y conocido por su teoría de la revolución con medios mínimos y por su extremismo.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "3"
     },
     {
@@ -678,7 +689,7 @@
         "pais": "180",
         "descripcionBreve": "Vasili Nikitich Tatishchev es un historiador y geógrafo ruso nacido el 19 de abril de 1686 y falleció el 26 de julio de 1750. Él fue adscrito a la Facultad de Minas, realiza para diversas misiones en el servicio de Siberia y Suecia, se convirtió en gran maestro de Minas (1737), y escribió el código de explotación minera de Rusia. Es el primero en establecer las fronteras de Europa que, dijo, se extiende desde el Océano Atlántico a los Urales 1. Él dejó una historia de Rusia, que no pudo terminar y fue publicado por Gerhard Friedrich Müller en Moscú, 1769 - 1784, en 4 volúmenes en 4 ° . También es el autor del Atlas de Siberia, 1745.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "7"
     },
     {
@@ -689,7 +700,7 @@
         "pais": "180",
         "descripcionBreve": "El Manifiesto de Octubre fue emitido el 17 de octubre de 1905 (30 de octubre en el Calendario Gregoriano) por el zar Nicolás II de Rusia bajo la influencia del conce Serguéi Witte en respuesta a la Revolución de 1905. El nombre oficial del documento fue El Manifiesto para la mejora del orden del Estado (Манифест об усовершенствовании государственного порядка). El manifiesto iba dirigido a mitigar el malestar existente en Rusia y contenía garantías para el otorgamiento de libertades civiles para la población: incluyendo la inmunidad personal, la libertad religiosa, la libertad de expresión, el derecho de reunión, y el derecho de asociación; una participación extensa en la Duma; la introducción del sufragio universal masculino; y un decreto que establecía que las leyes no se podían imponer sin el consentimiento de la Duma. El manifiesto fue el precursor de la primera Constitución rusa de 1906. El manifiesto y la constitución resultaron unos hechos insignificantes para la democratización, toda vez que el zar seguía ostentando el derecho de veto en la Duma, que de hecho disolvió y reformo en numerosas ocasiones.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -700,7 +711,7 @@
         "pais": "180",
         "descripcionBreve": "Jacques-Joachim Trotti, marqués de La Chétardie fue un diplomático francés que gestó el golpe de estado que llevó Elizaveta Petrovna al trono de Rusia en 1741. En el curso de su agitada carrera, La Chetardie fue enviado como diplomático por toda Europa: a Londres (1727), luego a Holanda y Prusia, en Rusia dos veces, y por último en Turín en 1749. Cuando llegó a San Petersburgo en 1739, encontró que todos los cargos claves de la administración imperial estaban en manos de alemanes étnicos, contrarios a su propio país. Con el fin de contrarrestar su influencia, La Chetardie acercó a su compatriota, el Conde Lestocq, y el embajador sueco, quien estaba preparando la guerra con Rusia. Su compleja maniobra resultó en el golpe de Estado que hizo emperatriz Isabel I de Rusia, hija de Pedro el Grande.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -711,7 +722,7 @@
         "pais": "180",
         "descripcionBreve": "El Gran Juego es la acepción que Rudyard Kipling utilizó al calificar de “juego” las políticas llevadas a cabo, en el siglo XIX, por Rusia y el Reino Unido, en su lucha por el control de Asia Central y el Cáucaso. Dicha rivalidad entre Rusia y Reino Unido (fue denominada por los rusos como \"El Torneo de las Sombras\"), nunca propició un enfrentamiento directo entre las fuerzas armadas de ambos países. Hoy en día esta acepción junto con la de “agujero negro” (popularizada por Brzezinski para explicar el orden postsoviético) son utilizadas por los especialistas internacionales para analizar la actuación de las grandes potencias en las regiones mencionadas. Sólo cuando todo el mundo muera acabará el Gran Juego. Rudyard Kipling",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -722,7 +733,7 @@
         "pais": "180",
         "descripcionBreve": "El incidente Ōtsu fue un fallido intento de asesinato del zarévich Nicolás Alexandrovich de Rusia el 11 de mayo de 1891, mientras que Nicolás estaba de visita en Japón durante su viaje del este.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -733,7 +744,7 @@
         "pais": "180",
         "descripcionBreve": "La Gran Embajada (en ruso Великое посольство) fue una misión diplomática y educativa rusa, planteada a varios países en Europa Occidental entre marzo de 1697 y septiembre de 1698 por Pedro el grande.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "5"
     },
     {
@@ -744,7 +755,7 @@
         "pais": "180",
         "descripcionBreve": "El tratado de Unkiar Skelessi, que se firmó el 8 de julio de 1833, es un acuerdo internacional, revestido de tratado comercial, firmado entre el Imperio otomano y Rusia, con la finalidad de frenar la expansión de Mehmet Alí. Al acuerdo se opusieron la potencias europeas, y se unieron al mismo los regímenes absolutistas de Prusia y Austria en un intento de reparto de poder e influencias. El acuerdo permitió la apertura del estrecho de Dardanelos y la independencia de Siria y Egipto",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -755,7 +766,7 @@
         "pais": "180",
         "descripcionBreve": "Nikolái Petróvich Rezánov; noble y estadista ruso que promovió la colonización por parte de Rusia de Alaska y California. Era uno de los diez barones de Rusia, fue el primer embajador ruso en Japón (1804) y apoyó el primer intento de Rusia de circunnavegar el mundo (1803), comandando personalmente la expedición hasta Kamchatka. Fue también autor de un lexicón del idioma japonés y varias otras obras, que se guardan en la biblioteca de la Academia de Ciencias de San Petersburgo, de la cual él era miembro. Pero muchos años después de su muerte es aún recordado por la gran Compañía Ruso-americana y el interés que despiertan en los estudiantes de historia las políticas seguidas en dicha empresa, que si no hubiera sido por su muerte a destiempo, hubieran podido cambiar el destino de Rusia y los Estados Unidos.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "3"
     },
     {
@@ -766,7 +777,7 @@
         "pais": "180",
         "descripcionBreve": "El Tratado de reaseguro fue un tratado de neutralidad del Imperio alemán con el ruso firmado en 1887 donde Alemania proponía la neutralidad en un posible enfrentamiento entre Rusia y Austria a cambio de que Rusia sea neutral en un posible enfrentamiento entre Francia y Alemania. Durará poco. Guillermo II desconfía de Bismarck y rompe las alianzas.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "1"
     },
     {
@@ -777,7 +788,7 @@
         "pais": "180",
         "descripcionBreve": "Ivan Ivanovich Neplyuyev (15 de noviembre de 1693 – 22 de noviembre 1773) fue un diplomático y prominente gestor ruso al servicio de Pedro el grande y Catalina la grande. Sus memorias fuero publicadas postumamente y una estatua suya se puede ver en Orenburg, ciudad que él fundó. Neplyuev nació en una familia noble, pero empobrecida, en la localidad de Poddubye cerca de Novgorod. Se inscribió en 1714 en la escuela local de matemáticas, más tarde se trasladó a la Academia Naval de San Petersburgo y competó su formación en la marina, en los servicios navales de Venecia y España. Volvió a Rusia en 1720, recibió el reconocimiento directo del zar Pedro I debido a sus conocimientos e inteligencia. Como recompensa se le preguntó por su interés en supervisar la construcción de los muelles de San Petersburgo. En 1721, el Zar envió a Neplyuev a una misión secreta a Constantinopla, donde permaneció hasta 1734. Tomó parte en el fracasado congreso de Nemirov en 1737 y en las negociaciones del Tratado de Belgrado (1739). Después de que Elizaveta Petrovna tomase el trono, Neplyuev fue acusado de irregularidades y cayó en desgracia, como les pasaría a otros personajes relevantes del anterior reinado. En 1742 Neplyuev obtuvo el perdón y fue enviado como gobernador a Orenburg krai. Durante los 16 años de su cargo, la ciudad de Orenburg fue traslada a la ubicación donde la encontramos en la actualidad, y más de 70 fuertes fueron construídos a lo largo de los ríos Samara, Tobol y otros cursos de agua. Fundó 13 altos hornos y 28 plantas de cobre, también consiguió mantener normalizada la situación con los Baskir que estaban en auge y liderados por Batarma Aleyev. En 1760, Neplyuev fue de nuevo llamado a San Petersburgo y en ésta ocasión se le designó senador. Catalina II premió su experiencia y competencia, de tal modo que abandonaba la capital a su administración cuando ella visitaba otras partes del país. También mantuvo el puesto de Gobernador en la Gobernatura general de San Petersburgo durante unos dos años, más tarde se retiró definitivamente a pasar sus últimos años en la localidad de Poddubye.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "2"
     },
     {
@@ -788,7 +799,7 @@
         "pais": "180",
         "descripcionBreve": "El Comité de Privados era un órgano consultorio no oficial durante el reinado ed Alejandro I en Rusia. El Comité de Privados estuvo funcionando desde junio de 1801 hasta finales de 1803. Comprendía a los socios más cercanos del zar (los llamados \"jóvenes amigos\"), el Conde Pável Stróganov, el príncipe Adam Jerzy Czartoryski, los condes Víktor Kochubéi y Nikolái Novosíltsev. Mijaíl Speranski tomó parte activa en las reuniones del Comité, aunque mo era un miembro formal. El Comité de Privados era un lugar de debate para muchas materias del gobierno, como la reforma del Senado Gobernante, el establecimiento de ministerios en 1802, y otros. El Comité prestó atención a los asuntos del campesinado preparó una serie de edictos enfocados a éste, como el decreto que permitía a los mercaderes y pequeños burgueses la adquisición de tierras (1801), o el decreto sobre los aradores (1803), y otros.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "0"
     },
     {
@@ -799,7 +810,7 @@
         "pais": "180",
         "descripcionBreve": "La primera constitución de Rusia, conocida como las Leyes Fundamentales, fue promulgada el 23 de abril de 1906, la víspera de la apertura de la Primera Duma. En el Capítulo I declaraba y definía la autocracia que era el Imperio ruso, incluyendo la supremacía del emperador sobre la ley, la iglesia, y la Duma. El artículo 4 establece que: «El poder supremo autocrático se establece en la figura del Emperador de todas las Rusias. Es un mandato Divino que su autoridad sea respetada y cumplida no sólo por miedo sino por un motivo de conciencia». El artículo 9 proveía que: «El Emperador Soberano aprueba las leyes, y sin su aprobación ninguna ley puede entrar en vigor». El Capítulo II establecía y definía los derechos y obligaciones de los ciudadanos del Imperio ruso. Determinaba el ámbito de actuación y la supremacía de la ley sobre todos los sujetos rusos. Confirmaba los derechos humanos básicos que se garantizaban ya en el Manifiesto de Octubre, pero estos quedaban supeditados a la ley. El Capítulo III establecía la regulación del cuerpo de leyes. El artículo 42 estipulaba: «El Imperio ruso está gobernado por leyes firmemente establecidas que deben ser debidamente promulgadas». El artículo 44 de este capítulo establecía que: «Ninguna ley nueva será promulgada si no es con la aprobación del Consejo de Estado y la Duma Estatal, y no será legalmente obligar a su cumplimiento sin la aprobación del Emperador Soberano». El artículo 45 también estipulaba: «En el caso de que circunstancias extraordinarias lo exigiesen, cuando la Duma no estuviese en periodo de sesiones, y la introducción de un proyecto de ley requiriese un procedimiento correcto de constitución legal, el Consejo de Ministro sometería ese proyecto de ley al Emperador directamente. Tal medida, en ningún caso, podrá introducir ningún cambio en las Leyes Fundamentales, o en la organización del Consejo de Estado o de la Duma, ni en las normas de elección de estos organismos. La validez de esta medida queda anulada si el ministro responsable o el jefe de un departamento especial no introdujese la legislación apropiada en la Duma durante los dos primeros meses de sus sesiones, o si la Duma o el Consejo de Estado rechazase promulgarla como una ley». El Capítulo IV definía la composición y las competencias en las actividades del Consejo de Estado y de la Duma del Estado.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "3"
     },
 	{
@@ -810,7 +821,7 @@
         "pais": "9",
         "descripcionBreve": "El pato es un deporte ecuestre originario de Argentina, declarado oficialmente juego nacional de dicho país en 1953.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "0"
     },
     {
@@ -821,7 +832,7 @@
         "pais": "9",
         "descripcionBreve": "La jineteada gaucha y doma gaucha es un deporte ecuestre característico y tradicional de Argentina, Paraguay y Uruguay, que integra la cultura folclórica con estirpe de gaucho de estos países, en particular la cultura gauchesca, es también tradicional en la zona sur y austral de Chile, como asi tambien en el sur de Brasil. El deporte consiste en que el jinete debe sostenerse por entre 6 y 15 segundos sobre un potro (bagual o pingo). Se realiza en varias categorías: crina limpia o potro pela(d)o, grupa sureña o cuero, bastos, con encimera, sin boleadoras, silla, etc. , o combinaciones. Existen dos estilos básicos de jineteada gaucha: la surera y la de los valles norteños. La primera suele realizarse montando sólo sobre un cuero y con el potro conducido por un freno en la boca, en tanto la segunda se utilza el apero completo y el potro es conducido por una guatana o semiguatana, una pieza de cuero circular colocada en la boca del caballo. La vestimenta del jinete se encuentra reglamentada para mantener las tradiciones gauchas. Existen normas estrictas para las espuelas, riendas y el rebenque o guacha. Entre los torneos de jineteada gaucha se destaca el Festival Nacional e Internacional de la Doma y Folklore de Jesús María, que se realiza anualmente en enero en la Provincia de Córdoba. También la denominada Semana Criolla de la Rural del Prado que se realiza todos los años coincidiendo con la fecha de Semana Santa en Montevideo, Uruguay.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "4"
     },
     {
@@ -832,7 +843,7 @@
         "pais": "9",
         "descripcionBreve": "El deporte en Argentina se caracteriza por una relevancia extraordinaria del fútbol masculino. El primer ídolo popular deportivo fue Jorge Newbery (1875-1914), quien se destacó como esgrimista, boxeador y aviador. La difusión masiva del deporte se produjo en las tres primeras décadas del siglo XX sobre la base de la pasión popular por tres actividades: el fútbol, el boxeo y el automovilismo. Aparte de los mencionados en Argentina se han desarrollado deportes que han alcanzado la primera línea mundial como el básquetbol, el cestoball, el ciclismo, el golf, el hockey sobre césped, el hockey sobre patines, el polo, el pádel, la pelota paleta (una variante de la pelota vasca), el remo, el rugby, el tenis, el voleibol y el yachting. Otros deportes de desarrollo considerable son el montañismo, la halterofilia, el handball, la natación, el patín, el taekwondo, el yudo, etc. En la zona andina del sur del país se practican de forma muy extendida los deportes de invierno, en especial esquí y snowboard. El deporte nacional es el pato.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -843,7 +854,7 @@
         "pais": "9",
         "descripcionBreve": "Los Premios Olimpia son los premios al deporte más importantes concedidos en Argentina. La entrega de los premios es organizada por el Círculo de Periodistas Deportivos de Buenos Aires. Se otorgan anualmente. Se entrega un Premio Olimpia de Plata para el mejor deportista de cada disciplina (41) y un Premio Olimpia de Oro, al mejor deportista del año. La primera entrega se realizó en 1954 y el automovilista Juan Manuel Fangio resultó premiado con el máximo galardón. En el año 2000, por excepción se entregó un Olimpia de Platino a Diego Armando Maradona, como deportista del Siglo XX.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     },
     {
@@ -854,7 +865,7 @@
         "pais": "9",
         "descripcionBreve": "La corrida de sortija es un tradicional juego gaucho del campo rioplatense que aún se practica en algunas partes de Argentina. Deriva de un torneo de la Edad Media que se desarrollaba en España, en que los contendientes se retaban a ensartar en la punta de su lanza y corriendo a caballo, una sortija que estaba a cierta distancia de la carrera.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "7"
     },
     {
@@ -865,7 +876,7 @@
         "pais": "9",
         "descripcionBreve": "El DUNI es un deporte en el cual dos equipos se miden en una cancha rectangular, separados por dos redes, intercambiando un balón especial llamado COR que, según la categoría de los jugadores, varía en su peso y que debe ser manipulado solo con las manos. Las principales características del DUNI radican: en sus movimientos circulares; en su total ausencia de violencia; y en sus 5 leyes fundamentales.",
         "link": "es.wikipedia.org",
-        "imagen": "imagen.jpg",
+        "imagen": "150.jpeg",
         "ponderacion": "8"
     }
 ]

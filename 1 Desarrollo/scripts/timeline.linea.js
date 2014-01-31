@@ -12,7 +12,7 @@ var Linea = {
 	plantilla_tooltip: '<div id="timeline-tooltip"> \
 							<div class="tipDate">{fecha}</div> \
 							<div class="tipHeader">{titulo}</div> \
-							<div class="tipImage"><img src="images/{imagen}" alt=""/></div> \
+							<div class="tipImage"><img src="images/{imagen}" width=200 heigth=50 alt=""/></div> \
 							<div class="tipBody">{descripcion}</div> \
 						</div>',
 
@@ -102,7 +102,7 @@ var Linea = {
 		tooltip = Linea.plantilla_tooltip.replace('{fecha}', tip.fecha)
 					.replace('{titulo}', tip.titulo)
 					.replace('{imagen}', tip.imagen)
-					.replace('{descripcion}', tip.descripcionBreve.substring(0, 250) + '...');
+					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');
 		
 		$('body').append(tooltip);     
 		
@@ -112,6 +112,10 @@ var Linea = {
 			//Define la posicion (x, y) del tooltip
 			.css('top', posicion.top + 30)
 			.css('left', posicion.left - 85)
+
+			// Define el ancho y alto del tooltip
+			.css('width', 200)
+			.css('height', 200)
 			
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
