@@ -606,7 +606,7 @@ var Regla = {
 				break;
 			case 2: fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);
 				break;
-			case 3: 
+			case 3: //de la cadena ingresada, se extrae los números extraidos antes de "/" y se asignan en mes. y los números posteriores a "/" son asignados en anio, para luego ser ingresados por parámetro en el constructor de Date
 				var cadena = $("#FechaNavegar").val();
 				var mes="";
 				var anio="";
