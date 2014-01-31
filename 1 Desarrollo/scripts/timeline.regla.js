@@ -602,9 +602,13 @@ var Regla = {
 		}
 		switch(n)
 		{
-			case 1: fechaNav= new Date ($("#FechaNavegar").val());
+			case 1: 
+							
+				fechaNav= new Date (Regla.validarFecha($("#FechaNavegar").val()));//genera un objeto Date.
+				Regla.zoom=4;
 				break;
-			case 2: fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);
+			case 2: fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);//se utiliza el constructor valido de la clase Date. 
+				Regla.zoom=2;
 				break;
 			case 3: //de la cadena ingresada, se extrae los números extraidos antes de "/" y se asignan en mes. y los números posteriores a "/" son asignados en anio, para luego ser ingresados por parámetro en el constructor de Date
 				var cadena = $("#FechaNavegar").val();
@@ -624,20 +628,53 @@ var Regla = {
 				}
 					
 				fechaNav= new Date (anio, mes, 1, 0, 0, 0, 0);
+				Regla.zoom=3;
 
 				break;
 	
 			default: alert('Error, ingrese fechas en formato DD/MM/AAAA ó MM/AAAA ó AAAA');
 		}
 
-			if (!fechaNav) {
-				alert('Error en el formato de fecha')
+			if (isNaN(fechaNav.getTime())) {
+				alert('El formato de fecha no es valido')
 			}
 			else {
 					Regla.crearRegla(fechaNav);
 					Linea.actualizarTodas();
 			}	
+	},
+	//El metodo transforma una stringDate en un formato valido para el objeto Date (de espanol a ingles)
+	//Para ellos, almacena dia,mes y anio por separado y los reacomoda en la variable fechaIngles.
+	validarFecha: function (fecha)
+	{
+				var dia="";
+				var mes="";
+				var anio="";
+				for(var i=0;i<fecha.length;i++)
+				{
+					if (fecha.charAt(i) != '/' && dia.length<2)
+					{
+						dia=dia.concat(fecha.charAt(i));
+					}
+					else
+					{
+						if (fecha.charAt(i) != '/' && mes.length<2)
+						{
+							mes=mes.concat(fecha.charAt(i));
+						}
+						else
+						{
+							if(fecha.charAt(i)!='/')
+							anio=anio.concat(fecha.charAt(i));
+						}
+					}
+					
+				}
+				var fechaIngles=""+mes+'/'+dia+'/'+ anio;
+				return fechaIngles;
+		
 	}
+	
 
 	
 };
