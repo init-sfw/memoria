@@ -8,6 +8,14 @@ var Linea = {
 	// Html que representa a un evento dentro de la linea de tiempo
 	plantilla_evento: '<div class="evento categoria-{categoria}"><a href="#"></a></div>',
 	
+	// Html que representa la descripcion de un evento cuando se clickea sobre él
+	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
+							<div class="popDate">{fecha}</div> \
+							<div class="popHeader">{titulo}</div> \
+							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
+							<div class="popBody">{descripcion}</div> \
+						</div>',
+	
 	// Html que representa la descripcion de un evento cuando se posa el mouse sobre él
 	plantilla_tooltip: '<div id="timeline-tooltip"> \
 							<div class="tipDate">{fecha}</div> \
@@ -86,7 +94,16 @@ var Linea = {
 			});
 			
 			Linea.inicializarEventosMouseHover($linea);
+			Linea.inicializarEventosMouseClick($linea);
 		});		
+	},
+	
+	// Evento de click para mostrar el popup grande
+	inicializarEventosMouseClick: function ($linea) {		
+		$linea.children('div.evento').click(function() {
+							Linea.mostrarDetalleEvento($linea.children('div.evento'))
+								}
+							);
 	},
 	
 	// Agrega a los eventos existentes en una línea los eventos de mouse necesarios para mostrar/ocultar los tooltips
@@ -94,6 +111,19 @@ var Linea = {
 		$linea.children('div.evento')
 			.mouseenter(Linea.mostrarResumen)
 			.mouseleave(Linea.ocultarResumen);
+	},
+
+	mostrarDetalleEvento: function(evento) {
+		var po = evento.data('info'); 	
+		
+		popup = Linea.plantilla_popup.replace('{fecha}', po.fecha)
+					.replace('{titulo}', po.titulo)
+					.replace('{imagen}', po.imagen)
+					.replace('{descripcion}', po.descripcionBreve);
+		
+		
+		$('body').append(popup);
+		$('#timeline-popup').dialog();     
 	},
 	
 	mostrarResumen: function() {       
