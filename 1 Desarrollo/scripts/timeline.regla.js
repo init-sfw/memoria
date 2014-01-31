@@ -105,7 +105,6 @@ var Regla = {
 	// Calcula el ancho de la regla multiplicando la cantidad de segmentos por el ancho en px de los mismos
 	calcularAnchoRegla: function () {
 		return Regla.$regla.children('div').length * Regla.ancho_segmento;
-		Console.log($regla.children('div').length)
 	},
 	
 	// Calcula el ancho en px de un dï¿½a, dividiendo el ancho total de la regla por la cantidad de dias representadas en ella
@@ -220,7 +219,7 @@ var Regla = {
 
 		
 
-		//TODO: REFACTORIZAR los mÃ©todos de manejo de regla, lÃ­neas y filtros
+		//TODO: REFACTORIZAR los métodos de manejo de regla, lí­neas y filtros
 		//Limpio la regla
 		Regla.$regla.html('');
 		//Limpio las lÃ­neas
@@ -300,16 +299,12 @@ var Regla = {
 				siglo = parseInt(Regla.fecha_foco.getFullYear() / 100) + 1;
 				clase = 2;
 				
-				extremo.fecha_inicio = new Date((siglo - 1) * 100, 0, 1, 0, 0);
-				extremo.fecha_fin = new Date((siglo - 1) * 100 + 99, 11, 31, 59, 59);
-				
-				extremo.miIDorigen = 0;
-				Regla.centro = 0;									
+				extremo.fecha_inicio = new Date((siglo - 1) * 100, 0, 1);
+				extremo.fecha_fin = new Date((siglo - 1) * 100 + 99, 11, 31);								
 			}
 			else {
 				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
-				extremo.miIDorigen += multiplicador;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 100, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 100, 'y', false);
 				
@@ -318,18 +313,9 @@ var Regla = {
 								
 				siglo = parseInt(extremo.fecha_inicio.getFullYear() / 100) + 1;		
 				clase = clase || extremo.clase;
-				if(direccion === Regla.direccion_segmento.izquierda)
-				{
-					Regla.izquierda = extremo.miIDorigen;		
-				} 
-				else 
-				{
-						Regla.derecha = extremo.miIDorigen;	
-				}
 			}
 			
 			segmentos.push({
-				miID: extremo.miIDorigen,	
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
@@ -358,16 +344,12 @@ var Regla = {
 				mil = parseInt(new String(Regla.fecha_foco.getFullYear()).substring(0, 2) + '00');				
 				clase = 2;
 				
-				extremo.fecha_inicio = new Date(mil + decada, 0, 1, 0, 0);
-				extremo.fecha_fin = new Date(mil + decada + 9, 11, 31, 59, 59);		
-				
-				extremo.miIDorigen = 0;
-				Regla.centro = 0;						
+				extremo.fecha_inicio = new Date(mil + decada, 1, 1);
+				extremo.fecha_fin = new Date(mil + decada + 9, 11, 31);								
 			}
 			else {
 				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
-				extremo.miIDorigen += multiplicador;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 10, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 10, 'y', false);
 				
@@ -378,18 +360,9 @@ var Regla = {
 				mil = parseInt(new String(extremo.fecha_inicio.getFullYear()).substring(0, 2) + '00');
 				
 				clase = clase || extremo.clase;
-				if(direccion === Regla.direccion_segmento.izquierda)
-				{
-					Regla.izquierda = extremo.miIDorigen;		
-				} 
-				else 
-				{
-						Regla.derecha = extremo.miIDorigen;	
-				}
 			}
 			
 			segmentos.push({
-				miID: extremo.miIDorigen,	
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
@@ -416,8 +389,8 @@ var Regla = {
 			if(!extremo.fecha_inicio) {
 				clase = 2;
 				
-				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), 1, 1, 0, 0);
-				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), 12, 31, 59, 59);
+				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), 0, 1);
+				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), 11, 31);
 				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0			
 				extremo.miIDorigen = 0;
 				Regla.centro = 0;					
@@ -479,8 +452,8 @@ var Regla = {
 				var mes = Regla.fecha_foco.getUTCMonth();
 				clase = 2;				
 				
-				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), mes, 1, 0, 0);
-				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), mes + 1, 0, 59, 59);
+				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), mes, 1);
+				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), mes + 1, 1);
 				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0
 				extremo.miIDorigen = 0;
 				Regla.centro = 0;
@@ -547,14 +520,10 @@ var Regla = {
 				extremo.fecha_inicio.setMinutes(0);
 				extremo.fecha_fin.setHours(23);
 				extremo.fecha_fin.setMinutes(59);
-				
-				extremo.miIDorigen = 0;
-				Regla.centro = 0;
 			}
 			else {
 				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
-				extremo.miIDorigen += multiplicador;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 1, 'd', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 1, 'd', false);
 				
@@ -562,18 +531,9 @@ var Regla = {
 				if(direccion === Regla.direccion_segmento.izquierda && extremo.fecha_inicio.getFullYear() < 0) { break; }
 									
 				clase = clase || extremo.clase;
-				if(direccion === Regla.direccion_segmento.izquierda)
-					{
-						Regla.izquierda = extremo.miIDorigen;
-					}
-					else
-					{
-							Regla.derecha = extremo.miIDorigen;
-					}
 			}
 			
 			segmentos.push({
-				miID: extremo.miIDorigen,
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
