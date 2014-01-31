@@ -1,0 +1,123 @@
+﻿[
+	{ 
+		"fecha": "01/01/1806",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Primer invasión inglesa",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "Primer expedicion militar de la corona británica que atacó el Virreinato del Río de la Plata a principios del siglo XIX.",
+		"link": "http://es.wikipedia.org/wiki/Invasiones_Inglesas#Primera_Invasi.C3.B3n_a_Buenos_Aires",
+		"imagen": "imagen.jpg",
+		"ponderacion": "1"
+	},
+	{ 
+		"fecha": "05/02/1807",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Segunda invasión inglesa",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "Segunda expedicion militar de la corona británica que atacó el Virreinato del Río de la Plata a principios del siglo XIX.",
+		"link": "http://es.wikipedia.org/wiki/Invasiones_Inglesas#Segunda_Invasi.C3.B3n_a_Buenos_Aires",
+		"imagen": "imagen.jpg",
+		"ponderacion": "1"
+	},
+	{ 
+		"fecha": "25/05/1810",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Revolución de Mayo",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "Se conoce como Revolución de Mayo a la serie de acontecimientos revolucionarios ocurridos en mayo de 1810 en la ciudad de Buenos Aires, por aquel entonces capital del Virreinato del Río de la Plata, una dependencia colonial de España. Como consecuencia de la revolución fue depuesto el virrey Baltasar Hidalgo de Cisneros y reemplazado por la Primera Junta de Gobierno.",
+		"link": "http://es.wikipedia.org/wiki/Revoluci%C3%B3n_de_Mayo",
+		"imagen": "imagen.jpg",
+		"ponderacion": "0"
+	},
+	{ 
+		"fecha": "01/05/1853",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Constitución Argentina de 1853",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "La Constitución Argentina de 1853 fue la primera constitución de la que se dotó a la actual República Argentina tras la finalización del período de Anarquía del Año XX comenzado en 1820",
+		"link": "http://es.wikipedia.org/wiki/Constituci%C3%B3n_Argentina_de_1853",
+		"imagen": "imagen.jpg",
+		"ponderacion": "1"
+	},
+	{ 
+		"fecha": "28/07/1914",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Inicia Primera Guerra Mundial",
+		"categoria": "historia",
+		"pais": "-1",
+		"descripcionBreve": "La Primera Guerra Mundial, también llamada la Gran Guerra, se desarrolló entre el 28 de julio de 1914 y el 11 de noviembre de 1918. Involucró a todas las grandes potencias del mundo, que se alinearon en dos bandos enfrentados: por un lado, los Aliados de la Triple Entente, y, por otro, las Potencias Centrales de la Triple Alianza.",
+		"link": "http://es.wikipedia.org/wiki/Primera_Guerra_Mundial",
+		"imagen": "imagen.jpg",
+		"ponderacion": "0"
+	},
+	{ 
+		"fecha": "01/01/1918",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Reforma Universitaria del 18",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "La Reforma Universitaria es el nombre que reciben una serie de movimientos político-culturales o de políticas públicas cuya finalidad es la reforma de las estructuras, contenidos y fines de la universidad. En 1918 los estudiantes de la Universidad Nacional de Córdoba iniciaron una huelga universitaria en reclamo de profundas reformas universitarias, que se convirtió rápidamente en un amplio movimiento en todo el país y en América Latina, con cierto impacto también en España y Estados Unidos.",
+		"link": "http://es.wikipedia.org/wiki/Reforma_universitaria",
+		"imagen": "imagen.jpg",
+		"ponderacion": "1"
+	},
+	{ 
+		"fecha": "11/11/1918",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Finaliza Primera Guerra Mundial",
+		"categoria": "historia",
+		"pais": "-1",
+		"descripcionBreve": "La Primera Guerra Mundial, también llamada la Gran Guerra, se desarrolló entre el 28 de julio de 1914 y el 11 de noviembre de 1918. Involucró a todas las grandes potencias del mundo, que se alinearon en dos bandos enfrentados: por un lado, los Aliados de la Triple Entente, y, por otro, las Potencias Centrales de la Triple Alianza.",
+		"link": "http://es.wikipedia.org/wiki/Primera_Guerra_Mundial",
+		"imagen": "imagen.jpg",
+		"ponderacion": "0"
+	},
+	{ 
+		"fecha": "24/10/1929",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Crisis del 29",
+		"categoria": "historia",
+		"pais": "Estados Unidos",
+		"descripcionBreve": "Crisis de 1929 es un concepto muy utilizado por la historiografía, la ciencia económica y otras ciencias sociales, cuyo estricto significado varía según la acotación temporal y temática a la que se quiera hacer referencia: Crack del 29 y Jueves negro y posterior Gran depresión.",
+		"link": "http://es.wikipedia.org/wiki/Crisis_de_1929#Jueves_negro_-_crisis_burs.C3.A1til",
+		"imagen": "imagen.jpg",
+		"ponderacion": "0"
+	},
+	{ 
+		"fecha": "01/09/1939",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Inicia Segunda Guerra Mundial",
+		"categoria": "historia",
+		"pais": "-1",
+		"descripcionBreve": "La Segunda Guerra Mundial fue un conflicto militar global que se desarrolló entre 1939 y 1945. En él se vieron implicadas la mayor parte de las naciones del mundo, incluidas todas las grandes potencias, mediante la creación de dos alianzas militares opuestas: los Aliados y las Potencias del Eje. Fue la mayor guerra de la Historia, con más de 100 millones de militares movilizados y un estado de «guerra total» en que los grandes contendientes destinaron toda su capacidad económica, militar y científica al servicio del esfuerzo de guerra, borrando la distinción entre recursos civiles y militares.",
+		"link": "http://es.wikipedia.org/wiki/Segunda_Guerra_Mundial",
+		"imagen": "imagen.jpg",
+		"ponderacion": "0"
+	},
+	{ 
+		"fecha": "15/08/1945",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Finaliza Segunda Guerra Mundial",
+		"categoria": "historia",
+		"pais": "-1",
+		"descripcionBreve": "La Segunda Guerra Mundial fue un conflicto militar global que se desarrolló entre 1939 y 1945. En él se vieron implicadas la mayor parte de las naciones del mundo, incluidas todas las grandes potencias, mediante la creación de dos alianzas militares opuestas: los Aliados y las Potencias del Eje. Fue la mayor guerra de la Historia, con más de 100 millones de militares movilizados y un estado de «guerra total» en que los grandes contendientes destinaron toda su capacidad económica, militar y científica al servicio del esfuerzo de guerra, borrando la distinción entre recursos civiles y militares.",
+		"link": "http://es.wikipedia.org/wiki/Segunda_Guerra_Mundial",
+		"imagen": "imagen.jpg",
+		"ponderacion": "0"
+	},
+	{ 
+		"fecha": "24/02/1946",
+		"fechaCreacion": "28/12/2011",
+		"titulo": "Primera Presidencia de Perón",
+		"categoria": "historia",
+		"pais": "9",
+		"descripcionBreve": "Desde la presidencia, Perón continuó con las políticas sociales que beneficiaron tanto a la clase trabajadora como al empresariado nacional, sobre todo industrial. Luego del triunfo electoral disolvió los tres partidos que se habían creado para sostener su candidatura, Laborista, Unión Cívica Radical Junta Renovadora y el Partido Independiente, para unificarlos en una sola organización política, llamada primero Partido Único de la Revolución y luego simplemente Peronista o Justicialista.",
+		"imagen": "imagen.jpg",
+		"link": "http://es.wikipedia.org/wiki/Juan_Domingo_Per%C3%B3n#Primer_per.C3.ADodo_.281946.E2.80.931952.29",
+		"ponderacion": "2"
+	}
+]
