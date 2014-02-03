@@ -100,10 +100,7 @@ var Linea = {
 	
 	// Evento de click para mostrar el popup grande
 	inicializarEventosMouseClick: function ($linea) {		
-		$linea.children('div.evento').click(function() {
-							Linea.mostrarDetalleEvento($linea.children('div.evento'))
-								}
-							);
+		$linea.children('div.evento').click(Linea.mostrarDetalleEvento);
 	},
 	
 	// Agrega a los eventos existentes en una línea los eventos de mouse necesarios para mostrar/ocultar los tooltips
@@ -113,8 +110,8 @@ var Linea = {
 			.mouseleave(Linea.ocultarResumen);
 	},
 
-	mostrarDetalleEvento: function(evento) {
-		var po = evento.data('info'); 	
+	mostrarDetalleEvento: function() {
+		var po = $(this).data('info'); 	
 		
 		popup = Linea.plantilla_popup.replace('{fecha}', po.fecha)
 					.replace('{titulo}', po.titulo)
@@ -125,7 +122,13 @@ var Linea = {
 		$('body').append(popup);
 		$('#timeline-popup').dialog();
 		$('#timeline-popup').dialog( "option", "width", 800);
-		$('#timeline-popup').dialog( "option", "height", 600);     
+		$('#timeline-popup').dialog( "option", "height", 600);
+		$('#timeline-popup').on("dialogclose", function( event, ui ) { Linea.ocultarDetalleEvento(); } )     
+	},
+
+	ocultarDetalleEvento: function () {
+		//Elimina el div que contiene el popup
+		$('#timeline-popup').remove();		
 	},
 	
 	mostrarResumen: function() {       
