@@ -20,7 +20,7 @@ var Linea = {
 	plantilla_tooltip: '<div id="timeline-tooltip"> \
 							<div class="tipDate">{fecha}</div> \
 							<div class="tipHeader">{titulo}</div> \
-							<div class="tipImage"><img src="images/{imagen}" width=200 heigth=50 alt=""/></div> \
+							<div class="tipImage" align="center" style="background-image:url(images/{imagen});"></div> \
 							<div class="tipBody">{descripcion}</div> \
 						</div>',
 
@@ -145,7 +145,7 @@ var Linea = {
 
 			// Define el ancho y alto del tooltip
 			.css('width', 200)
-			.css('height', 200)
+			.css('max-height', 250)
 			
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
