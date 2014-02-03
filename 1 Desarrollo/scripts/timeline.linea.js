@@ -125,11 +125,6 @@ var Linea = {
 		$('#timeline-popup').dialog( "option", "height", 600);
 		$('#timeline-popup').on("dialogclose", function( event, ui ) { Linea.ocultarDetalleEvento(); } )     
 	},
-
-	ocultarDetalleEvento: function () {
-		//Elimina el div que contiene el popup
-		$('#timeline-popup').remove();		
-	},
 	
 	mostrarResumen: function() {       
 		var tip = $(this).data('info'); 	
@@ -155,6 +150,11 @@ var Linea = {
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
 			.fadeTo('10',0.8);		
+	},
+
+	ocultarDetalleEvento: function () {
+		//Elimina el div que contiene el popup
+		$('#timeline-popup').remove();		
 	},
 	
 	ocultarResumen: function () {
