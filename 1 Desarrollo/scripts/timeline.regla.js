@@ -586,100 +586,103 @@ var Regla = {
 
 
 	navegar : function() {
-		var n=0;
 		var expresion1 = /^\d{1,2}\/\d{1,2}\/\d{1,4}$/; //valida que se ingresa una fecha en formato DD/MM/AAAA
 		var expresion2 = /^\d{1,4}$/; //valida que se ingresa una fecha en formato AAAA
 		var expresion3 = /^\d{1,2}\/\d{1,4}$/; //valida que se ingresa una fecha en formato MM/AAAA
-
+		var bandera=false
+				
 		if (expresion1.test($("#FechaNavegar").val())){ //se ha ingresado DD/MM/AAAA
-			n = 1;		
+			fechaNav= new Date (Regla.validarFecha($("#FechaNavegar").val(),1));//genera un objeto Date.	
+			bandera=true;
 		}
 		if (expresion2.test($("#FechaNavegar").val())){ //se ha ingresado AAAA
-			n = 2;		
+			fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);//se utiliza el constructor valido de la clase Date. 	
+			bandera=true;
 		}
 		if (expresion3.test($("#FechaNavegar").val())){ // se ha ingresado MM/AAAA
-			n = 3;		
+				fechaNav= new Date (Regla.validarFecha($("#FechaNavegar").val(),2));
+				bandera=true;					
 		}
-		switch(n)
+		if(!bandera||isNaN(fechaNav.getTime()))
 		{
-			case 1: 
-							
-				fechaNav= new Date (Regla.validarFecha($("#FechaNavegar").val()));//genera un objeto Date.
-			
-				break;
-			case 2: fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);//se utiliza el constructor valido de la clase Date. 
-				
-				break;
-			case 3: //de la cadena ingresada, se extrae los números extraidos antes de "/" y se asignan en mes. y los números posteriores a "/" son asignados en anio, para luego ser ingresados por parámetro en el constructor de Date
-				var cadena = $("#FechaNavegar").val();
-				var mes="";
-				var anio="";
-				for (var i=0; i<cadena.length; i++)
-				{
-					if (cadena.charAt(i) != '/' && mes.length<2)
-					{
-						mes= mes.concat(cadena.charAt(i));
-					}
-					else
-					{
-						if (cadena.charAt(i) != '/')
-							anio = anio.concat(cadena.charAt(i));
-					}
-				}
-				mes = parseInt(mes,0);
-				if(mes>12||mes<1)
-				{
-					alert('El formato de fecha no es valido');
-				}
-				else
-				{
-					fechaNav= new Date (anio, mes-1, 1, 0, 0, 0, 0);
-				}
-				
-				
-
-				break;
-	
-			default: alert('Error, ingrese fechas en formato DD/MM/AAAA ó MM/AAAA ó AAAA');
+			alert('Error, ingrese una fecha valida en los formatos DD/MM/AAAA ó MM/AAAA ó AAAA');
 		}
-
-			if (isNaN(fechaNav.getTime())) {
-				alert('El formato de fecha no es valido')
-			}
-			else {
-					Regla.crearRegla(fechaNav);
-					Linea.actualizarTodas();
-			}	
+		else {
+				Regla.crearRegla(fechaNav);
+				Linea.actualizarTodas();
+		}	
 	},
 	//El metodo transforma una stringDate en un formato valido para el objeto Date (de espanol a ingles)
 	//Para ellos, almacena dia,mes y anio por separado y los reacomoda en la variable fechaIngles.
-	validarFecha: function (fecha)
+	validarFecha: function (fecha,indice)
 	{
-				var dia="";
-				var mes="";
-				var anio="";
-				for(var i=0;i<fecha.length;i++)
+				//Selecciona el metodo segun el indice ingresado, 1: para dia 2: para mes.
+				switch(indice)
 				{
-					if (fecha.charAt(i) != '/' && dia.length<2)
-					{
-						dia=dia.concat(fecha.charAt(i));
-					}
-					else
-					{
-						if (fecha.charAt(i) != '/' && mes.length<2)
-						{
-							mes=mes.concat(fecha.charAt(i));
-						}
-						else
-						{
-							if(fecha.charAt(i)!='/')
-							anio=anio.concat(fecha.charAt(i));
-						}
-					}
+						case 1:
+								var dia="";
+								var mes="";
+								var anio="";
+								for(var i=0;i<fecha.length;i++)
+								{
+									if (fecha.charAt(i) != '/' && dia.length<2)
+									{
+										dia=dia.concat(fecha.charAt(i));
+									}
+									else
+									{
+										if (fecha.charAt(i) != '/' && mes.length<2)
+										{
+											mes=mes.concat(fecha.charAt(i));
+										}
+										else
+										{
+											if(fecha.charAt(i)!='/')
+											anio=anio.concat(fecha.charAt(i));
+										}
+									}
 					
+								}
+								var fechaIngles=""+mes+'/'+dia+'/'+ anio;
+								return fechaIngles;
+								break;
+								
+						case 2:
+								//de la cadena ingresada, se extrae los números extraidos antes de "/" y se asignan en mes. y los números posteriores a "/" son asignados en anio, para luego ser ingresados por parámetro en el constructor de Date
+								var cadena = $("#FechaNavegar").val();
+								var mes="";
+								var anio="";
+								for (var i=0; i<cadena.length; i++)
+								{
+									if (cadena.charAt(i) != '/' && mes.length<2)
+								{
+									mes= mes.concat(cadena.charAt(i));
+								}
+								else
+								{
+									if (cadena.charAt(i) != '/')
+									anio = anio.concat(cadena.charAt(i));
+								}
+								}
+								mes = parseInt(mes,0);
+								if(mes>12||mes<1)
+								{
+									alert('El mes no es valido');
+								}
+								else
+								{
+									fechaNav= new Date (anio, mes-1, 1, 0, 0, 0, 0);
+								}
+								return fechaNav;
+								break;
+					
+								
+						default: alert('error')
+								break;
+							
 				}
-				var fechaIngles=""+mes+'/'+dia+'/'+ anio;
-				return fechaIngles;
+				
+				
 		
 	}
 	
