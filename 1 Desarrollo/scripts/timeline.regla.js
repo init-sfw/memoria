@@ -605,10 +605,10 @@ var Regla = {
 			case 1: 
 							
 				fechaNav= new Date (Regla.validarFecha($("#FechaNavegar").val()));//genera un objeto Date.
-				Regla.zoom=4;
+			
 				break;
 			case 2: fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);//se utiliza el constructor valido de la clase Date. 
-				Regla.zoom=2;
+				
 				break;
 			case 3: //de la cadena ingresada, se extrae los números extraidos antes de "/" y se asignan en mes. y los números posteriores a "/" son asignados en anio, para luego ser ingresados por parámetro en el constructor de Date
 				var cadena = $("#FechaNavegar").val();
@@ -626,9 +626,17 @@ var Regla = {
 							anio = anio.concat(cadena.charAt(i));
 					}
 				}
-					
-				fechaNav= new Date (anio, mes, 1, 0, 0, 0, 0);
-				Regla.zoom=3;
+				mes = parseInt(mes,0);
+				if(mes>12||mes<1)
+				{
+					alert('El formato de fecha no es valido');
+				}
+				else
+				{
+					fechaNav= new Date (anio, mes-1, 1, 0, 0, 0, 0);
+				}
+				
+				
 
 				break;
 	
