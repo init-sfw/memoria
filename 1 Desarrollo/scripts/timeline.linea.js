@@ -10,8 +10,6 @@ var Linea = {
 	
 	// Html que representa la descripcion de un evento cuando se clickea sobre él
 	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
-							<div class="popDate">{fecha}</div> \
-							<div class="popHeader">{titulo}</div> \
 							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
 							<div class="popBody">{descripcion}</div> \
 						</div>',
@@ -20,7 +18,7 @@ var Linea = {
 	plantilla_tooltip: '<div id="timeline-tooltip"> \
 							<div class="tipDate">{fecha}</div> \
 							<div class="tipHeader">{titulo}</div> \
-							<div class="tipImage" align="center" style="background-image:url(images/{imagen});"></div> \
+							<div class="tipImage"><img src="images/{imagen}"/></div> \
 							<div class="tipBody">{descripcion}</div> \
 						</div>',
 
@@ -121,6 +119,7 @@ var Linea = {
 		
 		$('body').append(popup);
 		$('#timeline-popup').dialog();
+        $('#timeline-popup').dialog( "option", "title", po.fecha + " - " + po.titulo);
 		$('#timeline-popup').dialog( "option", "width", 800);
 		$('#timeline-popup').dialog( "option", "height", 600);
 		$('#timeline-popup').on("dialogclose", function( event, ui ) { Linea.ocultarDetalleEvento(); } )     
@@ -145,7 +144,7 @@ var Linea = {
 
 			// Define el ancho y alto del tooltip
 			.css('width', 200)
-			.css('max-height', 250)
+			//.css('height', 200)
 			
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')

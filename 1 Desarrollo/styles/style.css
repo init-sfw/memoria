@@ -186,8 +186,10 @@ body {
 #timeline-tooltip {
 	position:absolute;
 	z-index:9999;
-	text-align:center;
+	width:200px;
+	text-align:center; /*ROX*/
 	
+	height: auto;
 	border-width:1px;
 	border-style:solid;
 	border-radius:10px;
@@ -219,7 +221,7 @@ body {
 #timeline-tooltip .tipHeader {
     clear: left;
     float: left;
-    font-weight:bold;
+    font-weight:bold; /*ROX*/
     font-size: 16px;
     font-style: italic;
     margin-top: 5px;
@@ -227,32 +229,40 @@ body {
     /* 38 caracteres de maximo para el titulo */
 }
 
+
 #timeline-tooltip .tipImage {
-    float: left;
-    width: 200px;
-    height: 100px;
-    background-position:center;
-    background-size:contain;
-    background-repeat:no-repeat;
+float:left;
+width:100%;
+height:auto;
+max-height:200px;
+overflow:hidden;
+
+}
+
+#timeline-tooltip .tipImage img {
+max-width:100%;
+margin: 0 auto;
 }
 
 #timeline-tooltip .tipBody {
     clear: both;
     float: left;
     font-size: 13px;
-    margin: 2px;
-    margin-bottom:10px;
+    margin-top: 5px;
 }
 
 
-/* POPUP */
 
+/* POPUP */
+/* 
 #timeline-popup {
 
 	width: 800px;
 	height: 600px;
-	text-align:center;
-
+	text-align:center; /*ROX
+    */
+	
+/*	
 	border-width:1px;
 	border-style:solid;
 	border-radius:10px;
@@ -260,19 +270,27 @@ body {
 
 	color:#000;
 	border-color:#61380B;
-
+	*/
 	/* Color alternativo para versiones que no soporten degradados */
-	background-color:#000;
+/*	background-color:#000;*/
 	/* Safari 4+ y Chrome 1+ */
-	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fdee6d), color-stop(1, #fcfa9c));
+/*	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fdee6d), color-stop(1, #fcfa9c));*/
 	/* Safari 5.1+ y Chrome 10+ */
-	background-image:-webkit-linear-gradient(#fdee6d, #fcfa9c);
+/*	background-image:-webkit-linear-gradient(#fdee6d, #fcfa9c);*/
 	/* Firefox 3.6+ */
-	background-image:-moz-linear-gradient(top, #fdee6d, #fcfa9c);
+/*	background-image:-moz-linear-gradient(top, #fdee6d, #fcfa9c); */
 	/* Opera 11.10+ */
-	background-image:-o-linear-gradient(top, #fdee6d, #fcfa9c);
+/*	background-image:-o-linear-gradient(top, #fdee6d, #fcfa9c); */
 	/* Internet Explorer 5.5+ */
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdee6d', EndColorStr='#fcfa9c');
+/*	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdee6d', EndColorStr='#fcfa9c'); */
+/*}*/
+ 
+#timeline-popup {
+    min-height: 350px !important;
+    max-height: 530px !important;
+    overflow: auto;
+    overflow-x: hidden;
+    /*Antes era height: 530 - sin min ni max*/
 }
  
 #timeline-popup .tipDate {
@@ -284,7 +302,7 @@ body {
 #timeline-popup .tipHeader {
     clear: left;
     float: left;
-    font-weight:bold;
+    font-weight:bold; /*ROX*/
     font-size: 16px;
     font-style: italic;
     margin-top: 5px;
@@ -297,6 +315,20 @@ body {
     max-height: 200px;
     max-width: 10px;
 }
+
+#timeline-popup .popImage {
+width: 45%;
+height: auto;
+}
+
+#timeline-popup .popImage img {
+width: 100%;
+float: left;
+margin-right: 10px;
+}
+
+
+
 
 #timeline-popup .tipBody {
     clear: both;
