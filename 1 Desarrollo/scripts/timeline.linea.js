@@ -16,8 +16,7 @@ var Linea = {
 	
 	// Html que representa la descripcion de un evento cuando se posa el mouse sobre él
 	plantilla_tooltip: '<div id="timeline-tooltip"> \
-							<div class="tipDate">{fecha}</div> \
-							<div class="tipHeader">{titulo}</div> \
+							<div class="tipHeader">{fecha} {titulo}</div> \
 							<div class="tipImage"><img src="images/{imagen}"/></div> \
 							<div class="tipBody">{descripcion}</div> \
 						</div>',

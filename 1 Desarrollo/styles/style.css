@@ -187,45 +187,45 @@ body {
 	position:absolute;
 	z-index:9999;
 	width:200px;
-	text-align:center; /*ROX*/
+	text-align:center;
 	
 	height: auto;
-	border-width:1px;
-	border-style:solid;
-	border-radius:10px;
+	border-radius:5px;
 	font-size:11px;
 
 	color:#000;
-	border-color:#61380B;
-	
+	overflow:hidden;
+
 	/* Color alternativo para versiones que no soporten degradados */
-	background-color:#fcfa9c;
+	background-color:#f4f0ec;
 	/* Safari 4+ y Chrome 1+ */
-	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fdee6d), color-stop(1, #fcfa9c));
+/*	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fdee6d), color-stop(1, #fcfa9c));*/
 	/* Safari 5.1+ y Chrome 10+ */
-	background-image:-webkit-linear-gradient(#fdee6d, #fcfa9c);
+/*	background-image:-webkit-linear-gradient(#fdee6d, #fcfa9c);*/
 	/* Firefox 3.6+ */
-	background-image:-moz-linear-gradient(top, #fdee6d, #fcfa9c);
+/*	background-image:-moz-linear-gradient(top, #fdee6d, #fcfa9c);*/
 	/* Opera 11.10+ */
-	background-image:-o-linear-gradient(top, #fdee6d, #fcfa9c);
+/*	background-image:-o-linear-gradient(top, #fdee6d, #fcfa9c);*/
 	/* Internet Explorer 5.5+ */
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdee6d', EndColorStr='#fcfa9c');
+/*	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdee6d', EndColorStr='#fcfa9c');*/
 }
  
-#timeline-tooltip .tipDate {
-    color: #999999;
-    float: right;
-    font-style: italic;
-}
+/*#timeline-tooltip .tipDate {*/
+/*    color: #999999;*/
+/*    float: right;*/
+/*    font-style: italic;*/
+/*}*/
 
 #timeline-tooltip .tipHeader {
     clear: left;
     float: left;
-    font-weight:bold; /*ROX*/
+    font-weight:bold;
     font-size: 16px;
     font-style: italic;
-    margin-top: 5px;
+    margin-bottom: 5px;
     width: 200px;
+    background-color:#cb842e;
+    color:#FFF;
     /* 38 caracteres de maximo para el titulo */
 }
 
@@ -248,7 +248,7 @@ margin: 0 auto;
     clear: both;
     float: left;
     font-size: 13px;
-    margin-top: 5px;
+    margin: 7px;
 }
 
 
@@ -259,8 +259,7 @@ margin: 0 auto;
 
 	width: 800px;
 	height: 600px;
-	text-align:center; /*ROX
-    */
+	text-align:center;
 	
 /*	
 	border-width:1px;
@@ -302,7 +301,7 @@ margin: 0 auto;
 #timeline-popup .tipHeader {
     clear: left;
     float: left;
-    font-weight:bold; /*ROX*/
+    font-weight:bold;
     font-size: 16px;
     font-style: italic;
     margin-top: 5px;
@@ -327,12 +326,13 @@ float: left;
 margin-right: 10px;
 }
 
-
-
-
 #timeline-popup .tipBody {
     clear: both;
     float: left;
     font-size: 13px;
     margin-top: 5px;
+}
+
+#timeline-popup .popBody {
+    text-align:justify;
 }
