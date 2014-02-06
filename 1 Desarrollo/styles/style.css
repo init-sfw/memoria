@@ -326,13 +326,23 @@ float: left;
 margin-right: 10px;
 }
 
+<<<<<<< .mine
+
+=======
+>>>>>>> .r108
 #timeline-popup .tipBody {
     clear: both;
     float: left;
     font-size: 13px;
     margin-top: 5px;
 }
+<<<<<<< .mine
+
+#timeline-popup .popBody {
+text-align:justify;
+}=======
 
 #timeline-popup .popBody {
     text-align:justify;
 }
+>>>>>>> .r108z
