@@ -586,106 +586,42 @@ var Regla = {
 
 
 	navegar : function() {
-		var expresion1 = /^\d{1,2}\/\d{1,2}\/\d{1,4}$/; //valida que se ingresa una fecha en formato DD/MM/AAAA
-		var expresion2 = /^\d{1,4}$/; //valida que se ingresa una fecha en formato AAAA
-		var expresion3 = /^\d{1,2}\/\d{1,4}$/; //valida que se ingresa una fecha en formato MM/AAAA
-		var bandera=false
-				
-		if (expresion1.test($("#FechaNavegar").val())){ //se ha ingresado DD/MM/AAAA
-			fechaNav= new Date (Regla.validarFecha($("#FechaNavegar").val(),1));//genera un objeto Date.	
-			bandera=true;
+		var busqueda = Regla.validarFecha($("#FechaNavegar").val());
+		if (busqueda == false) { // buscamos un texto
+			// TODO: implement me :P
+		} else {
+			Regla.crearRegla(busqueda);
+			Linea.actualizarTodas();
 		}
-		if (expresion2.test($("#FechaNavegar").val())){ //se ha ingresado AAAA
-			fechaNav= new Date ($("#FechaNavegar").val(), 0, 1, 0, 0, 0, 0);//se utiliza el constructor valido de la clase Date. 	
-			bandera=true;
-		}
-		if (expresion3.test($("#FechaNavegar").val())){ // se ha ingresado MM/AAAA
-				fechaNav= new Date (Regla.validarFecha($("#FechaNavegar").val(),2));
-				bandera=true;					
-		}
-		if(!bandera||isNaN(fechaNav.getTime()))
-		{
-			alert('Error, ingrese una fecha valida en los formatos DD/MM/AAAA ó MM/AAAA ó AAAA');
-		}
-		else {
-				Regla.crearRegla(fechaNav);
-				Linea.actualizarTodas();
-		}	
 	},
 	//El metodo transforma una stringDate en un formato valido para el objeto Date (de espanol a ingles)
 	//Para ellos, almacena dia,mes y anio por separado y los reacomoda en la variable fechaIngles.
-	validarFecha: function (fecha,indice)
-	{
-				//Selecciona el metodo segun el indice ingresado, 1: para dia 2: para mes.
-				switch(indice)
-				{
-						case 1:
-								var dia="";
-								var mes="";
-								var anio="";
-								for(var i=0;i<fecha.length;i++)
-								{
-									if (fecha.charAt(i) != '/' && dia.length<2)
-									{
-										dia=dia.concat(fecha.charAt(i));
-									}
-									else
-									{
-										if (fecha.charAt(i) != '/' && mes.length<2)
-										{
-											mes=mes.concat(fecha.charAt(i));
-										}
-										else
-										{
-											if(fecha.charAt(i)!='/')
-											anio=anio.concat(fecha.charAt(i));
-										}
-									}
-					
-								}
-								var fechaIngles=""+mes+'/'+dia+'/'+ anio;
-								return fechaIngles;
-								break;
-								
-						case 2:
-								//de la cadena ingresada, se extrae los números extraidos antes de "/" y se asignan en mes. y los números posteriores a "/" son asignados en anio, para luego ser ingresados por parámetro en el constructor de Date
-								var cadena = $("#FechaNavegar").val();
-								var mes="";
-								var anio="";
-								for (var i=0; i<cadena.length; i++)
-								{
-									if (cadena.charAt(i) != '/' && mes.length<2)
-								{
-									mes= mes.concat(cadena.charAt(i));
-								}
-								else
-								{
-									if (cadena.charAt(i) != '/')
-									anio = anio.concat(cadena.charAt(i));
-								}
-								}
-								mes = parseInt(mes,0);
-								if(mes>12||mes<1)
-								{
-									alert('El mes no es valido');
-								}
-								else
-								{
-									fechaNav= new Date (anio, mes-1, 1, 0, 0, 0, 0);
-								}
-								return fechaNav;
-								break;
-					
-								
-						default: alert('error')
-								break;
-							
-				}
-				
-				
-		
-	}
-	
+	validarFecha: function (fecha) {
+		var components = fecha.split('/');
 
+		// TODO: unificar valor devuelto
+		switch (components.length) {
+		case 3: // DD/MM/AAAA
+			// TODO: validar que los componentes sean validos
+			return new Date(components[2], components[1], components[0], 0, 0, 0, 0);
+			break;
+
+		case 2: // MM/AAAA
+			// TODO: validar que el mes sea valido
+		        return new Date(components[1], components[0], 1, 0, 0, 0, 0);
+		        break;
+
+		default:
+			// solo anio
+			var expresion = /\d{2,4}/;
+			if (expresion.test(fecha)) {
+				return new Date(fecha, 1, 1, 0, 0, 0, 0);
+			} else {
+				return false; // devolvemos False en otros casos
+			}
+		}
+
+		return false; // si llegamos aca la fecha no es valida
+	}
 	
 };
