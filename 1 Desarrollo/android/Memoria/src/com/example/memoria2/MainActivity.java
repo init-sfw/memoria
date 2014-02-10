@@ -1,6 +1,7 @@
 package com.example.memoria2;
 
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,24 +10,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.RandomAccessFile;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Iterator;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreProtocolPNames;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import com.example.memoria2.R.id;
 
@@ -35,21 +28,25 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.util.JsonWriter;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
-import org.json.*;
+
 import org.json.simple.parser.JSONParser;
 import org.w3c.dom.Text;
 
@@ -72,6 +69,14 @@ public class MainActivity extends Activity {
 	private static final String TAG_COUNTRIES = "Paises";
 	private static final String TAG_ID = "id";
 	private static final String TAG_NAME = "nombre";
+	
+	private int mYear;
+	private int mMonth;
+	private int mDay;
+
+	private Button mPickDate;
+
+	static final int DATE_DIALOG_ID = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +115,22 @@ public class MainActivity extends Activity {
 		spinner1 = (Spinner) findViewById(R.id.spinner1);
 		spinner2 = (Spinner) findViewById(R.id.spinner2);
 
-		
+		mPickDate = (Button) findViewById(R.id.btnFecha);
+
+	    mPickDate.setOnClickListener(new View.OnClickListener() {
+	        public void onClick(View v) {
+	            showDialog(DATE_DIALOG_ID);
+	        }
+	    });
+
+	    // get the current date
+	    final Calendar c = Calendar.getInstance();
+	    mYear = c.get(Calendar.YEAR);
+	    mMonth = c.get(Calendar.MONTH);
+	    mDay = c.get(Calendar.DAY_OF_MONTH);
+
+	    // display the current date
+	    updateDisplay();
 		
 		cargarCategorias();
 		cargarPaises();
@@ -129,26 +149,50 @@ public class MainActivity extends Activity {
 
 				JSONObject obj = new JSONObject();
 
+
+						// Getting JSON Array node
+						JSONArray json = obtenerJSONArray("eventos.json", "Eventos");
+						//showToast(json.toString());
+						// looping through All Contacts
+						try {
+							obj.put("fecha", fecha.getText());
+							obj.put("titulo", titulo.getText());
+							obj.put("categoria", spinner1.getSelectedItem().toString());
+							obj.put("pais", spinner2.getSelectedItem().toString());
+							
+						} catch (JSONException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						
+
+						json.put(obj);
+
+            	
+			
+				//HASTA ACAA
+				
 				try {
-
-					obj.put("fecha", fecha.getText());
-					obj.put("titulo", titulo.getText());
-					obj.put("categoria", spinner1.getSelectedItem().toString());
-					obj.put("pais", spinner2.getSelectedItem().toString());
-
-					FileOutputStream eventos = openFileOutput("eventos.json",
-							Context.MODE_PRIVATE);
-					eventos.write(obj.toString().getBytes());
-					eventos.close();
+					
+					JSONObject jeison = new JSONObject();
+					
+					jeison.put("Eventos", json);
 
 					
-                	
+					showToast(obj.toString());
+
+					
                 	try {                		
                 		FileWriter evento = new FileWriter(file);
-                    	evento.write(obj.toString());
-                    	evento.flush();
+
+                		evento.write(jeison.toString(8));
+
+      					
+        					evento.flush();
                     	evento.close();
+                    	showToast(file.toString());
                     	showToast("Evento creado con éxito! Bien ahí wachin!");
+
                 	}
 
             	catch (Exception e3){
@@ -162,6 +206,37 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
+	
+	private void updateDisplay() {
+	    this.fecha.setText(
+	        new StringBuilder()
+	                // Month is 0 based so add 1
+	                .append(mDay).append("/")
+	                .append(mMonth+1).append("/")
+	                .append(mYear).append(" "));
+	}
+	
+	private DatePickerDialog.OnDateSetListener mDateSetListener =
+		    new DatePickerDialog.OnDateSetListener() {
+		        public void onDateSet(DatePicker view, int year, 
+		                              int monthOfYear, int dayOfMonth) {
+		            mYear = year;
+		            mMonth = monthOfYear;
+		            mDay = dayOfMonth;
+		            updateDisplay();
+		        }
+		    };
+		    
+		    @Override
+		    protected Dialog onCreateDialog(int id) {
+		       switch (id) {
+		       case DATE_DIALOG_ID:
+		          return new DatePickerDialog(this,
+		                    mDateSetListener,
+		                    mYear, mMonth, mDay);
+		       }
+		       return null;
+		    }
 
 	private void showToast(String message) {
 		Toast.makeText(this, message, Toast.LENGTH_LONG).show();
@@ -169,7 +244,7 @@ public class MainActivity extends Activity {
 
 	private void cargarPaises() {
 		String jsonStr;
-
+		
 		String root = Environment.getExternalStorageDirectory().toString();
 		File myDir = new File(root + "/eventos");
 		myDir.mkdirs();
@@ -272,7 +347,7 @@ public class MainActivity extends Activity {
 
 					String id = c.getString(TAG_ID);
 					String name = c.getString(TAG_NAME);
-
+					
 					cat.add(name);
 
 				}
@@ -297,4 +372,59 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	
+	private JSONArray obtenerJSONArray(String archivo, String nombre){
+		String jsonStr;
+
+		String root = Environment.getExternalStorageDirectory().toString();
+		File myDir = new File(root + "/eventos");
+		myDir.mkdirs();
+		String nombre_arch = archivo;
+		File file = new File(myDir, nombre_arch);
+		StringBuilder text = new StringBuilder();
+		BufferedReader br = null;
+		JSONArray json = null; 
+		
+		try {
+			br = new BufferedReader(new FileReader(file));
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				text.append(line);
+				text.append('\n');
+			}
+		} catch (IOException e) {
+			// do exception handling
+		} finally {
+			try {
+				br.close();
+				showToast("Se cerro");
+			} catch (Exception e) {
+				showToast("NOOO Se cerro");
+			}
+		}
+
+		jsonStr = text.toString();
+
+		if (jsonStr != null) {
+			try {
+				JSONObject jsonObj = new JSONObject(jsonStr);
+
+				// Getting JSON Array node
+				json = jsonObj.getJSONArray(nombre);	
+
+
+
+				
+
+			} catch (JSONException e) {
+				e.printStackTrace();
+			} 
+		} else {
+			Log.e("ServiceHandler", "Couldn't get any data from the url");
+		}
+
+		return json;
+	
+	}
 }
