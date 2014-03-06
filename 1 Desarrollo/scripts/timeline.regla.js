@@ -81,9 +81,13 @@ var Regla = {
 		});
 		
 		// Scroll de la linea
-		//Regla.$scroll.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal' });
+		//Regla.$contenedor.overscroll({ wheelDelta: 0, showThumbs: true, direction: 'horizontal', });
 		//Regla.inicializarEventosScroll();
 		
+	},
+
+	activarScrollHorizontal: function () {
+		Regla.$contenedor.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal', });
 	},
 	
 	// Carga por demanda una vez que llega al final de la línea
@@ -96,7 +100,7 @@ var Regla = {
 		Regla.$scroll.bind('overscroll:driftend', function() { 
 			Regla.cargarSegmentosADemanda();
 			
-			// Ubica el titulo de cada lï¿½nea a la izquierda de la pantalla
+			// Ubica el titulo de cada línea a la izquierda de la pantalla
 			Linea.$lineas.find('span').css('left', Regla.$scroll.scrollLeft()).fadeIn();
 			alert("Método deprecado, suponemos que no se usa más. Si te salta este error checkeá el método inicializarEventosScroll() del script timeline.regla.js");	
 		});
@@ -254,6 +258,9 @@ var Regla = {
 		
 		//Revisa las lineas generadas por el filtro y las agrega (mismo metodo que el asignado al click del boton generar en timeline.filtro
 		Filtros.generarLineas()
+
+		// Activo la posibilidad de hacer scroll horizontal
+		Regla.activarScrollHorizontal();
 		
 	},
 	
