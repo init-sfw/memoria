@@ -1,7 +1,7 @@
 var Eventos = {
 	filtrar: function (fecha_desde, fecha_hasta, ponderacion, filtros) {
 		var deferred = $.Deferred();
-		var consulta = $.getJSON('datos/datos-ext.json');
+		var consulta = $.getJSON('datos/datos_mundial-f.json');
 		
 		consulta.success(function (eventos) {
 			var query = Enumerable
