@@ -23,9 +23,17 @@ var Filtros = {
 		});
 
 		
-		// Recupera las paises de un archivo y los carga en el combo
+		// Recupera los paises de un archivo JSON y los carga en el combo
 		$.getJSON('datos/categorias.json', function (categorias) {
 			$('#filtroCategorias').cargarCombo(categorias, 'id', 'nombre');
+		});
+
+		$.getJSON('datos/paises.json', function (paises) {
+		$('#agregarPaises').cargarCombo(paises, 'id', 'nombre');
+		});
+
+		$.getJSON('datos/categorias.json', function (categorias) {
+		$('#agregarCategorias').cargarCombo(categorias, 'id', 'nombre');
 		});
 		
 		// Agrega funcionalidad al botón que abre/cierra el panel de filtros
