@@ -21,7 +21,7 @@ var Regla = {
 	dias: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
 	
 	// Nivel de zoom por defecto
-	zoom: 2,
+	zoom: 1,
 	// Nombre de los niveles de zoom
 	nombre_zoom: ['Siglo', 'Decada', 'Año', 'Mes', 'Dia'],
 	// Array que contiene las referencias a las funciones que generan los segmentos para los distintos niveles de zoom
@@ -82,13 +82,9 @@ var Regla = {
 		});
 		
 		// Scroll de la linea
-		//Regla.$contenedor.overscroll({ wheelDelta: 0, showThumbs: true, direction: 'horizontal', });
+		//Regla.$scroll.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal' });
 		//Regla.inicializarEventosScroll();
 		
-	},
-
-	activarScrollHorizontal: function () {
-		Regla.$contenedor.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal', });
 	},
 	
 	// Carga por demanda una vez que llega al final de la línea
@@ -101,7 +97,7 @@ var Regla = {
 		Regla.$scroll.bind('overscroll:driftend', function() { 
 			Regla.cargarSegmentosADemanda();
 			
-			// Ubica el titulo de cada línea a la izquierda de la pantalla
+			// Ubica el titulo de cada lï¿½nea a la izquierda de la pantalla
 			Linea.$lineas.find('span').css('left', Regla.$scroll.scrollLeft()).fadeIn();
 			alert("Método deprecado, suponemos que no se usa más. Si te salta este error checkeá el método inicializarEventosScroll() del script timeline.regla.js");	
 		});
@@ -177,10 +173,11 @@ var Regla = {
 		
 		//Aca condiciona la cracion de segmentos a derecha si el valro absoluto de la diferencia de divs (calculada con los id que tienen) (el valor absouto representa la distancia en divs que hay desde el centro al de la derecha) y si esta distancia es menor a 20 crea sino no
 		//limiteCargaDiv es la distancia minima que debe haber en el div central y el que se encuentre en el limite de la regla
-		if (Math.abs(Regla.derecha-Regla.centro) < Regla.limiteCargaDiv) {
-			Regla.cargarSegmentos(Regla.direccion_segmento.derecha);}
-			Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
-			Regla.centro += Regla.cantidad_segmentos;
+		if(Math.abs(Regla.derecha-Regla.centro) < Regla.limiteCargaDiv){		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);}
+		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
+		Regla.centro += Regla.cantidad_segmentos;
+		
+		
 	},
 	
 	// Mueve el ï¿½rea visible de la regla hacia la izquierda y carga una nueva porciï¿½n de la regla en el caso que corresponda
@@ -258,9 +255,6 @@ var Regla = {
 		
 		//Revisa las lineas generadas por el filtro y las agrega (mismo metodo que el asignado al click del boton generar en timeline.filtro
 		Filtros.generarLineas()
-
-		// Activo la posibilidad de hacer scroll horizontal
-		//Regla.activarScrollHorizontal();
 		
 	},
 	
@@ -559,11 +553,8 @@ var Regla = {
 		se pueda llamar al metodo append y se creen a partir del ultimo div de tiempo y no a partir de la linea, después al salir del for se vuelve a poner la linea al final del div "timeline-regla" ej: div div div linea ---> remove(linea) ----> div div div --> append(div) ---> div div div div ---> apend(linea) ---> div div div div linea
 		La validación por regla.inicio = 1 es de una variable que se creo en regla para poder validar que no esta creando la linea sino que esta avanzando o retrocediendo ya que si es el inicio no se ha creado la linea todavía y produce errores y redundancia de divs con el mismo año.		
 		*/
-		// creo variable para que guarde auxiliarmente los datos de linea que vienen
-		var auxDataFiltros;
 		if(Regla.inicio === 1){		
 		$linea = Regla.$regla.children().eq(-1);
-		auxDataFiltros = $linea.children('div.timeline-eventos:last').data('linea')
 		Regla.$regla.children().last().remove()}
 		for(var i = 0; i < segmentos.length; i++) {
 			// Reemplaza las claves por los valores correspondientes a la clase y la etiqueta
@@ -589,11 +580,7 @@ var Regla = {
 				.data('fecha_inicio', segmentos[i].fecha_inicio)
 				.data('fecha_fin', segmentos[i].fecha_fin);
 		}
-		if(Regla.inicio === 1) {
-			// Por alguna razón los remove usados arriba borran la data de la línea, vuelvo a setearla
-			$linea.children('div.timeline-eventos:last').data('linea', auxDataFiltros);
-			Regla.$regla.append($linea);
-		}
+		if(Regla.inicio === 1){Regla.$regla.append($linea);}
 	},
 
 

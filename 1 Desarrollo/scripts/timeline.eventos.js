@@ -10,6 +10,11 @@ var Eventos = {
 						Descripcion: <div class="PopDescripcion"> <input type="text" name="descripcion" class="pop-descripcion"><br> </div>\
 						Categoria: <div class="Pop-Categoria"> <br><select id="agregarCategorias"  multiple="multiple" size="5"></select><br> </div>\
 						Pais: <div class="Pop-Pais"> <br><select id="agregarPaises" multiple="multiple" size="5"></select><br><br></div>\
+						Titulo: <input type="text" name="nombre"><br>\
+						<p>Date: <input type="text" id="datepicker" class="hasDatepicker"></input> </p><br>\
+						Descripcion: <input type="text" name="descripcion"><br>\
+						Categoria: <br><select id="agregarCategorias"  multiple="multiple" size="5"></select><br>\
+						Pais: <br><select id="agregarPaises" multiple="multiple" size="5"></select><br><br>\
 						<input type="submit" value="enviar">    <input type="reset" value="borrar">\
 						</form>\
 						</div>'
@@ -56,21 +61,47 @@ var Eventos = {
 		return deferred.promise();
 	},
 
+
 	cargar: function () {
 
 		popup = Eventos.popup_cargar
 			
-
-
 		$('body').append(popup);
 		$('#cargarEventos').dialog();
 		$('#cargarEventos').dialog( "option", "width", 600);
 		$('#cargarEventos').dialog( "option", "height", 450);
-		$('#cargarEventos').on("dialogclose", function( event, ui ) { Eventos.ocultar_popup(); } )     
+		$('#cargarEventos').on("dialogclose", function( event, ui ) { Eventos.ocultar_popup(); } );
+		Eventos.calendario();
+		Filtros.cargarCombos();
+		
 },
 
 		ocultar_popup: function () {
 		//Elimina el div que contiene el popup
 		$('#cargarEventos').remove();		
+	},
+	
+	calendario: function()
+	{
+		$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+		$.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '<Ant',
+        nextText: 'Sig>',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
 	}
+	
 };

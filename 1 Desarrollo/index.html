@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="scripts/jquery-ui-1.10.4.custom.js"></script> 
 		<script type="text/javascript" src="scripts/jquery.mousewheel.min.js"></script>
-		<script type="text/javascript" src="scripts/jquery.overscroll.js"></script>
+		<script type="text/javascript" src="scripts/jquery.overscroll.min.js"></script>
 		<script type="text/javascript" src="scripts/jquery.linq.min.js"></script>
 		
 		<script type="text/javascript" src="scripts/util.date.js"></script>
@@ -40,12 +40,15 @@
 				Filtros.init();				
 			});
 		</script>
+		
+		
 	</head>
 	
 	<body>        
         <div id="navegador">
         	<input id="FechaNavegar" type="text" maxlength="10" onkeypress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
             <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..."></a>
+
         </div>
 		
 		<div id="cargarEvento">
@@ -53,7 +56,10 @@
 		<img title="cargar..." src="images/iconos/subir.png">
 	</div>
                 
-	
+	<div id="cargarEvento">
+		<a id="botonCargar" href="javascript:Eventos.cargar()">
+		<img title="cargar..." src="images/iconos/subir.png">
+	</div>
 				
 				
     	<div id="timeline-comandos">
@@ -86,6 +92,8 @@
             <p class="botones"><button type="button" id="btnAgregarFiltro">Agregar</button></p>
             
             <h3>Vista previa</h3>
+
+		
             
             <div id="timeline-filtros"></div>            
             <p class="botones"><button id="btnGenerarLineas" type="button">Generar</button></p>

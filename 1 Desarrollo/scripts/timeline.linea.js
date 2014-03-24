@@ -108,13 +108,12 @@ var Linea = {
 	},
 
 	mostrarDetalleEvento: function() {
-		var po = $(this).data('info'); 	
+		var po = $(this).data('info');
 		
 		popup = Linea.plantilla_popup.replace('{fecha}', po.fecha)
 					.replace('{titulo}', po.titulo)
 					.replace('{imagen}', po.imagen)
 					.replace('{descripcion}', po.descripcionBreve);
-		
 		
 		$('body').append(popup);
 		$('#timeline-popup').dialog();
