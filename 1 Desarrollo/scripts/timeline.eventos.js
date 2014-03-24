@@ -73,7 +73,7 @@ var Eventos = {
 			show: { effect: "slideDown", duration: 800 }
 			});
 		Eventos.calendario();
-		Filtros.cargarCombos();
+		Filtros.cargarCombosPopUpEvento();
 	},
 
 		ocultar_popup: function () {
