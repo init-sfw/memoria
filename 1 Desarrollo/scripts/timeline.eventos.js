@@ -63,7 +63,6 @@ var Eventos = {
 			
 		$('body').append(popup);
 		$('#cargarEventos').dialog({ 
-			autoOpen: false,
 			width: 400,
 			height: 450,
 			resizable: true,
@@ -75,7 +74,6 @@ var Eventos = {
 			});
 		Eventos.calendario();
 		Filtros.cargarCombos();
-		$('#cargarEventos').dialog("open");
 	},
 
 		ocultar_popup: function () {
