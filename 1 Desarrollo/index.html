@@ -28,7 +28,11 @@
 			if (enter==13) Regla.navegar();
 			}
 		</script>
-		
+		<script>
+			$(function() {
+			$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yyyy' });
+			});
+		</script>‏
 		
 		<script type="text/javascript">
 			$(document).ready(function () {
@@ -36,6 +40,8 @@
 				Filtros.init();				
 			});
 		</script>
+		
+		
 	</head>
 	
 	<body>        
@@ -44,6 +50,11 @@
             <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..."></a>
 
         </div>
+		
+		<div id="cargarEvento">
+		<a id="botonCargar" href="javascript:Eventos.cargar()">
+		<img title="cargar..." src="images/iconos/subir.png">
+	</div>
                 
 	<div id="cargarEvento">
 		<a id="botonCargar" href="javascript:Eventos.cargar()">

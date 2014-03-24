@@ -336,3 +336,8 @@ margin-right: 10px;
 #timeline-popup .popBody {
     text-align:justify;
 }
+
+#cargarEventos .pop-descripcion {
+	width: 350px;
+	height: 200px;
+}

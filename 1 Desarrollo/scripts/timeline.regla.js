@@ -9,6 +9,7 @@ var Regla = {
 	// Instancia del segmento sobre el cual esta posicionado el puntero del mouse
 	$segmento: null,
 
+	$filtro: null,
 	// Fecha de foco inicial
 	fecha_foco: new Date(),
 	// Fecha de inicio del primer segmento de la regla

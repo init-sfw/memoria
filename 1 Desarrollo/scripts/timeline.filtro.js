@@ -111,5 +111,17 @@ var Filtros = {
 		});
 		
 		Linea.mostrarLineas();
+	},
+	
+	cargarCombos: function ()
+	{
+		$.getJSON('datos/paises.json', function (paises) {
+		$('#agregarPaises').cargarCombo(paises, 'id', 'nombre');
+		});
+
+	$.getJSON('datos/categorias.json', function (categorias) {
+		$('#agregarCategorias').cargarCombo(categorias, 'id', 'nombre');
+	});
 	}
+
 };
