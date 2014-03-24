@@ -62,17 +62,21 @@ var Eventos = {
 		popup = Eventos.popup_cargar
 			
 		$('body').append(popup);
-		$('#cargarEventos').dialog({ show: { effect: "slideDown", duration: 1000 } });
-		$('#cargarEventos').dialog( "option", "width", 400);
-		$('#cargarEventos').dialog( "option", "height", 450);
-		$('#cargarEventos').dialog( "option", "resizable", true );
-		$('#cargarEventos').dialog( "option", "closeOnEscape", true );
-		$('#cargarEventos').dialog( "option", "title", "NUEVO EVENTO" );
-		$('#cargarEventos').on("dialogclose", function( event, ui ) { Eventos.ocultar_popup(); } );
+		$('#cargarEventos').dialog({ 
+			autoOpen: false,
+			width: 400,
+			height: 450,
+			resizable: true,
+			closeOnEscape: true,
+			title: 'Evento Nuevo',
+			modal: true,
+			close: function( event, ui ) { Eventos.ocultar_popup(); },
+			show: { effect: "slideDown", duration: 800 }
+			});
 		Eventos.calendario();
 		Filtros.cargarCombos();
-		
-},
+		$('#cargarEventos').dialog("open");
+	},
 
 		ocultar_popup: function () {
 		//Elimina el div que contiene el popup
