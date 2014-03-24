@@ -103,5 +103,8 @@ var Filtros = {
 		});
 		
 		Linea.mostrarLineas();
-	}
+	},
+	
+	#datepicker
+
 };

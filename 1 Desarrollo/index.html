@@ -28,7 +28,11 @@
 			if (enter==13) Regla.navegar();
 			}
 		</script>
-		
+		<script>
+			$(function() {
+			$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yyyy' });
+			});
+		</script>â€
 		
 		<script type="text/javascript">
 			$(document).ready(function () {
@@ -43,6 +47,11 @@
         	<input id="FechaNavegar" type="text" maxlength="10" onkeypress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
             <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..."></a>
         </div>
+		
+		<div id="cargarEvento">
+		<a id="botonCargar" href="javascript:Eventos.cargar()">
+		<img title="cargar..." src="images/iconos/subir.png">
+	</div>
                 
 	
 				

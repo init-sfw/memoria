@@ -6,7 +6,7 @@ var Eventos = {
 						'<div id="cargarEventos"  style="display:none;"> \
 						<form name="datos" action="" method="POST" target="_blank">\
 						Titulo: <div class="Pop-Titulo"> <input type="text" name="nombre"> </div>\
-						<p>Date: <input type="text" id="datepicker" class="hasDatepicker"></input> </p><br>\
+						<p>Date: <input type="text" id="datepicker"></p><br>\
 						Descripcion: <div class="PopDescripcion"> <input type="text" name="descripcion" class="pop-descripcion"><br> </div>\
 						Categoria: <div class="Pop-Categoria"> <br><select id="agregarCategorias"  multiple="multiple" size="5"></select><br> </div>\
 						Pais: <div class="Pop-Pais"> <br><select id="agregarPaises" multiple="multiple" size="5"></select><br><br></div>\
@@ -56,45 +56,16 @@ var Eventos = {
 		return deferred.promise();
 	},
 
-/*
-	calendario: function()
-	{
-	$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yyyy' });
-
-    $.datepicker.regional['es'] = {
-        closeText: 'Cerrar',
-        prevText: '<Ant',
-        nextText: 'Sig>',
-        currentText: 'Hoy',
-        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-        weekHeader: 'Sm',
-        dateFormat: 'dd/mm/yy',
-        firstDay: 1,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: ''
-    };
-    $.datepicker.setDefaults($.datepicker.regional['es']); 
-},
-
-*/
-
-
 	cargar: function () {
 
 		popup = Eventos.popup_cargar
 			
 
-		$( "#datepicker" ).datepicker(/*{ dateFormat: 'dd/mm/yyyy' }*/);
 
 		$('body').append(popup);
 		$('#cargarEventos').dialog();
-		$('#cargarEventos').dialog( "option", "width", 400);
-		$('#cargarEventos').dialog( "option", "height", 300);
+		$('#cargarEventos').dialog( "option", "width", 600);
+		$('#cargarEventos').dialog( "option", "height", 450);
 		$('#cargarEventos').on("dialogclose", function( event, ui ) { Eventos.ocultar_popup(); } )     
 },
 
