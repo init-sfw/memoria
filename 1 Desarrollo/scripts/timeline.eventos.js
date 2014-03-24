@@ -4,17 +4,12 @@ var Eventos = {
 	popup_cargar: 	
 						
 						'<div id="cargarEventos"  style="display:none;"> \
-						<form name="datos" action="" method="POST" target="_blank">\
-						Titulo: <div class="Pop-Titulo"> <input type="text" name="nombre"> </div>\
-						<p>Date: <input type="text" id="datepicker"></p><br>\
+						<form name="datos" action="" method="POST" class="contender" target="_blank">\
+						Titulo: <div > <input type="text" name="titulo" class="Pop-Titulo" id="Pop-Titulo"> </div>\
+						<p>Date: <br/> <input type="text" id="datepicker"></p>\
 						Descripcion: <div class="PopDescripcion"> <input type="text" name="descripcion" class="pop-descripcion"><br> </div>\
-						Categoria: <div class="Pop-Categoria"> <br><select id="agregarCategorias"  multiple="multiple" size="5"></select><br> </div>\
-						Pais: <div class="Pop-Pais"> <br><select id="agregarPaises" multiple="multiple" size="5"></select><br><br></div>\
-						Titulo: <input type="text" name="nombre"><br>\
-						<p>Date: <input type="text" id="datepicker" class="hasDatepicker"></input> </p><br>\
-						Descripcion: <input type="text" name="descripcion"><br>\
-						Categoria: <br><select id="agregarCategorias"  multiple="multiple" size="5"></select><br>\
-						Pais: <br><select id="agregarPaises" multiple="multiple" size="5"></select><br><br>\
+						Categoria: <br><select id="agregarCategorias" class="agregarCategorias" multiple="multiple" size="5"></select><br>\
+						Pais: <br><select id="agregarPaises" class="agregarPaises" multiple="multiple" size="5"></select><br><br>\
 						<input type="submit" value="enviar">    <input type="reset" value="borrar">\
 						</form>\
 						</div>'
@@ -67,9 +62,12 @@ var Eventos = {
 		popup = Eventos.popup_cargar
 			
 		$('body').append(popup);
-		$('#cargarEventos').dialog();
-		$('#cargarEventos').dialog( "option", "width", 600);
+		$('#cargarEventos').dialog({ show: { effect: "slideDown", duration: 1000 } });
+		$('#cargarEventos').dialog( "option", "width", 400);
 		$('#cargarEventos').dialog( "option", "height", 450);
+		$('#cargarEventos').dialog( "option", "resizable", true );
+		$('#cargarEventos').dialog( "option", "closeOnEscape", true );
+		$('#cargarEventos').dialog( "option", "title", "NUEVO EVENTO" );
 		$('#cargarEventos').on("dialogclose", function( event, ui ) { Eventos.ocultar_popup(); } );
 		Eventos.calendario();
 		Filtros.cargarCombos();
