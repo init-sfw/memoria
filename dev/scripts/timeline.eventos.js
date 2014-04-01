@@ -4,12 +4,12 @@ var Eventos = {
 	popup_cargar: 	
 						
 						'<div id="cargarEventos"  style="display:none;"> \
-						<form name="datos" action="" method="POST" target="_blank">\
-						Titulo: <input type="text" name="nombre"><br>\
-						<p>Date: <input type="text" id="datepicker" class="hasDatepicker"></input> </p><br>\
-						Descripcion: <input type="text" name="descripcion"><br>\
-						Categoria: <br><select id="agregarCategorias"  multiple="multiple" size="5"></select><br>\
-						Pais: <br><select id="agregarPaises" multiple="multiple" size="5"></select><br><br>\
+						<form name="datos" action="" method="POST" class="contender" target="_blank">\
+						Titulo: <div > <input type="text" name="titulo" class="Pop-Titulo" id="Pop-Titulo"> </div>\
+						<p>Date: <br/> <input type="text" id="datepicker"></p>\
+						Descripcion: <div class="PopDescripcion"> <input type="text" name="descripcion" class="pop-descripcion"><br> </div>\
+						Categoria: <br><select id="agregarCategorias" class="agregarCategorias" multiple="multiple" size="5"></select><br>\
+						Pais: <br><select id="agregarPaises" class="agregarPaises" multiple="multiple" size="5"></select><br><br>\
 						<input type="submit" value="enviar">    <input type="reset" value="borrar">\
 						</form>\
 						</div>'
@@ -19,7 +19,7 @@ var Eventos = {
 
 	filtrar: function (fecha_desde, fecha_hasta, ponderacion, filtros) {
 		var deferred = $.Deferred();
-		var consulta = $.getJSON('datos/datos-ext.json');
+		var consulta = $.getJSON('data/datos-deportes.json');
 		
 		consulta.success(function (eventos) {
 			var query = Enumerable
@@ -56,12 +56,35 @@ var Eventos = {
 		return deferred.promise();
 	},
 
-/*
+
+	cargar: function () {
+
+		popup = Eventos.popup_cargar
+			
+		$('body').append(popup);
+		$('#cargarEventos').dialog({ 
+			width: 400,
+			height: 450,
+			resizable: true,
+			closeOnEscape: true,
+			title: 'Evento Nuevo',
+			modal: true,
+			close: function( event, ui ) { Eventos.ocultar_popup(); },
+			show: { effect: "slideDown", duration: 800 }
+			});
+		Eventos.calendario();
+		Filtros.cargarCombosPopUpEvento();
+	},
+
+		ocultar_popup: function () {
+		//Elimina el div que contiene el popup
+		$('#cargarEventos').remove();		
+	},
+	
 	calendario: function()
 	{
-	$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yyyy' });
-
-    $.datepicker.regional['es'] = {
+		$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+		$.datepicker.regional['es'] = {
         closeText: 'Cerrar',
         prevText: '<Ant',
         nextText: 'Sig>',
@@ -78,28 +101,7 @@ var Eventos = {
         showMonthAfterYear: false,
         yearSuffix: ''
     };
-    $.datepicker.setDefaults($.datepicker.regional['es']); 
-},
-
-*/
-
-
-	cargar: function () {
-
-		popup = Eventos.popup_cargar
-			
-
-		$( "#datepicker" ).datepicker(/*{ dateFormat: 'dd/mm/yyyy' }*/);
-
-		$('body').append(popup);
-		$('#cargarEventos').dialog();
-		$('#cargarEventos').dialog( "option", "width", 400);
-		$('#cargarEventos').dialog( "option", "height", 300);
-		$('#cargarEventos').on("dialogclose", function( event, ui ) { Eventos.ocultar_popup(); } )     
-},
-
-		ocultar_popup: function () {
-		//Elimina el div que contiene el popup
-		$('#cargarEventos').remove();		
+    $.datepicker.setDefaults($.datepicker.regional['es']);
 	}
+	
 };

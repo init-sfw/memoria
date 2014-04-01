@@ -336,3 +336,30 @@ margin-right: 10px;
 #timeline-popup .popBody {
     text-align:justify;
 }
+/* Se trabaja con los componentes del popup para cargar eventos*/
+#cargarEventos{
+	overflow: auto;
+	}
+
+#cargarEventos .contender{
+	height:100%;
+	width: 100%;
+}
+
+#cargarEventos .Pop-Titulo{
+	width:100%;
+}
+
+#cargarEventos .pop-descripcion {
+	width: 100%;
+	height: 200px;
+}
+
+#cargarEventos .agregarCategorias{
+	width: 100%;
+}
+
+#cargarEventos .agregarPaises{
+	width: 100%;
+}
+

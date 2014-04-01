@@ -1,7 +1,7 @@
 <html>
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ASCII" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
         <link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.10.4.custom.css">
 
@@ -28,14 +28,15 @@
 			if (enter==13) Regla.navegar();
 			}
 		</script>
-		
-		
+				
 		<script type="text/javascript">
 			$(document).ready(function () {
 				Linea.init();
 				Filtros.init();				
 			});
 		</script>
+		
+		
 	</head>
 	
 	<body>        
@@ -44,7 +45,7 @@
             <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..."></a>
 
         </div>
-                
+		                
 	<div id="cargarEvento">
 		<a id="botonCargar" href="javascript:Eventos.cargar()">
 		<img title="cargar..." src="images/iconos/subir.png">

@@ -18,23 +18,8 @@ var Filtros = {
 		
 		// Recupera las categorias de un archivo y las carga en el combo
 		// FIXME: este método está fallando en Google Chrome
-		$.getJSON('datos/paises.json', function (paises) {
-			$('#filtroPaises').cargarCombo(paises, 'id', 'nombre');
-		});
+		Filtros.cargarCombosFiltros();
 
-		
-		// Recupera los paises de un archivo JSON y los carga en el combo
-		$.getJSON('datos/categorias.json', function (categorias) {
-			$('#filtroCategorias').cargarCombo(categorias, 'id', 'nombre');
-		});
-
-		$.getJSON('datos/paises.json', function (paises) {
-		$('#agregarPaises').cargarCombo(paises, 'id', 'nombre');
-		});
-
-		$.getJSON('datos/categorias.json', function (categorias) {
-		$('#agregarCategorias').cargarCombo(categorias, 'id', 'nombre');
-		});
 		
 		// Agrega funcionalidad al botón que abre/cierra el panel de filtros
 	
@@ -111,5 +96,30 @@ var Filtros = {
 		});
 		
 		Linea.mostrarLineas();
-	}
+	},
+
+	cargarCombosFiltros : function () {
+		Filtros.cargarComboPais($('#filtroPaises'));
+		Filtros.cargarComboCategorias($('#filtroCategorias'));
+	},
+
+	cargarCombosPopUpEvento : function () {
+		Filtros.cargarComboPais($('#agregarPaises'));
+		Filtros.cargarComboCategorias($('#agregarCategorias'));
+	},
+
+	cargarComboPais : function (div) {
+		Filtros.cargarCombo(div, 'datos/paises.json')
+	},
+	
+	cargarComboCategorias : function (div) {
+		Filtros.cargarCombo(div, 'datos/categorias.json')
+	},
+
+	cargarCombo : function (div, source) {	
+		$.getJSON(source, function (data) {
+			div.cargarCombo(data, 'id', 'nombre');
+		});
+	},
+
 };
