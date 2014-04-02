@@ -374,7 +374,7 @@ var Regla = {
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
-				etiqueta: 'Década \'' + decada + '<br />' + mil
+				etiqueta: 'D&eacute;cada \'' + decada + '<br />' + mil
 			});		
 			
 			clase ++;	
