@@ -5,11 +5,11 @@ var Eventos = {
 						
 						'<div id="cargarEventos"  style="display:none;"> \
 						<form name="datos" action="" method="POST" class="contender" target="_blank">\
-						Titulo: <div > <input type="text" name="titulo" class="Pop-Titulo" id="Pop-Titulo"> </div>\
-						<p>Date: <br/> <input type="text" id="datepicker"></p>\
-						Descripcion: <div class="PopDescripcion"> <input type="text" name="descripcion" class="pop-descripcion"><br> </div>\
-						Categoria: <br><select id="agregarCategorias" class="agregarCategorias" multiple="multiple" size="5"></select><br>\
-						Pais: <br><select id="agregarPaises" class="agregarPaises" multiple="multiple" size="5"></select><br><br>\
+						Título: <div > <input type="text" name="titulo" class="Pop-Titulo" id="Pop-Titulo"> </div>\
+						<p>Fecha: <br/> <input type="text" id="datepicker"></p>\
+						Descripción: <div class="PopDescripcion"> <input type="text" name="descripcion" class="pop-descripcion"><br> </div>\
+						Categoría: <br><select id="agregarCategorias" class="agregarCategorias" multiple="multiple" size="5"></select><br>\
+						País: <br><select id="agregarPaises" class="agregarPaises" multiple="multiple" size="5"></select><br><br>\
 						<input type="submit" value="enviar">    <input type="reset" value="borrar">\
 						</form>\
 						</div>'
@@ -24,15 +24,15 @@ var Eventos = {
 		consulta.success(function (eventos) {
 			var query = Enumerable
 				.From(eventos)
-				.Where(function (x) { 
+				.Where(function (x) {
 					var fecha = x.fecha.parseDate();
 					var rango = x.ponderacion <= ponderacion &&  fecha_desde <= fecha && fecha <= fecha_hasta;
 					
 					var categorias = filtros.categorias === null || 
-									filtros.categorias.filter(function (val) { return val === x.categoria }).length !== 0;
+					filtros.categorias.filter(function (val) { return val === x.categoria }).length !== 0;
 					
 					var paises = filtros.paises === null || 
-									filtros.paises.filter(function (val) { return val === x.pais }).length !== 0;
+					filtros.paises.filter(function (val) { return val === x.pais }).length !== 0;
 									
 					return rango && categorias && paises;
 				})

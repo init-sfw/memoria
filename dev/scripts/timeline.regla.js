@@ -21,7 +21,7 @@ var Regla = {
 	dias: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
 	
 	// Nivel de zoom por defecto
-	zoom: 1,
+	zoom: 2,
 	// Nombre de los niveles de zoom
 	nombre_zoom: ['Siglo', 'Decada', 'Año', 'Mes', 'Dia'],
 	// Array que contiene las referencias a las funciones que generan los segmentos para los distintos niveles de zoom
@@ -81,11 +81,17 @@ var Regla = {
 			else { Regla.zoomAlejar(); }
 		});
 		
-		// Scroll de la linea
-		//Regla.$scroll.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal' });
+		// Scroll de la linea		
+		//Regla.$contenedor.overscroll({ wheelDelta: 0, showThumbs: true, direction: 'horizontal', });
 		//Regla.inicializarEventosScroll();
 		
 	},
+
+	activarScrollHorizontal: function () {
+
+		Regla.$contenedor.overscroll({ wheelDelta: 0, showThumbs: false, direction: 'horizontal', });
+	},
+
 	
 	// Carga por demanda una vez que llega al final de la línea
 	inicializarEventosScroll: function () {
@@ -97,7 +103,7 @@ var Regla = {
 		Regla.$scroll.bind('overscroll:driftend', function() { 
 			Regla.cargarSegmentosADemanda();
 			
-			// Ubica el titulo de cada lï¿½nea a la izquierda de la pantalla
+			// Ubica el titulo de cada línea a la izquierda de la pantalla
 			Linea.$lineas.find('span').css('left', Regla.$scroll.scrollLeft()).fadeIn();
 			alert("Método deprecado, suponemos que no se usa más. Si te salta este error checkeá el método inicializarEventosScroll() del script timeline.regla.js");	
 		});
@@ -108,7 +114,7 @@ var Regla = {
 		return Regla.$regla.children('div').length * Regla.ancho_segmento;
 	},
 	
-	// Calcula el ancho en px de un dï¿½a, dividiendo el ancho total de la regla por la cantidad de dias representadas en ella
+	// Calcula el ancho en px de un día, dividiendo el ancho total de la regla por la cantidad de dias representadas en ella
 	calcularAnchoDia: function () {
 		var total_dias = DateDiff.inDays(Regla.fecha_inicio, Regla.fecha_fin); 
 		return Regla.calcularAnchoRegla() / total_dias;
@@ -173,14 +179,15 @@ var Regla = {
 		
 		//Aca condiciona la cracion de segmentos a derecha si el valro absoluto de la diferencia de divs (calculada con los id que tienen) (el valor absouto representa la distancia en divs que hay desde el centro al de la derecha) y si esta distancia es menor a 20 crea sino no
 		//limiteCargaDiv es la distancia minima que debe haber en el div central y el que se encuentre en el limite de la regla
-		if(Math.abs(Regla.derecha-Regla.centro) < Regla.limiteCargaDiv){		Regla.cargarSegmentos(Regla.direccion_segmento.derecha);}
+		if (Math.abs(Regla.derecha-Regla.centro) < Regla.limiteCargaDiv) {
+			Regla.cargarSegmentos(Regla.direccion_segmento.derecha);
+		}
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
-		Regla.centro += Regla.cantidad_segmentos;
-		
+		Regla.centro += Regla.cantidad_segmentos;		
 		
 	},
 	
-	// Mueve el ï¿½rea visible de la regla hacia la izquierda y carga una nueva porciï¿½n de la regla en el caso que corresponda
+	// Mueve el área visible de la regla hacia la izquierda y carga una nueva porción de la regla en el caso que corresponda
 	scrollRetroceder: function () {
 		//ACTUALIZACION: Se han modificado el valor de avance del sroll de la regla por un cálculo que consiste en multiplicar la cantidad de segmentos a sumar por el ancho de cada segmento
 		var posicion = Regla.$scroll.scrollLeft() - (Regla.ancho_segmento * Regla.cantidad_segmentos);
@@ -189,11 +196,11 @@ var Regla = {
 		//Realiza el mismo calculo que en avanzar pero para el lado izquierdo
 		//limiteCargaDiv es la distancia minima que debe haber en el div central y el que se encuentre en el limite de la regla
 	   if(Math.abs(Regla.centro - Regla.izquierda) < Regla.limiteCargaDiv){Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);}
-		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
+		// Obtiene el primer/último segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(Regla.direccion_segmento.izquierda);
 		// Si no se llegï¿½ al aï¿½o 0
 		if(extremo.fecha_inicio.getFullYear() > 0) { 
-			//Sumo a la posiciï¿½n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posiciï¿½n.
+			//Sumo a la posiciï¿½n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posición.
 			Regla.$scroll.scrollLeft(posicion + (Regla.cantidad_segmentos * Regla.ancho_segmento));
 		}		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
@@ -223,7 +230,7 @@ var Regla = {
 		//TODO: REFACTORIZAR los métodos de manejo de regla, lí­neas y filtros
 		//Limpio la regla
 		Regla.$regla.html('');
-		//Limpio las lÃ­neas
+		//Limpio las lí­neas
 		Linea.$lineas.html('');
 		
 		// Agrego los segmentos, primero el del centro, luego seis a la izquierda y seis a la derecha
@@ -235,12 +242,12 @@ var Regla = {
 		Regla.fecha_inicio = Regla.$regla.children("div:first").data('fecha_inicio');
 		Regla.fecha_fin = Regla.$regla.children("div:last").data('fecha_fin');	
 
-		// Creo las lÃ­neas dentro de la regla para que no sean borradas en el limpiado
+		// Creo las líneas dentro de la regla para que no sean borradas en el limpiado
 		Linea.crearLinea();
 		Linea.mostrarLineas();
 		Linea.actualizarTodas();
 		
-		// Actualiza el tamaï¿½o de la regla de acuerdo a la cantidad de segmentos que se han cargado
+		// Actualiza el tamaño de la regla de acuerdo a la cantidad de segmentos que se han cargado
 		Regla.redimensionarRegla();	
 		
 		// Inserto el DIV de las Líneas dentro de la Regla
@@ -291,7 +298,7 @@ var Regla = {
 		// Si no se ingresa ninguna cantidad, por defecto se crea solo un segmento
 		cantidad = cantidad || 1;
 		
-		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
+		// Obtiene el primer/último segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(direccion);
 				
 		for(var i = 0; i < cantidad; i++) {
@@ -304,7 +311,7 @@ var Regla = {
 				extremo.fecha_fin = new Date((siglo - 1) * 100 + 99, 11, 31);								
 			}
 			else {
-				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
+				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 100, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 100, 'y', false);
@@ -335,7 +342,7 @@ var Regla = {
 		// Si no se ingresa ninguna cantidad, por defecto se crea solo un segmento
 		cantidad = cantidad || 1;
 		
-		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
+		// Obtiene el primer/último segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(direccion);
 				
 		for(var i = 0; i < cantidad; i++) {
@@ -349,7 +356,7 @@ var Regla = {
 				extremo.fecha_fin = new Date(mil + decada + 9, 11, 31);								
 			}
 			else {
-				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
+				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 10, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 10, 'y', false);
@@ -367,7 +374,7 @@ var Regla = {
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
-				etiqueta: 'Década \'' + decada + '<br />' + mil
+				etiqueta: 'D&eacute;cada \'' + decada + '<br />' + mil
 			});		
 			
 			clase ++;	
@@ -382,7 +389,7 @@ var Regla = {
 		// Si no se ingresa ninguna cantidad, por defecto se crea solo un segmento
 		cantidad = cantidad || 1;
 		
-		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
+		// Obtiene el primer/último segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(direccion);
 				
 		for(var i = 0; i < cantidad; i++) {
@@ -397,7 +404,7 @@ var Regla = {
 				Regla.centro = 0;					
 			}
 			else {
-				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
+				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
 				//Esta linea de código hace que se le sume al id del extremo el multiplicador dado que si es un segmento que se dibuja a la izquierda se le restará uno y qudara negativo, y si es para la derecha sumara uno positivo y quedará positivo
@@ -444,7 +451,7 @@ var Regla = {
 		// Si no se ingresa ninguna cantidad, por defecto se crea solo un segmento
 		cantidad = cantidad || 1;
 		
-		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
+		// Obtiene el primer/último segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(direccion);
 				
 		for(var i = 0; i < cantidad; i++) {
@@ -462,7 +469,7 @@ var Regla = {
 								
 			}
 			else {
-				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
+				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
 				//Esta linea de código hace que se le sume al id del extremo el multiplicador dado que si es un segmento que se dibuja a la izquierda se le restará uno y qudara negativo, y si es para la derecha sumara uno positivo y quedará positivo
 				extremo.miIDorigen += multiplicador;
@@ -506,7 +513,7 @@ var Regla = {
 		// Si no se ingresa ninguna cantidad, por defecto se crea solo un segmento
 		cantidad = cantidad || 1;
 		
-		// Obtiene el primer/ï¿½ltimo segmento existente en la regla y su correspondiente fecha de inicio y fin
+		// Obtiene el primer/último segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(direccion);
 				
 		for(var i = 0; i < cantidad; i++) {
@@ -523,7 +530,7 @@ var Regla = {
 				extremo.fecha_fin.setMinutes(59);
 			}
 			else {
-				// Calculo el multiplicador que determinarï¿½ si se deben restar o sumar 100 aï¿½os al segmento $extremo
+				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 1, 'd', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 1, 'd', false);
