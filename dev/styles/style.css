@@ -37,12 +37,12 @@ body {
 }
 
 #timeline-lineas .timeline-eventos .evento {
-	background: url(../images/pines.png) no-repeat 0 0;
-	width: 18px;
-	min-height: 20px;
+	background: url(../images/pines.png) no-repeat;
+	width: 100%;
+	min-height: 100%;
 	position: absolute;
 	cursor: pointer;
-	margin: 0;
+	margin: 6;
 	padding: 0;
 }
 
