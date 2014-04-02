@@ -553,9 +553,13 @@ var Regla = {
 		se pueda llamar al metodo append y se creen a partir del ultimo div de tiempo y no a partir de la linea, después al salir del for se vuelve a poner la linea al final del div "timeline-regla" ej: div div div linea ---> remove(linea) ----> div div div --> append(div) ---> div div div div ---> apend(linea) ---> div div div div linea
 		La validación por regla.inicio = 1 es de una variable que se creo en regla para poder validar que no esta creando la linea sino que esta avanzando o retrocediendo ya que si es el inicio no se ha creado la linea todavía y produce errores y redundancia de divs con el mismo año.		
 		*/
-		if(Regla.inicio === 1){		
-		$linea = Regla.$regla.children().eq(-1);
-		Regla.$regla.children().last().remove()}
+		// creo variable para que guarde auxiliarmente los datos de linea que vienen
+		var auxDataFiltros;
+		if(Regla.inicio === 1){	
+			$linea = Regla.$regla.children().eq(-1);
+			auxDataFiltros = $linea.children('div.timeline-eventos:last').data('linea')
+			Regla.$regla.children().last().remove()
+		}
 		for(var i = 0; i < segmentos.length; i++) {
 			// Reemplaza las claves por los valores correspondientes a la clase y la etiqueta
 			div = Regla.html_segmento
@@ -580,7 +584,11 @@ var Regla = {
 				.data('fecha_inicio', segmentos[i].fecha_inicio)
 				.data('fecha_fin', segmentos[i].fecha_fin);
 		}
-		if(Regla.inicio === 1){Regla.$regla.append($linea);}
+		if(Regla.inicio === 1) {
+			// Por alguna razón los remove usados arriba borran la data de la línea, vuelvo a setearla
+			$linea.children('div.timeline-eventos:last').data('linea', auxDataFiltros);
+			Regla.$regla.append($linea);
+		}
 	},
 
 

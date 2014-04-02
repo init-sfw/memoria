@@ -12,6 +12,7 @@ var Linea = {
 	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
 							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
 							<div class="popBody">{descripcion}</div> \
+							<div class="tipBody">{link}</div> \
 						</div>',
 	
 	// Html que representa la descripcion de un evento cuando se posa el mouse sobre él
@@ -113,7 +114,8 @@ var Linea = {
 		popup = Linea.plantilla_popup.replace('{fecha}', po.fecha)
 					.replace('{titulo}', po.titulo)
 					.replace('{imagen}', po.imagen)
-					.replace('{descripcion}', po.descripcionBreve);
+					.replace('{descripcion}', po.descripcionBreve)
+					.replace('{link}', po.link);
 		
 		$('body').append(popup);
 		$('#timeline-popup').dialog();
