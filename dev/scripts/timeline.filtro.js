@@ -109,7 +109,7 @@ var Filtros = {
 	},
 
 	cargarComboPais : function (div) {
-		Filtros.cargarCombo(div, 'data/paises.json')
+		Filtros.cargarCombo(div, 'data/paises_ar.json')
 	},
 	
 	cargarComboCategorias : function (div) {

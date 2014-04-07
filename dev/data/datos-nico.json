@@ -47,16 +47,6 @@
     "pais" : "MN",
     "ponderacion" : 1,
     "titulo" : "Mongolia"
-  },
- { "categoria" : "historia",
-    "descripcionBreve" : "mundial",
-    "fecha" : "19/10/2008",
-    "fechaCreacion" : "14/03/2014",
-    "imagen" : "",
-    "link" : "http://es.wikipedia.org/wiki/Anexo:Fútbol_en_los_Juegos_Olímpicos_de_Londres_1908",
-    "pais" : "-1",
-    "ponderacion" : 1,
-    "titulo" : "mundial"
   }
 
 ]
