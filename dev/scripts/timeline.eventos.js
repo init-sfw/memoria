@@ -19,7 +19,7 @@ var Eventos = {
 
 	filtrar: function (fecha_desde, fecha_hasta, ponderacion, filtros) {
 		var deferred = $.Deferred();
-		var consulta = $.getJSON('data/datos-ext-prueba-alfa2.json');
+		var consulta = $.getJSON('data/datos-deportes.json');
 		
 		consulta.success(function (eventos) {
 			var query = Enumerable
