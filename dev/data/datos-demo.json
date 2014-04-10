@@ -1,0 +1,11 @@
+﻿[ { "categoria" : "historia",
+    "descripcionBreve" : "un ejemplo de argentina",
+    "fecha" : "13/06/2009",
+    "fechaCreacion" : "14/03/2014",
+    "imagen" : "",
+    "link" : "http://es.wikipedia.org/wiki/Copa_Mundial_de_Fútbol_de_1982",
+    "pais" : "AR",
+    "ponderacion" : 1,
+    "titulo" : "Argentina"
+  },
+]
