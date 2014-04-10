@@ -308,14 +308,30 @@ var Regla = {
 				clase = 2;
 				
 				extremo.fecha_inicio = new Date((siglo - 1) * 100, 0, 1);
-				extremo.fecha_fin = new Date((siglo - 1) * 100 + 99, 11, 31);								
+				extremo.fecha_fin = new Date((siglo - 1) * 100 + 99, 11, 31);
+
+				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0			
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;								
 			}
 			else {
 				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				//Esta linea de código hace que se le sume al id del extremo el multiplicador dado que si es un segmento que se dibuja a la izquierda se le restará uno y qudara negativo, y si es para la derecha sumara uno positivo y quedará positivo
+				extremo.miIDorigen += multiplicador; 
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 100, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 100, 'y', false);
 				
+				//En esta validación se pregunta si la direccíon es derecha o izquierda para setear las variables derecha e izquierda segun corresponda con el id que se encuentre al extremo de la regla.
+				//Se podría optimizar este codigo haciendo que se sete solo al final del for para que no se repita todas las veces
+				if(direccion === Regla.direccion_segmento.izquierda)
+				{
+					Regla.izquierda = extremo.miIDorigen;		
+				} 
+				else 
+				{
+						Regla.derecha = extremo.miIDorigen;	
+				}
 				// Si la fecha es igual a false es porque se llego al Siglo 0
 				if(direccion === Regla.direccion_segmento.izquierda && extremo.fecha_inicio.getFullYear() < 0) { break; }
 								
@@ -324,6 +340,8 @@ var Regla = {
 			}
 			
 			segmentos.push({
+				//aca se agrega a segmentos el id que corresponde para dibujar el div
+				miID: extremo.miIDorigen,
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
@@ -353,14 +371,31 @@ var Regla = {
 				clase = 2;
 				
 				extremo.fecha_inicio = new Date(mil + decada, 1, 1);
-				extremo.fecha_fin = new Date(mil + decada + 9, 11, 31);								
+				extremo.fecha_fin = new Date(mil + decada + 9, 11, 31);	
+
+				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0			
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;							
 			}
 			else {
 				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				//Esta linea de código hace que se le sume al id del extremo el multiplicador dado que si es un segmento que se dibuja a la izquierda se le restará uno y qudara negativo, y si es para la derecha sumara uno positivo y quedará positivo
+				extremo.miIDorigen += multiplicador; 
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 10, 'y', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 10, 'y', false);
 				
+
+				//En esta validación se pregunta si la direccíon es derecha o izquierda para setear las variables derecha e izquierda segun corresponda con el id que se encuentre al extremo de la regla.
+				//Se podría optimizar este codigo haciendo que se sete solo al final del for para que no se repita todas las veces
+				if(direccion === Regla.direccion_segmento.izquierda)
+				{
+					Regla.izquierda = extremo.miIDorigen;		
+				} 
+				else 
+				{
+						Regla.derecha = extremo.miIDorigen;	
+				}
 				// No se continua agregando segmentos cuando se alcanza el aï¿½o 0
 				if(direccion === Regla.direccion_segmento.izquierda && extremo.fecha_inicio.getFullYear() < 0) { break; }
 									
@@ -371,6 +406,8 @@ var Regla = {
 			}
 			
 			segmentos.push({
+				//aca se agrega a segmentos el id que corresponde para dibujar el div
+				miID: extremo.miIDorigen,
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
@@ -523,6 +560,9 @@ var Regla = {
 				
 				extremo.fecha_inicio = new Date(Regla.fecha_foco);
 				extremo.fecha_fin = new Date(Regla.fecha_foco);
+				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0			
+				extremo.miIDorigen = 0;
+				Regla.centro = 0;
 				
 				extremo.fecha_inicio.setHours(0);
 				extremo.fecha_inicio.setMinutes(0);
@@ -532,9 +572,21 @@ var Regla = {
 			else {
 				// Calculo el multiplicador que determinará si se deben restar o sumar 100 años al segmento $extremo
 				var multiplicador = (direccion === Regla.direccion_segmento.izquierda) ? (-1) : 1;
+				//Esta linea de código hace que se le sume al id del extremo el multiplicador dado que si es un segmento que se dibuja a la izquierda se le restará uno y qudara negativo, y si es para la derecha sumara uno positivo y quedará positivo
+				extremo.miIDorigen += multiplicador; 
 				extremo.fecha_inicio = $.addTimeToDate(extremo.fecha_inicio, multiplicador * 1, 'd', false);
 				extremo.fecha_fin = $.addTimeToDate(extremo.fecha_fin, multiplicador * 1, 'd', false);
 				
+				//En esta validación se pregunta si la direccíon es derecha o izquierda para setear las variables derecha e izquierda segun corresponda con el id que se encuentre al extremo de la regla.
+				//Se podría optimizar este codigo haciendo que se sete solo al final del for para que no se repita todas las veces
+				if(direccion === Regla.direccion_segmento.izquierda)
+				{
+					Regla.izquierda = extremo.miIDorigen;		
+				} 
+				else 
+				{
+						Regla.derecha = extremo.miIDorigen;	
+				}
 				// Si la fecha es igual a false es porque se llego al Siglo 0
 				if(direccion === Regla.direccion_segmento.izquierda && extremo.fecha_inicio.getFullYear() < 0) { break; }
 									
@@ -542,6 +594,8 @@ var Regla = {
 			}
 			
 			segmentos.push({
+				//aca se agrega a segmentos el id que corresponde para dibujar el div
+				miID: extremo.miIDorigen,
 				fecha_inicio: extremo.fecha_inicio,
 				fecha_fin: extremo.fecha_fin,
 				clase: Regla.clase_segmento[(clase + 1) % 2],
