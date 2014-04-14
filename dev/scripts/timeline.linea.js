@@ -134,9 +134,7 @@ var Linea = {
 					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');
 		
 		$('body').append(tooltip);
-			$('#timeline-tooltip').qtip({position: {
-        viewport: auto // Adjust position to keep within the window
-    }});
+		//$('#timeline-tooltip').qtip({position: { viewport: auto // Adjust position to keep within the window    }});
 		
 		var posicion = $(this).offset();
 		 
