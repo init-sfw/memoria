@@ -85,7 +85,7 @@ var Linea = {
 					
 					// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
 					$linea.find('div.evento:last')
-						.css('top', new String ($linea.index() * 140 + 53) + 'px')
+						.css('top', new String ($linea.index() * 102 + 53) + 'px')
 						.css('left', Regla.calcularPosicionEvento(val))
 						.data('info', val);
 				}										  
@@ -133,7 +133,10 @@ var Linea = {
 					.replace('{imagen}', tip.imagen)
 					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');
 		
-		$('body').append(tooltip);     
+		$('body').append(tooltip);
+			$('#timeline-tooltip').qtip({position: {
+        viewport: auto // Adjust position to keep within the window
+    }});
 		
 		var posicion = $(this).offset();
 		 

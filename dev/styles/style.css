@@ -42,8 +42,8 @@ body {
 	height: 25px;
 	position: absolute;
 	cursor: pointer;
-	margin: 6;
-	padding: 0;
+	margin: 6;	
+	padding-bottom: 240;
 }
 
 #timeline-lineas .categoria-musica { background-position: -152px 0 !important; }
