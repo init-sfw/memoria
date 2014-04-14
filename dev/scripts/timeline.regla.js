@@ -123,7 +123,7 @@ var Regla = {
 	// Calcula la distancia en px respecto del margen izquierdo de la derecha, multiplicando el ancho en px de un d�a por la diferencia de d�as entre la fecha de inicio de la regla y la fecha de evento
 	calcularPosicionEvento: function (evento) {
 		var fecha_evento = evento.fecha.parseDate();		
-		var dias = DateDiff.inDays(Regla.fecha_inicio, fecha_evento); 
+		var dias = DateDiff.inDays(Regla.fecha_inicio, fecha_evento)+1; 
 		
 		return Regla.calcularAnchoDia() * dias;
 	},	
@@ -494,11 +494,11 @@ var Regla = {
 		for(var i = 0; i < cantidad; i++) {
 			// Si es el primer segmento
 			if(!extremo.fecha_inicio) {
-				var mes = Regla.fecha_foco.getUTCMonth();
+				var mes = Regla.fecha_foco.getUTCMonth()+1;
 				clase = 2;				
 				
 				extremo.fecha_inicio = new Date(Regla.fecha_foco.getFullYear(), mes, 1);
-				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), mes + 1, 1);
+				extremo.fecha_fin = new Date(Regla.fecha_foco.getFullYear(), mes+1, 1);
 				//Al ser el primer segmento de la regla se le setea a extremo el id = 0 y como ya se dibujara en la regla se setea el valor central de la pantalla en 0
 				extremo.miIDorigen = 0;
 				Regla.centro = 0;
