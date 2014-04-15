@@ -90,7 +90,6 @@ var Linea = {
 						.data('info', val);
 				}										  
 			});
-			
 			Linea.inicializarEventosMouseHover($linea);
 			Linea.inicializarEventosMouseClick($linea);
 		});		
@@ -102,10 +101,9 @@ var Linea = {
 	},
 	
 	// Agrega a los eventos existentes en una línea los eventos de mouse necesarios para mostrar/ocultar los tooltips
-	inicializarEventosMouseHover: function ($linea) {		
+	inicializarEventosMouseHover: function ($linea) {	
 		$linea.children('div.evento')
-			.mouseenter(Linea.mostrarResumen)
-			.mouseleave(Linea.ocultarResumen);
+			.mouseenter(Linea.mostrarResumen);
 	},
 
 	mostrarDetalleEvento: function() {
@@ -133,11 +131,9 @@ var Linea = {
 					.replace('{imagen}', tip.imagen)
 					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');
 		
-		$('body').append(tooltip);
-		//$('#timeline-tooltip').qtip({position: { viewport: auto // Adjust position to keep within the window    }});
 		
+		$('body').append(tooltip);
 		var posicion = $(this).offset();
-		 
 		$('#timeline-tooltip')
 			//Define la posicion (x, y) del tooltip
 			.css('top', posicion.top + 30)
@@ -147,6 +143,10 @@ var Linea = {
 			.css('width', 200)
 			//.css('height', 200)
 			
+			//le agrega el foco al tooltip
+			.focus(true)
+			//hace que se cierre cuando el mouse se va fuera del tooltip
+			.mouseleave(Linea.ocultarResumen)
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
 			.fadeTo('10',0.8);		
@@ -158,6 +158,9 @@ var Linea = {
 	},
 	
 	ocultarResumen: function () {
+	
+		//le agrega el efecto de hide antes de remover el tooltip. 
+		$('body').children('#timeline-tooltip').hide({effect:"explode",duration:1000})
 		//Elimina el div que contiene el tooltip
 		$('body').children('#timeline-tooltip').remove();
 	}
