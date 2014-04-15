@@ -16,6 +16,9 @@ var Regla = {
 	fecha_inicio: new Date(),
 	// Fecha de fin del ultimo segmento de la regla
 	fecha_fin: new Date(), 
+	
+	//Ancho del div que contiene la imagen representativa de un evento en la linea
+	ancho_evento: 30,
 		
 	meses: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
 	dias: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
@@ -110,8 +113,9 @@ var Regla = {
 	},
 	
 	// Calcula el ancho de la regla multiplicando la cantidad de segmentos por el ancho en px de los mismos
+	//MODIFICACION: Se le resta uno porque al tomar la cantidad de divs que hay en regla (length) tambien toma en cuenta timeline-lineas div lo que hace que el calculo de mal, por eso se le resta uno) 
 	calcularAnchoRegla: function () {
-		return Regla.$regla.children('div').length * Regla.ancho_segmento;
+		return (Regla.$regla.children('div').length - 1) * Regla.ancho_segmento;
 	},
 	
 	// Calcula el ancho en px de un día, dividiendo el ancho total de la regla por la cantidad de dias representadas en ella
@@ -121,11 +125,12 @@ var Regla = {
 	},
 	
 	// Calcula la distancia en px respecto del margen izquierdo de la derecha, multiplicando el ancho en px de un dï¿½a por la diferencia de dï¿½as entre la fecha de inicio de la regla y la fecha de evento
+	//MODIFICACION: Se le resta a la posicion del evento la mitad del tamaño del div de la imagen representativa del evento para que este quede centrado en la fecha que corresponde y no quede al comienzo de la fecha que corresponde. Se utiliza el valor del atributo ancho_evento
 	calcularPosicionEvento: function (evento) {
 		var fecha_evento = evento.fecha.parseDate();		
-		var dias = DateDiff.inDays(Regla.fecha_inicio, fecha_evento)+1; 
-		
-		return Regla.calcularAnchoDia() * dias;
+		var dias = DateDiff.inDays(Regla.fecha_inicio, fecha_evento); 
+		var resto =  Regla.ancho_evento / 2;
+		return (Regla.calcularAnchoDia() * dias) - resto;
 	},	
 	
 	// Indica si un evento se encuentra dentro del rango de fechas visibles
