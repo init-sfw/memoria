@@ -1,11 +1,21 @@
 ﻿[ { "categoria" : "historia",
-    "descripcionBreve" : "un ejemplo de argentina",
-    "fecha" : "13/06/2009",
-    "fechaCreacion" : "14/03/2014",
-    "imagen" : "",
-    "link" : "http://es.wikipedia.org/wiki/Copa_Mundial_de_Fútbol_de_1982",
+    "descripcionBreve" : "La Primera Invasión Inglesa de 1806, en la que las tropas británicas ocuparon la ciudad de Buenos Aires, capital del Virreinato del Río de la Plata, y que fueron vencidas 45 días después por un ejército proveniente de Montevideo comandado por Santiago de Liniers, al que se sumaron milicias populares porteñas, proceso conocido como la Reconquista.",
+    "fecha" : "24/06/1806",
+    "fechaCreacion" : "10/04/2014",
+    "imagen" : "images/demo/inv_inglesa1.png",
+    "link" : "http://es.wikipedia.org/wiki/Invasiones_Inglesas#Primera_Invasi.C3.B3n_a_Buenos_Aires",
     "pais" : "AR",
-    "ponderacion" : 1,
-    "titulo" : "Argentina"
+    "ponderacion" : 0,
+    "titulo" : "Primera invasión inglesa"
+  },
+  { "categoria" : "historia",
+    "descripcionBreve" : "La Segunda Invasión Inglesa de 1807, en la que las tropas británicas, luego de tomar Montevideo, fueron rechazadas cuando intentaron ocupar Buenos Aires, por las fuerzas defensoras, que se componían de tropas regulares y de milicias urbanas, integradas por población que se había armado y organizado militarmente durante el curso de las invasiones; el proceso conocido como la Defensa.",
+    "fecha" : "24/06/1807",
+    "fechaCreacion" : "10/04/2014",
+    "imagen" : "images/demo/inv_inglesa2.png",
+    "link" : "http://es.wikipedia.org/wiki/Invasiones_Inglesas#Primera_Invasi.C3.B3n_a_Buenos_Aires",
+    "pais" : "AR",
+    "ponderacion" : 0,
+    "titulo" : "Segunda invasión inglesa"
   },
 ]
