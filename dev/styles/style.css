@@ -43,7 +43,8 @@ body {
 	position: absolute;
 	cursor: pointer;
 	margin: 6;
-	padding: 0;
+		
+	
 }
 
 #timeline-lineas .categoria-musica { background-position: -152px 0 !important; }
@@ -197,6 +198,7 @@ body {
 
 	color:#000;
 	overflow:hidden;
+	
 
 	/* Color alternativo para versiones que no soporten degradados */
 	background-color:#f4f0ec;
