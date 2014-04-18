@@ -14,10 +14,10 @@ var Regla = {
 	fecha_foco: new Date(),
 	// Fecha de inicio del primer segmento de la regla
 	fecha_inicio: new Date(),
-	// Fecha de fin del ultimo segmento de la regla
+	// Fecha de fin del último segmento de la regla
 	fecha_fin: new Date(), 
 	
-	//Ancho del div que contiene la imagen representativa de un evento en la linea
+	//Ancho del div que contiene la imagen representativa de un evento en la línea
 	ancho_evento: 30,
 		
 	meses: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -30,11 +30,11 @@ var Regla = {
 	// Array que contiene las referencias a las funciones que generan los segmentos para los distintos niveles de zoom
 	funcion_zoom: [],
 		
-	// Cantidad de segmentos a mostrar a cada lado de la fecha_foco, y la cantidad que se agregarï¿½ por demanda
+	// Cantidad de segmentos a mostrar a cada lado de la fecha_foco, y la cantidad que se agregaría por demanda
 	cantidad_segmentos: 6,
 	// Ancho en px de cada unos de los segmentos
 	ancho_segmento: 135,
-	// Posiciï¿½n del scroll en la que se realizara la carga de segmentos del lado izquierdo de la lï¿½nea
+	// Posición del scroll en la que se realizara la carga de segmentos del lado izquierdo de la línea
 	posicion_scroll_limite_izquierdo:  2000,
 	
 	//Se crea una variable inicio para saber si se encuentra en el comienzo de la creación de la regla. Sirve en el metodo dibujar Segmentos
@@ -73,15 +73,19 @@ var Regla = {
 		// Efecto ZOOM con la rueda del mouse
 		Regla.$regla.mousewheel(function(e, delta) {
 			Regla.$segmento = $(e.target).is('.periodo-titulo') ? $(e.target.parentNode) : $(e.target);
-			Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
+			// Pregunto si el elemento guardado en Regla.$segmento es un período para evitar problema de múltiples mousewheels
+			if (Regla.$segmento.attr('class').contains('periodo'))
+			{ 
+				Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
 			
-			// Si aï¿½n no se han mostrado los segmentos salto de la funciï¿½n
-			if(!Regla.fecha_foco) {
-				return;
+				// Si aún no se han mostrado los segmentos salto de la funciï¿½n
+				if(!Regla.fecha_foco) {
+					return;
+				}
+												   
+				if(delta > 0) { Regla.zoomAcercar(); }
+				else { Regla.zoomAlejar(); }
 			}
-											   
-			if(delta > 0) { Regla.zoomAcercar(); }
-			else { Regla.zoomAlejar(); }
 		});
 		
 		// Scroll de la linea		
@@ -194,18 +198,18 @@ var Regla = {
 	
 	// Mueve el área visible de la regla hacia la izquierda y carga una nueva porción de la regla en el caso que corresponda
 	scrollRetroceder: function () {
-		//ACTUALIZACION: Se han modificado el valor de avance del sroll de la regla por un cálculo que consiste en multiplicar la cantidad de segmentos a sumar por el ancho de cada segmento
-		var posicion = Regla.$scroll.scrollLeft() - (Regla.ancho_segmento * Regla.cantidad_segmentos);
-		
+		var posicion = Regla.$scroll.scrollLeft() - (Regla.ancho_segmento * Regla.cantidad_segmentos);		
 		
 		//Realiza el mismo calculo que en avanzar pero para el lado izquierdo
 		//limiteCargaDiv es la distancia minima que debe haber en el div central y el que se encuentre en el limite de la regla
-	   if(Math.abs(Regla.centro - Regla.izquierda) < Regla.limiteCargaDiv){Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);}
+		if (Math.abs(Regla.centro - Regla.izquierda) < Regla.limiteCargaDiv) {
+			Regla.cargarSegmentos(Regla.direccion_segmento.izquierda);
+		}
 		// Obtiene el primer/último segmento existente en la regla y su correspondiente fecha de inicio y fin
 		var extremo = Regla.obtenerSegmentoOrigen(Regla.direccion_segmento.izquierda);
-		// Si no se llegï¿½ al aï¿½o 0
+		// Si no se llegó al año 0
 		if(extremo.fecha_inicio.getFullYear() > 0) { 
-			//Sumo a la posiciï¿½n del scroll los segmentos agregados hacia la izquierda para que se mantenga en posición.
+			//Sumo a la posición del scroll los segmentos agregados hacia la izquierda para que se mantenga en posición.
 			Regla.$scroll.scrollLeft(posicion + (Regla.cantidad_segmentos * Regla.ancho_segmento));
 		}		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
@@ -615,16 +619,23 @@ var Regla = {
 	
 	dibujarSegmentos: function (segmentos, direccion) {
 		/* ESTE METODO FUE MODIFICADO EL 29/10/2013
-		antes de comenzar con el dibujado de los nuevos div se extrae la linea que se encuentra al final del div "timeline-regla" para que 
-		se pueda llamar al metodo append y se creen a partir del ultimo div de tiempo y no a partir de la linea, después al salir del for se vuelve a poner la linea al final del div "timeline-regla" ej: div div div linea ---> remove(linea) ----> div div div --> append(div) ---> div div div div ---> apend(linea) ---> div div div div linea
+		antes de comenzar con el dibujado de los nuevos div se extrae la linea que se encuentra al final del div "timeline-regla" para que se pueda llamar al metodo append y se creen a partir del ultimo div de tiempo y no a partir de la linea, después al salir del for se vuelve a poner la linea al final del div "timeline-regla" ej: div div div linea ---> remove(linea) ----> div div div --> append(div) ---> div div div div ---> apend(linea) ---> div div div div linea
 		La validación por regla.inicio = 1 es de una variable que se creo en regla para poder validar que no esta creando la linea sino que esta avanzando o retrocediendo ya que si es el inicio no se ha creado la linea todavía y produce errores y redundancia de divs con el mismo año.		
 		*/
 		// creo variable para que guarde auxiliarmente los datos de linea que vienen
-		var auxDataFiltros;
+		var auxDataFiltros = [];
 		if(Regla.inicio === 1){	
-			$linea = Regla.$regla.children().eq(-1);
-			auxDataFiltros = $linea.children('div.timeline-eventos:last').data('linea')
-			Regla.$regla.children().last().remove()
+			/*$linea = Regla.$regla.children().eq(-1);
+			// Guardo la data del filtro de cada línea
+			auxDataFiltros = $linea.children('div.timeline-eventos').data('linea');
+			Regla.$regla.children().last().remove(); */
+
+			var lineasColeccion = Linea.$lineas.children('div.timeline-eventos');
+			$.each(lineasColeccion, function (index, value) {
+				auxDataFiltros[index] = $(this).data('linea');
+				});
+			// Borro las líneas de la regla para que queden sólo los períodos
+			Regla.$regla.children().last().remove();
 		}
 		for(var i = 0; i < segmentos.length; i++) {
 			// Reemplaza las claves por los valores correspondientes a la clase y la etiqueta
@@ -651,9 +662,12 @@ var Regla = {
 				.data('fecha_fin', segmentos[i].fecha_fin);
 		}
 		if(Regla.inicio === 1) {
-			// Por alguna razón los remove usados arriba borran la data de la línea, vuelvo a setearla
-			$linea.children('div.timeline-eventos:last').data('linea', auxDataFiltros);
-			Regla.$regla.append($linea);
+			// Se vuelve a setear la data de las líneas
+			var lineasColeccion = Linea.$lineas.children('div.timeline-eventos');
+			$.each(lineasColeccion, function (index, value) {
+				$(this).data('linea',auxDataFiltros[index]);
+				});
+			Regla.$regla.append(Linea.$lineas);
 		}
 	},
 

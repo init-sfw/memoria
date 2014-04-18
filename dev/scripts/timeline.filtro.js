@@ -77,7 +77,6 @@ var Filtros = {
 		var filtros = [];
 		
 		// Recupera en un vector todos los filtros ingresados
-		//ACUTALIZACION	 Se agrega una validacion ya que cuando carga la pagina pasa por aqui y la variable $filtros todavia no existe.
 		if(Filtros.$filtros != null){		
 		Filtros.$filtros.children('div.filtro').each(function () {
 			filtros.push($(this).data('filtro'));
