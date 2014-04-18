@@ -73,15 +73,19 @@ var Regla = {
 		// Efecto ZOOM con la rueda del mouse
 		Regla.$regla.mousewheel(function(e, delta) {
 			Regla.$segmento = $(e.target).is('.periodo-titulo') ? $(e.target.parentNode) : $(e.target);
-			Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
+			// Pregunto si el elemento guardado en Regla.$segmento es un período para evitar problema de múltiples mousewheels
+			if (Regla.$segmento.attr('class').contains('periodo'))
+			{ 
+				Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
 			
-			// Si aï¿½n no se han mostrado los segmentos salto de la funciï¿½n
-			if(!Regla.fecha_foco) {
-				return;
+				// Si aún no se han mostrado los segmentos salto de la funciï¿½n
+				if(!Regla.fecha_foco) {
+					return;
+				}
+												   
+				if(delta > 0) { Regla.zoomAcercar(); }
+				else { Regla.zoomAlejar(); }
 			}
-											   
-			if(delta > 0) { Regla.zoomAcercar(); }
-			else { Regla.zoomAlejar(); }
 		});
 		
 		// Scroll de la linea		
