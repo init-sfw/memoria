@@ -97,6 +97,7 @@ var Filtros = {
 		});
 		
 		Linea.mostrarLineas();
+		Linea.actualizarTodas();
 	},
 
 	cargarCombosFiltros : function () {
