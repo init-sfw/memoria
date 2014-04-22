@@ -93,6 +93,7 @@ var Linea = {
 			
 			Linea.inicializarEventosMouseHover($linea);
 			Linea.inicializarEventosMouseClick($linea);
+			Linea.ocultarTooltips();
 		});		
 	},
 	
@@ -106,7 +107,7 @@ var Linea = {
 		$linea.children('div.evento')
 			.mouseover(Linea.mostrarResumen);		
 	},
-
+	
 	mostrarDetalleEvento: function() {
 		var po = $(this).data('info');
 		
@@ -128,6 +129,8 @@ var Linea = {
 		//elimina los anteriores tooltip si existieren
 		Linea.ocultarResumen();	
 		var tip = $(this).data('info'); 
+		
+
 		
 		tooltip = Linea.plantilla_tooltip.replace('{fecha}', tip.fecha)
 					.replace('{titulo}', tip.titulo)
@@ -151,7 +154,7 @@ var Linea = {
 			//le agrega el foco al tooltip
 			.focus(true)
 			//hace que se cierre el tooltip con un efecto de DROP cuando se sale del popup.
-			.mouseleave(function(){$('#timeline-tooltip').hide({effect:"drop",duration:1000})})			
+			.mouseleave(function(){$('#timeline-tooltip').hide({effect:"drop",duration:1000});})			
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
 			.fadeTo('10',0.8)
@@ -164,12 +167,17 @@ var Linea = {
 	},
 	
 	ocultarResumen: function () {
-	
-		 
-		$('body').children('#timeline-tooltip').each(function(){$('body').children('#timeline-tooltip').remove()})
+		
+			$('body').children('#timeline-tooltip').each(function(){$('body').children('#timeline-tooltip').remove()});
+		
 		//le agrega el efecto de hide antes de remover el tooltip.
 		//	.hide({effect:"drop",duration:1000})
 		//Elimina el div que contiene el tooltip
+		
+	},
+	
+	ocultarTooltips: function(){
+		$('body').children('#accesibilidad').mouseover(function(){Linea.ocultarResumen();});
 		
 	}
 };
