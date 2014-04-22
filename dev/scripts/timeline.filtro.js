@@ -73,6 +73,8 @@ var Filtros = {
 	},
 	
 	// Crea las lineas correspondientes a los filtros seleccionados
+
+
 	generarLineas: function () {
 		var filtros = [];
 		
@@ -95,6 +97,7 @@ var Filtros = {
 		});
 		
 		Linea.mostrarLineas();
+		Linea.actualizarTodas();
 	},
 
 	cargarCombosFiltros : function () {

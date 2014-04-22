@@ -366,3 +366,9 @@ margin-right: 10px;
 	width: 100%;
 }
 
+/* ACCESIBILIDAD */
+#accesibilidad{bottom: 2px;right: 2px;float: right;position: absolute;}
+#accesibilidad-content{display: none;}
+#accesibilidad-content ul{list-style: none;}
+#accesibilidad-icon{width: 32px;float: right;}
+
