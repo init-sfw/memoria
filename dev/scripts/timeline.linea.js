@@ -92,7 +92,7 @@ var Linea = {
 			});
 			
 			Linea.inicializarEventosMouseHover($linea);
-			Linea.inicializarEventosMouseClick($linea);
+			Linea.inicializarEventosMouseClick($linea);			
 		});		
 	},
 	
@@ -104,9 +104,10 @@ var Linea = {
 	// Agrega a los eventos existentes en una línea los eventos de mouse necesarios para mostrar/ocultar los tooltips
 	inicializarEventosMouseHover: function ($linea) {			
 		$linea.children('div.evento')
-			.mouseover(Linea.mostrarResumen);		
+			.mouseleave(Linea.ocultarTooltips)
+			.mouseenter(Linea.mostrarResumen);		
 	},
-
+	
 	mostrarDetalleEvento: function() {
 		var po = $(this).data('info');
 		
@@ -132,8 +133,7 @@ var Linea = {
 		tooltip = Linea.plantilla_tooltip.replace('{fecha}', tip.fecha)
 					.replace('{titulo}', tip.titulo)
 					.replace('{imagen}', tip.imagen)
-					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');
-		
+					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');		
 		
 		$('body').append(tooltip);
 		var posicion = $(this).offset();
@@ -151,7 +151,7 @@ var Linea = {
 			//le agrega el foco al tooltip
 			.focus(true)
 			//hace que se cierre el tooltip con un efecto de DROP cuando se sale del popup.
-			.mouseleave(function(){$('#timeline-tooltip').hide({effect:"drop",duration:1000})})			
+			.mouseleave(function(){$('#timeline-tooltip').hide({effect:"drop",duration:1000});})			
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
 			.fadeTo('10',0.8)
@@ -164,12 +164,19 @@ var Linea = {
 	},
 	
 	ocultarResumen: function () {
-	
-		 
-		$('body').children('#timeline-tooltip').each(function(){$('body').children('#timeline-tooltip').remove()})
-		//le agrega el efecto de hide antes de remover el tooltip.
-		//	.hide({effect:"drop",duration:1000})
-		//Elimina el div que contiene el tooltip
-		
+			//Elimina los div que contienen los tooltips
+			$('body').children('#timeline-tooltip').each(function(){$('body').children('#timeline-tooltip').remove()});
+			
+			//quita los eventos mouseover asociados a la regla para "reinicializar" el evento y permitir que al salir del
+			//pin se tome el evento mouseover para la regla nuevamente y se active el ocultarTooltips otra vez.
+			Regla.$regla.unbind("mouseover");		
+	},
+
+	//evento que oculta los tooltip cuando se pasa con el puntero del mouse sobre la regla. Solo se activa cuando se sale del diametro del pin. 
+	ocultarTooltips: function(){
+				Regla.$regla.mouseover(function(){Linea.ocultarResumen()});
+			
 	}
+	
+	
 };
