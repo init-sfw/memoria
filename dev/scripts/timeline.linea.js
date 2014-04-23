@@ -92,8 +92,7 @@ var Linea = {
 			});
 			
 			Linea.inicializarEventosMouseHover($linea);
-			Linea.inicializarEventosMouseClick($linea);
-			Linea.ocultarTooltips();
+			Linea.inicializarEventosMouseClick($linea);			
 		});		
 	},
 	
@@ -105,7 +104,8 @@ var Linea = {
 	// Agrega a los eventos existentes en una línea los eventos de mouse necesarios para mostrar/ocultar los tooltips
 	inicializarEventosMouseHover: function ($linea) {			
 		$linea.children('div.evento')
-			.mouseover(Linea.mostrarResumen);		
+			.mouseleave(Linea.ocultarTooltips)
+			.mouseenter(Linea.mostrarResumen);		
 	},
 	
 	mostrarDetalleEvento: function() {
@@ -130,13 +130,10 @@ var Linea = {
 		Linea.ocultarResumen();	
 		var tip = $(this).data('info'); 
 		
-
-		
 		tooltip = Linea.plantilla_tooltip.replace('{fecha}', tip.fecha)
 					.replace('{titulo}', tip.titulo)
 					.replace('{imagen}', tip.imagen)
-					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');
-		
+					.replace('{descripcion}', tip.descripcionBreve.substring(0, 75) + '...');		
 		
 		$('body').append(tooltip);
 		var posicion = $(this).offset();
@@ -167,17 +164,19 @@ var Linea = {
 	},
 	
 	ocultarResumen: function () {
-		
+			//Elimina los div que contienen los tooltips
 			$('body').children('#timeline-tooltip').each(function(){$('body').children('#timeline-tooltip').remove()});
-		
-		//le agrega el efecto de hide antes de remover el tooltip.
-		//	.hide({effect:"drop",duration:1000})
-		//Elimina el div que contiene el tooltip
-		
+			
+			//quita los eventos mouseover asociados a la regla para "reinicializar" el evento y permitir que al salir del
+			//pin se tome el evento mouseover para la regla nuevamente y se active el ocultarTooltips otra vez.
+			Regla.$regla.unbind("mouseover");		
 	},
-	
+
+	//evento que oculta los tooltip cuando se pasa con el puntero del mouse sobre la regla. Solo se activa cuando se sale del diametro del pin. 
 	ocultarTooltips: function(){
-		$('body').children('#accesibilidad').mouseover(function(){Linea.ocultarResumen();});
-		
+				Regla.$regla.mouseover(function(){Linea.ocultarResumen()});
+			
 	}
+	
+	
 };

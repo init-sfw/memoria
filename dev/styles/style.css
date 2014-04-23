@@ -39,7 +39,7 @@ body {
 #timeline-lineas .timeline-eventos .evento {
 	background: url(../images/pines.png) no-repeat;
 	width: 30px;
-	height: 25px;
+	height: 100px;
 	position: absolute;
 	cursor: pointer;
 	margin: 6;
