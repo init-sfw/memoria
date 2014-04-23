@@ -29,9 +29,7 @@ $(document).on( "keydown", function( event ) {
                 Regla.zoomAlejar();
                 break;
             case 114:
-            case 66:
                 //114 = Tecla F3
-                //66 = Letra b
                 buscador.focus();
                 event.preventDefault();
                 break;
@@ -41,8 +39,7 @@ $(document).on( "keydown", function( event ) {
                 187 = Tecla + */
                 Eventos.cargar();
                 break;
-            case 65:
-            case 72:
+            case 112:
                 $('#accesibilidad').trigger('click');
         }
     }
