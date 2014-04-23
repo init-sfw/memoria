@@ -176,7 +176,7 @@ var Linea = {
 
 	//evento que oculta los tooltip cuando se pasa con el puntero del mouse sobre la regla. Solo se activa cuando se sale del diametro del pin. 
 	ocultarTooltips: function(){
-				$(this).css('height', -100);
+				$(this).css('height', 25);
 				Regla.$regla.mouseover(function(){Linea.ocultarResumen()});
 			
 	}
