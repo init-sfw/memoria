@@ -47,6 +47,25 @@ body {
 	
 }
 
+/*Intro*/
+#intro {
+position:absolute;
+left:0px;
+top: 0px;
+z-index:1;
+}
+#logo {
+	position:absolute;
+z-index:2;
+top: 50%;
+left: 50%;
+margin-top: -491px;
+margin-left: -550px;
+display: none;
+	
+}
+
+
 #timeline-lineas .categoria-musica { background-position: -152px 0 !important; }
 #timeline-lineas .categoria-cine { background-position: -35px 0 !important; }
 #timeline-lineas .categoria-historia { background-position: -210px 0 !important; }

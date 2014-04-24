@@ -7,6 +7,12 @@
 </head>
 
 <body>
+<div id="intro">
+<img src="images/fondoMemo2.jpg" alt="" >
+<div id="logo">
+<img src="images/logo.png" alt="" >
+</div>
+</div>
     <div id="navegador">
         <input id="FechaNavegar" type="text" maxlength="10" onkeypress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
         <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..."></a>
@@ -101,6 +107,12 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+        $("#intro").css({    
+    left: ($(window).width() - $("#intro").outerWidth())/2,
+    top: ($(window).height() - $("#intro").outerHeight())/2
+  });
+       	 	$( "#logo" ).fadeIn(2000);
+        		 $( "#intro" ).delay( 4000 ).fadeOut(2000);
             Linea.init();
             Filtros.init();
         });
