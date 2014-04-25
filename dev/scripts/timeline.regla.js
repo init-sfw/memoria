@@ -8,7 +8,10 @@ var Regla = {
 	$regla: null,
 	// Instancia del segmento sobre el cual esta posicionado el puntero del mouse
 	$segmento: null,
-
+	// Div de la imagen de fondo
+	$fondoInteractivo:$('#fondoInteractivo'),
+	
+	
 	$filtro: null,
 	// Fecha de foco inicial
 	fecha_foco: new Date(),
@@ -67,6 +70,7 @@ var Regla = {
 		Regla.$scroll = $('#timeline-scroll');
 		Regla.$contenedor = $('#timeline-contenedor');
 		Regla.$regla = $('#timeline-regla');
+		
 		
 		Regla.funcion_zoom = [ Regla.crearSiglos, Regla.crearDecadas, Regla.crearAnios, Regla.crearMeses, Regla.crearDias ];
 				
@@ -192,7 +196,10 @@ var Regla = {
 			Regla.cargarSegmentos(Regla.direccion_segmento.derecha);
 		}
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
-		Regla.centro += Regla.cantidad_segmentos;		
+		Regla.centro += Regla.cantidad_segmentos;
+		//Aca se hace el corrimiento hacia la derecha del fondo interactivo  (Mejora, podría ser que se repita ciclicamente)
+		
+		Regla.$fondoInteractivo.animate({ "left": "-=50px" },'slow');
 		
 	},
 	
@@ -214,6 +221,8 @@ var Regla = {
 		}		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
 		Regla.centro -= Regla.cantidad_segmentos;
+		//Aca se hace el corrimiento hacia la izquierda del fondo interactivo  (Mejora, podría ser que se repita ciclicamente)
+		Regla.$fondoInteractivo.animate({ "left": "+=50px" },'slow');
 	},
 	
 	// Agrega segmentos a la izquierda de la regla

@@ -7,8 +7,18 @@
 </head>
 
 <body>
+<!-- Aca estan tanto el div de la intro como el div del fondo interactivo, ambos tienen dentro sus respectivas imagenes#-->
+<div id="intro">
+<img src="images/fondoMemo.jpg" alt="" >
+<div id="logo">
+<img src="images/logo.png" alt="" >
+</div>
+</div>
+<div id="fondoInteractivo">
+<img src="images/fondo.png" alt="" >
+</div>
     <div id="navegador">
-        <input id="FechaNavegar" type="text" maxlength="10" onkeypress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
+        <input id="FechaNavegar" type="text" maxlength="10" onKeyPress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
         <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..."></a>
     </div>
 
@@ -101,6 +111,14 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+			//activa la introducción y centra la introduccion para cualquier tamaño de ventana
+        $("#intro").css({    
+    left: ($(window).width() - $("#intro").outerWidth())/2,
+    top: ($(window).height() - $("#intro").outerHeight())/2
+  });
+  		//luego aparece el logo de memoria con fadeIn, espera 4s y desaparece con fadeOut, luego continua con su ejecucion normal
+       	 	$( "#logo" ).fadeIn(2000);
+        		 $( "#intro" ).delay( 4000 ).fadeOut(2000);
             Linea.init();
             Filtros.init();
         });
