@@ -114,6 +114,7 @@ var Linea = {
 	},
 	
 	mostrarDetalleEvento: function() {
+		Linea.ocultarResumen();
 		var po = $(this).data('info');
 		
 		popup = Linea.plantilla_popup.replace('{fecha}', po.fecha)
