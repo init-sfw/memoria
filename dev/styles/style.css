@@ -14,13 +14,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-/* Aca se le pone -50 para que la imagen empieze a la mitad y le sobre imagen a ambos lados para poder moverse, es absoluto para no molestar a los demas div , y es index -1 para estar en un plano inferior a la pagina como un background*/
-#fondoInteractivo {
-	position:absolute;
-left:-50%;
-top: 0px;
-z-index:-1;
-}
 
 /* EVENTOS */
 
@@ -68,16 +61,13 @@ z-index:1;
 z-index:2;
 top: 50%;
 left: 50%;
-margin-top: -491px;
-margin-left: -550px;
+margin-top: -300px;
+margin-left: -345px;
 display: none;
 	
 }
 
 
-#timeline-lineas .categoria-musica { background-position: -152px 0 !important; }
-#timeline-lineas .categoria-cine { background-position: -35px 0 !important; }
-#timeline-lineas .categoria-historia { background-position: -210px 0 !important; }
 
 /* NAVEGADOR */
 
@@ -193,13 +183,13 @@ display: none;
 }
 
 
-/* MODIFICACION PROVISORIA:  se cambio el url de ambos periodos para que contraste con la imagen de ejemplo de fondo negro. Esto será hasta que quede el fondo definitivo  */
+
 #timeline-regla .periodo-odd {
-	background: url(../images/evento.png) repeat;
+	background: url(../images/fondo-odd.png) repeat;
 }
 
 #timeline-regla .periodo-even {
-	background: url(../images/evento.png) repeat;	
+	background: url(../images/fondo-even.png) repeat;		
 }
 
 #timeline-regla .periodo-titulo {
