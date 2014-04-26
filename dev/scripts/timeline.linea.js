@@ -133,6 +133,8 @@ var Linea = {
 	mostrarResumen: function() {   
 		//elimina los anteriores tooltip si existieren
 		Linea.ocultarResumen();	
+		
+		$(this).css('height', +100);
 		var tip = $(this).data('info'); 
 		
 		tooltip = Linea.plantilla_tooltip.replace('{fecha}', tip.fecha)
@@ -155,8 +157,7 @@ var Linea = {
 			
 			//le agrega el foco al tooltip
 			.focus(true)
-			//hace que se cierre el tooltip con un efecto de DROP cuando se sale del popup.
-			.mouseleave(function(){$('#timeline-tooltip').hide({effect:"drop",duration:1000});})			
+			.mouseleave(function(){$(this).remove();})			
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
 			.fadeTo('10',0.8)
@@ -174,11 +175,14 @@ var Linea = {
 			
 			//quita los eventos mouseover asociados a la regla para "reinicializar" el evento y permitir que al salir del
 			//pin se tome el evento mouseover para la regla nuevamente y se active el ocultarTooltips otra vez.
-			Regla.$regla.unbind("mouseover");		
+			Regla.$regla.unbind("mouseover");	
+			$('div.timeline-eventos').children('div.evento').css('height', 25);	
+					
 	},
 
 	//evento que oculta los tooltip cuando se pasa con el puntero del mouse sobre la regla. Solo se activa cuando se sale del diametro del pin. 
 	ocultarTooltips: function(){
+				
 				Regla.$regla.mouseover(function(){Linea.ocultarResumen()});
 			
 	}
