@@ -59,6 +59,11 @@ body {
 	margin-left: 15px;
 }
 
+#navegador .buscar{
+	width: 65px;
+	height: 55px;
+}
+
 #navegador input {
 	float: left;
     font-size: 1.5em;
@@ -77,6 +82,11 @@ body {
 	float: right;
 	width: 12%;
 	text-align: right;
+}
+
+#filtros .filtro {
+	width: 65px;
+	height:65px;
 }
 
 #filtros, #timeline-comandos, #navegador {
@@ -141,6 +151,26 @@ body {
 #timeline-comandos a {
 	color: #FFF;
 	text-decoration: none;
+}
+
+#timeline-comandos .retroceder {
+	width:65px;
+	height:55px;
+}
+
+#timeline-comandos .avanzar {
+	width:65px;
+	height:55px;
+}
+
+#timeline-comandos .alejar {
+	width:65px;
+	height:55px;
+}
+
+#timeline-comandos .acercar {
+	width:65px;
+	height:55px;
 }
 
 /* TIME LINE */
@@ -365,6 +395,11 @@ margin-right: 10px;
 #cargarEventos .agregarPaises{
 	width: 100%;
 }
+	
+#botonCargar .subir{
+	width:65px;
+	height:55px;
+	}
 
 /* ACCESIBILIDAD */
 #accesibilidad{bottom: 2px;right: 2px;float: right;position: absolute;}
