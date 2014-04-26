@@ -77,22 +77,27 @@ var Linea = {
 
 		// Cuando la consulta finaliza exitosamente, recorre los eventos agregandolos a la linea
 		$.when(consulta).done(function (response) {
-										
-			$.each(response.eventos, function (ind, val) {
-				if(Regla.esEventoVisible(val)) {		
+
+			if (!response.success) {
+				alert(response.errors);
+			}
+			else {										
+				$.each(response.eventos, function (ind, val) {
+					if(Regla.esEventoVisible(val)) {		
 				
-					$linea.append(Linea.plantilla_evento.replace('{categoria}', val.categoria));
+						$linea.append(Linea.plantilla_evento.replace('{categoria}', val.categoria));
 					
-					// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
-					$linea.find('div.evento:last')
-						.css('top', new String ($linea.index() * 102 + 53) + 'px')
-						.css('left', Regla.calcularPosicionEvento(val))
-						.data('info', val);
-				}										  
-			});
+						// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
+						$linea.find('div.evento:last')
+							.css('top', new String ($linea.index() * 102 + 53) + 'px')
+							.css('left', Regla.calcularPosicionEvento(val))
+							.data('info', val);
+					}										  
+				});
 			
-			Linea.inicializarEventosMouseHover($linea);
-			Linea.inicializarEventosMouseClick($linea);			
+				Linea.inicializarEventosMouseHover($linea);
+				Linea.inicializarEventosMouseClick($linea);
+			}
 		});		
 	},
 	
