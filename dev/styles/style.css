@@ -62,8 +62,7 @@ top: 50%;
 left: 50%;
 margin-top: -300px;
 margin-left: -345px;
-display: none;
-	
+display: none;	
 }
 
 /* NAVEGADOR */
@@ -423,4 +422,3 @@ margin-right: 10px;
 #accesibilidad-content{display: none;}
 #accesibilidad-content ul{list-style: none;}
 #accesibilidad-icon{width: 32px;float: right;}
-
