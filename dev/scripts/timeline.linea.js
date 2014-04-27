@@ -128,7 +128,7 @@ var Linea = {
 		
 		$('body').append(popup);
 		$('#timeline-popup').dialog();
-        $('#timeline-popup').dialog( "option", "title", po.fecha + " - " + po.titulo);
+       		$('#timeline-popup').dialog( "option", "title", po.fecha + " - " + po.titulo);
 		$('#timeline-popup').dialog( "option", "width", 800);
 		$('#timeline-popup').dialog( "option", "height", 600);
 		$('#timeline-popup').on("dialogclose", function( event, ui ) { Linea.ocultarDetalleEvento(); } )     
