@@ -16,25 +16,25 @@
 </div>
 
     <div id="navegador">
-        <input id="FechaNavegar" type="text" maxlength="10" onKeyPress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
-        <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..."></a>
+        <input id="FechaNavegar" type="text" maxlength="10" onkeypress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
+        <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..." class="buscar"></a>
     </div>
 
     <div id="cargarEvento">
         <a id="botonCargar" href="javascript:Eventos.cargar()">
-            <img title="cargar..." src="images/iconos/subir.png" /></a>
+            <img title="cargar..." src="images/iconos/subir.png" class="subir" /></a>
     </div>
 
 
     <div id="timeline-comandos">
-        <a href="javascript:Regla.scrollRetroceder()"><img src="images/iconos/retroceder.png" title="Retroceder"></a>
-        <a href="javascript:Regla.zoomAcercar()"><img src="images/iconos/zoom-acercar.png" title="Acercar"></a>
-        <a href="javascript:Regla.zoomAlejar()"><img src="images/iconos/zoom-alejar.png" title="Alejar"></a>
-        <a href="javascript:Regla.scrollAvanzar()"><img src="images/iconos/avanzar.png" title="Avanzar"></a>
+        <a href="javascript:Regla.scrollRetroceder()"><img src="images/iconos/retroceder.png" title="Retroceder" class="retroceder"></a>
+        <a href="javascript:Regla.zoomAcercar()"><img src="images/iconos/zoom-acercar.png" title="Acercar" class="acercar"></a>
+        <a href="javascript:Regla.zoomAlejar()"><img src="images/iconos/zoom-alejar.png" title="Alejar" class="alejar"></a>
+        <a href="javascript:Regla.scrollAvanzar()"><img src="images/iconos/avanzar.png" title="Avanzar" class="avanzar"></a>
     </div>
     <!--se eliminó el href de este div que llamaba al metodo Filtro.init() y se lo remplazo por #-->
     <div id="filtros">
-        <a href="#"><img src="images/iconos/filtros.png" title="Filtros"></a>
+        <a href="#"><img src="images/iconos/filtros.png" title="Filtros" class="filtro"></a>
     </div>
 
     <div id="filtros-panel" style='display: none;'>

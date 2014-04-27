@@ -39,15 +39,13 @@ body {
 #timeline-lineas .timeline-eventos .evento {
 	background: url(../images/pines.png) no-repeat;
 	width: 30px;
-	height: 100px;
+	height: 25px;
 	position: absolute;
 	cursor: pointer;
 	margin: 6;
 		
 	
 }
-
-/*Intro*/
 /* Es absolute para no molestar al resto de la pagina y tiene index 1 para que sea lo unico y primero que se vea hasta desaparecer*/
 #intro {
 position:absolute;
@@ -55,9 +53,10 @@ left:0px;
 top: 0px;
 z-index:1;
 }
-/* Aca la imagen esta a 50% en top y left para que aparezca centrado, asi tambien se le resta la mitad del tamaño del logo para que la referencia a ubicar en top y left sea el punto medio, se le pone display none para que se pueda utilizar el fadeIn*/
+/* Aca la imagen esta a 50% en top y left para que aparezca centrado, asi tambien se le resta la mitad del tamaño del logo para que la 
+referencia a ubicar en top y left sea el punto medio, se le pone display none para que se pueda utilizar el fadeIn*/
 #logo {
-	position:absolute;
+position:absolute;
 z-index:2;
 top: 50%;
 left: 50%;
@@ -67,14 +66,17 @@ display: none;
 	
 }
 
-
-
 /* NAVEGADOR */
 
 #navegador {
 	float: left;
 	width: 20%;
 	margin-left: 15px;
+}
+
+#navegador .buscar{
+	width: 65px;
+	height: 55px;
 }
 
 #navegador input {
@@ -95,6 +97,11 @@ display: none;
 	float: right;
 	width: 12%;
 	text-align: right;
+}
+
+#filtros .filtro {
+	width: 65px;
+	height:65px;
 }
 
 #filtros, #timeline-comandos, #navegador {
@@ -159,6 +166,26 @@ display: none;
 #timeline-comandos a {
 	color: #FFF;
 	text-decoration: none;
+}
+
+#timeline-comandos .retroceder {
+	width:65px;
+	height:55px;
+}
+
+#timeline-comandos .avanzar {
+	width:65px;
+	height:55px;
+}
+
+#timeline-comandos .alejar {
+	width:65px;
+	height:55px;
+}
+
+#timeline-comandos .acercar {
+	width:65px;
+	height:55px;
 }
 
 /* TIME LINE */
@@ -385,6 +412,11 @@ margin-right: 10px;
 #cargarEventos .agregarPaises{
 	width: 100%;
 }
+	
+#botonCargar .subir{
+	width:65px;
+	height:55px;
+	}
 
 /* ACCESIBILIDAD */
 #accesibilidad{bottom: 2px;right: 2px;float: right;position: absolute;}

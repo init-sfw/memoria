@@ -696,12 +696,12 @@ var Regla = {
 		switch (components.length) {
 		case 3: // DD/MM/AAAA
 			// TODO: validar que los componentes sean validos
-			return new Date(components[2], components[1], components[0], 0, 0, 0, 0);
+			return new Date(components[2], (components[1] - 1), components[0], 0, 0, 0, 0);
 			break;
 
 		case 2: // MM/AAAA
 			// TODO: validar que el mes sea valido
-		        return new Date(components[1], components[0], 1, 0, 0, 0, 0);
+		        return new Date(components[1], (components[0]-1), 1, 0, 0, 0, 0);
 		        break;
 
 		default:
