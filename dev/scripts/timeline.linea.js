@@ -12,7 +12,7 @@ var Linea = {
 	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
 							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
 							<div class="popBody">{descripcion}</div> \
-							<div class="tipBody">{link}</div> \
+							<div class="popFooter">{link}</div> \
 						</div>',
 	
 	// Html que representa la descripcion de un evento cuando se posa el mouse sobre él
@@ -115,24 +115,27 @@ var Linea = {
 	
 	mostrarDetalleEvento: function() {
 		Linea.ocultarResumen();
+		// Elimina los anteriores popups si hubiera
+		Linea.ocultarDetalleEvento();
+
 		var po = $(this).data('info');
 		
 		popup = Linea.plantilla_popup.replace('{fecha}', po.fecha)
 					.replace('{titulo}', po.titulo)
 					.replace('{imagen}', po.imagen)
 					.replace('{descripcion}', po.descripcionBreve)
-					.replace('{link}', po.link);
+					.replace('{link}', '<a href="' + po.link + '" target="_blank">fuente </a>');
 		
 		$('body').append(popup);
 		$('#timeline-popup').dialog();
-        $('#timeline-popup').dialog( "option", "title", po.fecha + " - " + po.titulo);
+       		$('#timeline-popup').dialog( "option", "title", po.fecha + " - " + po.titulo);
 		$('#timeline-popup').dialog( "option", "width", 800);
 		$('#timeline-popup').dialog( "option", "height", 600);
 		$('#timeline-popup').on("dialogclose", function( event, ui ) { Linea.ocultarDetalleEvento(); } )     
 	},
 	
 	mostrarResumen: function() {   
-		//elimina los anteriores tooltip si existieren
+		// Elimina los anteriores tooltip si existieren
 		Linea.ocultarResumen();	
 		
 		$(this).css('height', +100);
