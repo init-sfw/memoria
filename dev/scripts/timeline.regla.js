@@ -9,6 +9,8 @@ var Regla = {
 	// Instancia del segmento sobre el cual esta posicionado el puntero del mouse
 	$segmento: null,
 
+	
+	
 	$filtro: null,
 	// Fecha de foco inicial
 	fecha_foco: new Date(),
@@ -67,6 +69,7 @@ var Regla = {
 		Regla.$scroll = $('#timeline-scroll');
 		Regla.$contenedor = $('#timeline-contenedor');
 		Regla.$regla = $('#timeline-regla');
+		
 		
 		Regla.funcion_zoom = [ Regla.crearSiglos, Regla.crearDecadas, Regla.crearAnios, Regla.crearMeses, Regla.crearDias ];
 				
@@ -214,6 +217,7 @@ var Regla = {
 		}		
 		Regla.$scroll.animate({ scrollLeft: posicion }, 'slow');
 		Regla.centro -= Regla.cantidad_segmentos;
+		
 	},
 	
 	// Agrega segmentos a la izquierda de la regla
