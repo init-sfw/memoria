@@ -134,7 +134,7 @@ var Linea = {
 			onDialogClose: Linea.ocultarDetalleEvento(),
 		});
 		$('#timeline-popup').prev('.ui-dialog-titlebar').css('font-family', 'AlteHaasGroteskBold');
-		$('#timeline-popup').prev('.ui-dialog-titlebar').css('background-color','#4B4B4D');		
+		$('#timeline-popup').prev('.ui-dialog-titlebar').css('background','#4B4B4D');		
 	},
 	
 	mostrarResumen: function() {   
