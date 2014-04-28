@@ -54,9 +54,9 @@ body .h2 .h3 {
 }
 
 #timeline-lineas .timeline-eventos .evento {
-	background: url(../images/pines.png) no-repeat;
-	width: 30px;
-	height: 25px;
+	background: url(../images/hito.png) no-repeat;
+	width: 20px;
+	height: 29px;
 	position: absolute;
 	cursor: pointer;
 	margin: 6;

@@ -89,7 +89,7 @@ var Linea = {
 					
 						// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
 						$linea.find('div.evento:last')
-							.css('top', new String ($linea.index() * 102 + 53) + 'px')
+							.css('top', new String ($linea.index() * 102 + 41) + 'px')
 							.css('left', Regla.calcularPosicionEvento(val))
 							.data('info', val);
 					}										  
