@@ -127,11 +127,14 @@ var Linea = {
 					.replace('{link}', '<a href="' + po.link + '" target="_blank">fuente </a>');
 		
 		$('body').append(popup);
-		$('#timeline-popup').dialog();
-       		$('#timeline-popup').dialog( "option", "title", po.fecha + " - " + po.titulo);
-		$('#timeline-popup').dialog( "option", "width", 800);
-		$('#timeline-popup').dialog( "option", "height", 600);
-		$('#timeline-popup').on("dialogclose", function( event, ui ) { Linea.ocultarDetalleEvento(); } )     
+		$('#timeline-popup').dialog({
+			title: po.fecha + " - " + po.titulo,
+			width: 800,
+			height: 700,
+			onDialogClose: Linea.ocultarDetalleEvento(),
+		});
+		$('#timeline-popup').prev('.ui-dialog-titlebar').css('font-family', 'AlteHaasGroteskBold');
+		$('#timeline-popup').prev('.ui-dialog-titlebar').css('background-color','#4B4B4D');		
 	},
 	
 	mostrarResumen: function() {   

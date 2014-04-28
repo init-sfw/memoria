@@ -305,6 +305,7 @@ margin: 0 auto;
     max-height: 530px !important;
     overflow: auto;
     background-color:#727376;
+    font-family: "AlteHaasGroteskBold";
 }
  
 #timeline-popup .popDate {
