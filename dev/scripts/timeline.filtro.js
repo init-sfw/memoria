@@ -20,22 +20,11 @@ var Filtros = {
 		// FIXME: este método está fallando en Google Chrome
 		Filtros.cargarCombosFiltros();
 
-		
-		// Agrega funcionalidad al botón que abre/cierra el panel de filtros
-	
-		//ACTUALIZACION Cambie el orden de las funciones porque al parecer lo que generaba el bug era que bajaba el filtro sin mostrarlo, cuando hacias el primer click, cuando hacias el segundo te levantaba el filtro y cuando hacias el tercer click recien lo bajaba. Cuando se cambia el orden y se valida que entre en este metodo apenas cargue la pagina con la validacion que se hace mas abajo se arregla porque ahora sube el filtro que todavia no se muestra en la primera pasada y al primer click se baja el filtro que ya esta cargado.
-		$('#filtros a:last').toggle(
-			function () {
-				Filtros.$contenedor.slideDown();					
-			},
-			function () {						
-				Filtros.$contenedor.slideUp();	
-			}
-		);
-		
 		// Asigno los handlers a los eventos click de los botones Generar y Agregar
 		$('#btnAgregarFiltro').click(Filtros.agregarFiltro);		
 		$('#btnGenerarLineas').click(Filtros.generarLineas);
+		// Agrega funcionalidad al botón que abre/cierra el panel de filtros
+		$('#filtros a').click(function(){Filtros.$contenedor.slideToggle('slow')});
 		
 	}, 
 	

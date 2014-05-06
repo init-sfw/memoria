@@ -77,7 +77,10 @@ var Regla = {
 		Regla.$regla.mousewheel(function(e, delta) {
 			Regla.$segmento = $(e.target).is('.periodo-titulo') ? $(e.target.parentNode) : $(e.target);
 			// Pregunto si el elemento guardado en Regla.$segmento es un período para evitar problema de múltiples mousewheels
-			if (Regla.$segmento != $('#timeline-regla') && Regla.$segmento.attr('class') && Regla.$segmento.attr('class').contains('periodo'))
+			if (Regla.$segmento != $('#timeline-regla') 
+				&& Regla.$segmento.attr('class') 
+				&& (Regla.$segmento.hasClass('periodo-even') || Regla.$segmento.hasClass('periodo-even'))
+				)
 			{ 
 				Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
 			
