@@ -79,7 +79,7 @@ var Regla = {
 			// Pregunto si el elemento guardado en Regla.$segmento es un período para evitar problema de múltiples mousewheels
 			if (Regla.$segmento != $('#timeline-regla') 
 				&& Regla.$segmento.attr('class') 
-				&& (Regla.$segmento.hasClass('periodo-even') || Regla.$segmento.hasClass('periodo-even'))
+				&& (Regla.$segmento.hasClass('periodo-even') || Regla.$segmento.hasClass('periodo-odd'))
 				)
 			{ 
 				Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
