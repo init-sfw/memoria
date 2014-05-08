@@ -169,8 +169,10 @@ var Regla = {
 	// Sube un nivel en la escala de zoom, vuelve a generar la regla y mostrar los eventos correspondientes
 	zoomAcercar: function () {
 		if(Regla.zoom < Regla.nombre_zoom.length - 1) {
+			//Cargo la fecha del centro de la pantalla
+			var fechaZoom = $('#' + Regla.centro).data('fecha_inicio');
 			Regla.zoom ++;
-			Regla.crearRegla();
+			Regla.crearRegla(fechaZoom);
 			
 			Linea.actualizarTodas();
 		}
@@ -179,8 +181,9 @@ var Regla = {
 	// Baja un nivel en la escala de zoom, vuelve a generar la regla y mostrar los eventos correspondientes
 	zoomAlejar: function () {
 		if(Regla.zoom > 0) {
+			var fechaZoom = $('#' + Regla.centro).data('fecha_inicio');
 			Regla.zoom --;
-			Regla.crearRegla();
+			Regla.crearRegla(fechaZoom);
 			
 			Linea.actualizarTodas();
 		}
