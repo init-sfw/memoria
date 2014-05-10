@@ -686,8 +686,8 @@ var Regla = {
 
 	navegar : function() {
 		var busqueda = Regla.validarFecha($("#FechaNavegar").val());
-		if (busqueda == false) { // buscamos un texto
-			// TODO: implement me :P
+		if (busqueda == false) { 
+			alert("Error de formato de fecha (DD/MM/AAAA, MM/AAAA o AAAA) en el valor: " + $("#FechaNavegar").val());
 		} else {
 			Regla.crearRegla(busqueda);
 			Linea.actualizarTodas();
@@ -697,29 +697,36 @@ var Regla = {
 	//Para ellos, almacena dia,mes y anio por separado y los reacomoda en la variable fechaIngles.
 	validarFecha: function (fecha) {
 		var components = fecha.split('/');
+		var expresionA = /^\d{2,4}$/;
+		var expresion2 = /^\d{1,2}$/;
 
-		// TODO: unificar valor devuelto
 		switch (components.length) {
-		case 3: // DD/MM/AAAA
-			// TODO: validar que los componentes sean validos
-			return new Date(components[2], (components[1] - 1), components[0], 0, 0, 0, 0);
-			break;
-
-		case 2: // MM/AAAA
-			// TODO: validar que el mes sea valido
-		        return new Date(components[1], (components[0]-1), 1, 0, 0, 0, 0);
-		        break;
-
-		default:
-			// solo anio
-			var expresion = /\d{2,4}/;
-			if (expresion.test(fecha)) {
-				return new Date(fecha, 1, 1, 0, 0, 0, 0);
-			} else {
-				return false; // devolvemos False en otros casos
-			}
+			case 3: // DD/MM/AAAA
+				if (expresionA.test(components[2]) && expresion2.test(components[1] - 1) && expresion2.test(components[0]))
+				{
+					return new Date(components[2], (components[1] - 1), components[0], 0, 0, 0, 0);
+				}
+				else {
+					return false;
+				}
+				break;
+			case 2: // MM/AAAA
+				if (expresionA.test(components[1]) && expresion2.test(components[0] - 1))
+				{
+					return new Date(components[1], (components[0]-1), 1, 0, 0, 0, 0);
+				}
+				else {
+					return false;
+				}
+				break;
+			default:
+				// AAAA
+				if (expresionA.test(fecha)) {
+					return new Date(fecha, 1, 1, 0, 0, 0, 0);
+				} else {
+					return false;
+				}
 		}
-
 		return false; // si llegamos aca la fecha no es valida
 	}
 	

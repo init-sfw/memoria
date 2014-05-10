@@ -113,23 +113,23 @@
 
     <script type="text/javascript">
         function validarEnter(e) {
-            enter = (document.FechaNavegar) ? e.keyCode : e.which; /* ? es una versión abreviada del if. Si se cumple la condición toma el valor que hay entre el signo de interrogación y los dos puntos, si no se cumple, toma el valor que hay a continuación de los dos puntos. David */
+            enter = (document.FechaNavegar) ? e.keyCode : e.which;
             if (enter==13) Regla.navegar();
         }
     </script>
 
     <script type="text/javascript">
         $(document).ready(function () {
-			//activa la introducción y centra la introduccion para cualquier tamaño de ventana
-        $("#intro").css({    
-    left: ($(window).width() - $("#intro").outerWidth())/2,
-    top: ($(window).height() - $("#intro").outerHeight())/2
-  });
+		//activa la introducción y centra la introduccion para cualquier tamaño de ventana
+		$("#intro").css({    
+			left: ($(window).width() - $("#intro").outerWidth())/2,
+			top: ($(window).height() - $("#intro").outerHeight())/2
+		});
   		//luego aparece el logo de memoria con fadeIn, espera 4s y desaparece con fadeOut, luego continua con su ejecucion normal
        	 	$( "#logo" ).fadeIn(2000);
-        		 $( "#intro" ).delay( 4000 ).fadeOut(2000);
-            Linea.init();
-            Filtros.init();
+        	$( "#intro" ).delay( 4000 ).fadeOut(2000);
+		Linea.init();
+		Filtros.init();
         });
     </script>
 </body>
