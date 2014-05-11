@@ -170,7 +170,7 @@ var Linea = {
 			
 			//le agrega el foco al tooltip
 			.focus(true)
-			.mouseleave(function(){//$(this).remove();
+			.mouseleave(function(){$(this).remove();
 			})
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
