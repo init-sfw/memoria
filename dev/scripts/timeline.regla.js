@@ -77,7 +77,10 @@ var Regla = {
 		Regla.$regla.mousewheel(function(e, delta) {
 			Regla.$segmento = $(e.target).is('.periodo-titulo') ? $(e.target.parentNode) : $(e.target);
 			// Pregunto si el elemento guardado en Regla.$segmento es un período para evitar problema de múltiples mousewheels
-			if (Regla.$segmento != $('#timeline-regla') && Regla.$segmento.attr('class') && Regla.$segmento.attr('class').contains('periodo'))
+			if (Regla.$segmento != $('#timeline-regla') 
+				&& Regla.$segmento.attr('class') 
+				&& (Regla.$segmento.hasClass('periodo-even') || Regla.$segmento.hasClass('periodo-odd'))
+				)
 			{ 
 				Regla.fecha_foco = Regla.$segmento.data('fecha_inicio');
 			
@@ -166,8 +169,10 @@ var Regla = {
 	// Sube un nivel en la escala de zoom, vuelve a generar la regla y mostrar los eventos correspondientes
 	zoomAcercar: function () {
 		if(Regla.zoom < Regla.nombre_zoom.length - 1) {
+			//Cargo la fecha del centro de la pantalla
+			var fechaZoom = $('#' + Regla.centro).data('fecha_inicio');
 			Regla.zoom ++;
-			Regla.crearRegla();
+			Regla.crearRegla(fechaZoom);
 			
 			Linea.actualizarTodas();
 		}
@@ -176,8 +181,9 @@ var Regla = {
 	// Baja un nivel en la escala de zoom, vuelve a generar la regla y mostrar los eventos correspondientes
 	zoomAlejar: function () {
 		if(Regla.zoom > 0) {
+			var fechaZoom = $('#' + Regla.centro).data('fecha_inicio');
 			Regla.zoom --;
-			Regla.crearRegla();
+			Regla.crearRegla(fechaZoom);
 			
 			Linea.actualizarTodas();
 		}
@@ -680,8 +686,8 @@ var Regla = {
 
 	navegar : function() {
 		var busqueda = Regla.validarFecha($("#FechaNavegar").val());
-		if (busqueda == false) { // buscamos un texto
-			// TODO: implement me :P
+		if (busqueda == false) { 
+			alert("Error de formato de fecha (DD/MM/AAAA, MM/AAAA o AAAA) en el valor: " + $("#FechaNavegar").val());
 		} else {
 			Regla.crearRegla(busqueda);
 			Linea.actualizarTodas();
@@ -691,29 +697,36 @@ var Regla = {
 	//Para ellos, almacena dia,mes y anio por separado y los reacomoda en la variable fechaIngles.
 	validarFecha: function (fecha) {
 		var components = fecha.split('/');
+		var expresionA = /^\d{2,4}$/;
+		var expresion2 = /^\d{1,2}$/;
 
-		// TODO: unificar valor devuelto
 		switch (components.length) {
-		case 3: // DD/MM/AAAA
-			// TODO: validar que los componentes sean validos
-			return new Date(components[2], (components[1] - 1), components[0], 0, 0, 0, 0);
-			break;
-
-		case 2: // MM/AAAA
-			// TODO: validar que el mes sea valido
-		        return new Date(components[1], (components[0]-1), 1, 0, 0, 0, 0);
-		        break;
-
-		default:
-			// solo anio
-			var expresion = /\d{2,4}/;
-			if (expresion.test(fecha)) {
-				return new Date(fecha, 1, 1, 0, 0, 0, 0);
-			} else {
-				return false; // devolvemos False en otros casos
-			}
+			case 3: // DD/MM/AAAA
+				if (expresionA.test(components[2]) && expresion2.test(components[1] - 1) && expresion2.test(components[0]))
+				{
+					return new Date(components[2], (components[1] - 1), components[0], 0, 0, 0, 0);
+				}
+				else {
+					return false;
+				}
+				break;
+			case 2: // MM/AAAA
+				if (expresionA.test(components[1]) && expresion2.test(components[0] - 1))
+				{
+					return new Date(components[1], (components[0]-1), 1, 0, 0, 0, 0);
+				}
+				else {
+					return false;
+				}
+				break;
+			default:
+				// AAAA
+				if (expresionA.test(fecha)) {
+					return new Date(fecha, 1, 1, 0, 0, 0, 0);
+				} else {
+					return false;
+				}
 		}
-
 		return false; // si llegamos aca la fecha no es valida
 	}
 	
