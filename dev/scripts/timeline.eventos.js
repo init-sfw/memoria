@@ -19,11 +19,15 @@ var Eventos = {
 
 	filtrar: function (fecha_desde, fecha_hasta, ponderacion, filtros) {
 		var deferred = $.Deferred();
-		var consulta = $.getJSON('data/datos-demo.json');
+		var consulta = $.ajax({
+			url: 'http://192.168.1.104:8080/data',
+			dataType: 'jsonp',
+			jsonpCallback: "dataMemoria",
+		});
 		
 		consulta.success(function (eventos) {
 			var query = Enumerable
-				.From(eventos)
+				.From(eventos.data)
 				.Where(function (x) {
 					var fecha = x.fecha.parseDate();
 					var rango = x.ponderacion <= ponderacion &&  fecha_desde <= fecha && fecha <= fecha_hasta;

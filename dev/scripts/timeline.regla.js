@@ -173,8 +173,6 @@ var Regla = {
             var fechaZoom = $('#' + Regla.centro).data('fecha_inicio');
             Regla.zoom ++;
             Regla.crearRegla(fechaZoom);
-
-            Linea.actualizarTodas();
         }
     },
 
@@ -184,8 +182,6 @@ var Regla = {
             var fechaZoom = $('#' + Regla.centro).data('fecha_inicio');
             Regla.zoom --;
             Regla.crearRegla(fechaZoom);
-
-            Linea.actualizarTodas();
         }
     },
 
