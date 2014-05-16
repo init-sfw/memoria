@@ -20,7 +20,7 @@ var Eventos = {
 	filtrar: function (fecha_desde, fecha_hasta, ponderacion, filtros) {
 		var deferred = $.Deferred();
 		var consulta = $.ajax({
-			url: 'http://192.168.1.104:8080/data',
+			url: 'http://localhost:8080/data',
 			dataType: 'jsonp',
 			jsonpCallback: "dataMemoria",
 		});

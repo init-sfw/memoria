@@ -686,7 +686,6 @@ var Regla = {
             alert("Error de formato de fecha (DD/MM/AAAA, MM/AAAA o AAAA) en el valor: " + $("#FechaNavegar").val());
         } else {
             Regla.crearRegla(busqueda);
-            Linea.actualizarTodas();
         }
     },
     //El metodo transforma una stringDate en un formato valido para el objeto Date (de espanol a ingles)
