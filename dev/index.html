@@ -19,12 +19,12 @@
 
 <img src="images/logoEncabezado.png">  
 
-
+<section id="sectionSuperior">
 <div class="subir" id="navegador">
         <input id="FechaNavegar" type="text" maxlength="10" onKeyPress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
         <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..." class="buscar"></a>
     </div>
-    
+
 <div id="timeline-comandos">
         <a href="javascript:Regla.scrollRetroceder()"><img src="images/iconos/retroceder.png" title="Retroceder" class="retroceder"></a>
         <a href="javascript:Regla.zoomAcercar()"><img src="images/iconos/zoom-acercar.png" title="Acercar" class="acercar"></a>
@@ -35,19 +35,16 @@
         <a href="#"><img src="images/iconos/filtros.png" title="Filtros" class="filtro"></a>
     </div>
 </div>
-
-    
-
 <div id="cargarEvento" style="display: none">
         <a id="botonCargar" href="javascript:Eventos.cargar()">
             <img title="cargar..." src="images/iconos/subir.png" class="subir" /></a>
 </div>
 
-
+</section>
     
 <!--se eliminó el href de este div que llamaba al metodo Filtro.init() y se lo remplazo por #-->
     
-
+<section id="sectionPanel"
     <div id="filtros-panel" style='display: none;'>
         <h2>Filtros</h2>
         <table>
@@ -67,19 +64,19 @@
         <p class="botones"><button type="button" id="btnAgregarFiltro">Agregar</button></p>
 
         <h3>Vista previa</h3>
-
-
-
-        <div id="timeline-filtros"></div>
+		<div id="timeline-filtros"></div>
         <p class="botones"><button id="btnGenerarLineas" type="button">Generar</button></p>
     </div>
-
+	</section>
+	
+<section id="sectionRegla">
     <div id="timeline-scroll">
         <div id="timeline-contenedor">
             <div id="timeline-regla"></div>
             <div id="timeline-lineas"></div>
         </div>
     </div>
+</section>	
     <div id="accesibilidad">
         <div id="accesibilidad-content">
             <ul>
