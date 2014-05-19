@@ -9,18 +9,18 @@ var Linea = {
 	plantilla_evento: '<div class="evento categoria-{categoria}"><a href="#"></a></div>',
 	
 	// Html que representa la descripcion de un evento cuando se clickea sobre él
-	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
+	plantilla_popup: '<article id="timeline-popup" style="display:none;"> \
 							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
-							<div class="popBody">{descripcion}</div> \
-							<div class="popFooter">{link}</div> \
-						</div>',
+							<body class="popBody">{descripcion}</body> \
+							<footer class="popFooter">{link}</footer> \
+						</article>',
 	
 	// Html que representa la descripcion de un evento cuando se posa el mouse sobre él
-	plantilla_tooltip: '<div id="timeline-tooltip"> \
-							<div class="tipHeader">{fecha} {titulo}</div> \
+	plantilla_tooltip: '<article id="timeline-tooltip"> \
+							<div class="tipHeader">{fecha} </br> {titulo}</div> \
 							<div class="tipImage"><img src="images/{imagen}"/></div> \
 							<div class="tipBody">{descripcion}</div> \
-						</div>',
+						</article>',
 
 	init: function () {
 		Linea.$lineas = $('#timeline-lineas');
