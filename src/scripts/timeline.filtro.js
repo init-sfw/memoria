@@ -100,11 +100,11 @@ var Filtros = {
 	},
 
 	cargarComboPais : function (div) {
-		Filtros.cargarCombo(div, 'http://localhost:8080/countries', 'countriesMemoria')
+		Filtros.cargarCombo(div, 'http://107.170.16.162:8088/countries', 'countriesMemoria')
 	},
 	
 	cargarComboCategorias : function (div) {
-		Filtros.cargarCombo(div, 'http://localhost:8080/categories','categoriesMemoria')
+		Filtros.cargarCombo(div, 'http://107.170.16.162:8088/categories','categoriesMemoria')
 	},
 
 	cargarCombo : function (div, source, api) {
