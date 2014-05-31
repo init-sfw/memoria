@@ -1,9 +1,0 @@
-﻿{
-"Categorias": [
-	 { "id": "musica", "nombre": "Música" },
-	{ "id": "historia", "nombre": "Historia" },
-	 { "id": "politica", "nombre": "Política" },
-	{ "id": "deporte", "nombre": "Deporte" },
-	{ "id": "geografia", "nombre": "Geografía" }	
-]
-}
