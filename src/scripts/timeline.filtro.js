@@ -100,18 +100,26 @@ var Filtros = {
 	},
 
 	cargarComboPais : function (div) {
-		Filtros.cargarCombo(div, 'data/paises_ar.json')
+		Filtros.cargarCombo(div, 'http://107.170.16.162:8088/countries', 'countriesMemoria')
 	},
 	
 	cargarComboCategorias : function (div) {
-		Filtros.cargarCombo(div, 'data/categorias.json')
+		Filtros.cargarCombo(div, 'http://107.170.16.162:8088/categories','categoriesMemoria')
 	},
 
-	cargarCombo : function (div, source) {	
-		$.getJSON(source, function (data) {
-			div.cargarCombo(data, 'id', 'nombre');
+	cargarCombo : function (div, source, api) {
+		var resultado = $.ajax({
+			url: source,
+			dataType: 'jsonp',
+			jsonpCallback: api,
 		});
+		
+		resultado.success(function (data) {
+				div.cargarCombo(data, 'id', 'nombre');
+				});
+
+		resultado.error(function() {
+				alert('Error al cargar web service ' + source);
+				});
 	},
-
-
 };

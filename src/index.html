@@ -15,24 +15,15 @@
 </div>
 </div>
 <div id="encabezado">
-
-
-<img src="images/logoEncabezado.png">  
-
-
-<div class="subir" id="navegador">
-        <input id="FechaNavegar" type="text" maxlength="10" onKeyPress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
-        <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..." class="buscar"></a>
-    </div>
-    
-<div id="timeline-comandos">
-        <a href="javascript:Regla.scrollRetroceder()"><img src="images/iconos/retroceder.png" title="Retroceder" class="retroceder"></a>
-        <a href="javascript:Regla.zoomAcercar()"><img src="images/iconos/zoom-acercar.png" title="Acercar" class="acercar"></a>
-        <a href="javascript:Regla.zoomAlejar()"><img src="images/iconos/zoom-alejar.png" title="Alejar" class="alejar"></a>
-        <a href="javascript:Regla.scrollAvanzar()"><img src="images/iconos/avanzar.png" title="Avanzar" class="avanzar"></a>
+    <div class="brand">
+        <img src="images/logoEncabezado.png" style="width: 93px;">
     </div>
     <div id="filtros">
         <a href="#"><img src="images/iconos/filtros.png" title="Filtros" class="filtro"></a>
+    </div>
+    <div class="subir" id="navegador">
+        <input id="FechaNavegar" type="text" maxlength="10" onKeyPress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
+        <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..." class="buscar"></a>
     </div>
 </div>
 
@@ -59,7 +50,8 @@
             </tr>
             <tr>
                 <td>Categorias:</td>
-                <td><select id="filtroCategorias"  multiple="multiple" size="5"></select></td>
+                <td><select id="filtroCategorias" multiple="multiple" size="5"  ></select></td>
+		<td><input id="filterCat"></input></td>
                 <td>Paises:</td>
                 <td><select id="filtroPaises" multiple="multiple" size="5"></select></td>
             </tr>
@@ -72,6 +64,13 @@
 
         <div id="timeline-filtros"></div>
         <p class="botones"><button id="btnGenerarLineas" type="button">Generar</button></p>
+    </div>
+
+    <div id="timeline-comandos">
+        <a href="javascript:Regla.scrollRetroceder()"><img src="images/iconos/retroceder.png" title="Retroceder" class="retroceder"></a>
+        <a href="javascript:Regla.zoomAcercar()"><img src="images/iconos/zoom-acercar.png" title="Acercar" class="acercar"></a>
+        <a href="javascript:Regla.zoomAlejar()"><img src="images/iconos/zoom-alejar.png" title="Alejar" class="alejar"></a>
+        <a href="javascript:Regla.scrollAvanzar()"><img src="images/iconos/avanzar.png" title="Avanzar" class="avanzar"></a>
     </div>
 
     <div id="timeline-scroll">
@@ -98,6 +97,7 @@
     <script src="//code.jquery.com/jquery-latest.js"></script>
     <script>window.jQuery || document.write('<script src="scripts/jquery/jquery-1.7.1.min.js"><\/script>')</script>
     <script type="text/javascript" src="scripts/jquery/jquery-ui-1.10.4.custom.js"></script>
+    <script type="text/javascript" src="scripts/jquery/jquery-dialog-override.js"></script>
     <script type="text/javascript" src="scripts/jquery/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="scripts/jquery/jquery.linq.min.js"></script>
 
@@ -126,11 +126,43 @@
 			top: ($(window).height() - $("#intro").outerHeight())/2
 		});
   		//luego aparece el logo de memoria con fadeIn, espera 4s y desaparece con fadeOut, luego continua con su ejecucion normal
-       	 	$( "#logo" ).fadeIn(2000);
-        	$( "#intro" ).delay( 4000 ).fadeOut(2000);
+        $( "#logo" ).fadeIn(2000);
+        $( "#intro" ).delay( 4000 ).fadeOut(2000);
 		Linea.init();
 		Filtros.init();
         });
     </script>
+ <script>
+
+jQuery.fn.filterByText = function(textbox) {
+    return this.each(function() {
+        var select = this;
+        var options = [];
+        $(select).find('option').each(function() {
+            options.push({value: $(this).val(), text: $(this).text()});
+        });
+        $(select).data('options', options);
+
+        $(textbox).bind('change keyup', function() {
+            var options = $(select).empty().data('options');
+            var search = $.trim($(this).val());
+            var regex = new RegExp(search,"gi");
+
+            $.each(options, function(i) {
+                var option = options[i];
+                if(option.text.match(regex) !== null) {
+                    $(select).append(
+                        $('<option>').text(option.text).val(option.value)
+                    );
+                }
+            });
+        });
+    });
+};
+
+$(function() {
+    $('#filtroCategorias').filterByText($('#filterCat'));
+});
+</script>
 </body>
 </html>

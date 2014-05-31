@@ -32,7 +32,9 @@ Se utilizan las siguientes tecnologías para el desarrollo actualmente:
 - CSS3
 - JSON
 - NCL/LUA (previsto)
-- JAVA (En el proyecto asociado [extractor](https://github.com/init-sfw/extractor))
+- JAVA en los proyectos asociados:
+  - [back end](https://github.com/init-sfw/memoria-b)
+  - [extractor](https://github.com/init-sfw/extractor)
 
 ### Publicaciones
 
