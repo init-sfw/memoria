@@ -76,31 +76,22 @@ var Linea = {
 		var filtros = $linea.data('linea');
 		// Realiza la consulta sobre el total de eventos para obtener los solicitados
 		var consulta = Eventos.filtrar(Regla.fecha_inicio, Regla.fecha_fin, Regla.zoom, filtros);
-
-		// Cuando la consulta finaliza exitosamente, recorre los eventos agregandolos a la linea
-		$.when(consulta).done(function (response) {
-
-			if (!response.success) {
-				alert(response.errors);
-			}
-			else {										
-				$.each(response.eventos, function (ind, val) {
-					if(Regla.esEventoVisible(val)) {		
-				
-						$linea.append(Linea.plantilla_evento.replace('{categoria}', val.categoria));
-					
-						// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
-						$linea.find('div.evento:last')
-							.css('top', new String ($linea.index() * 102 + 41) + 'px')
-							.css('left', Regla.calcularPosicionEvento(val))
-							.data('info', val);
-					}										  
-				});
+											
+		$.each(consulta, function (ind, val) {
+			if(Regla.esEventoVisible(val)) {		
+		
+				$linea.append(Linea.plantilla_evento.replace('{categoria}', val.categoria));
 			
-				Linea.inicializarEventosMouseHover($linea);
-				Linea.inicializarEventosMouseClick($linea);
-			}
-		});		
+				// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
+				$linea.find('div.evento:last')
+					.css('top', new String ($linea.index() * 102 + 41) + 'px')
+					.css('left', Regla.calcularPosicionEvento(val))
+					.data('info', val);
+			}										  
+		});
+	
+		Linea.inicializarEventosMouseHover($linea);
+		Linea.inicializarEventosMouseClick($linea);
 	},
 	
 	// Evento de click para mostrar el popup grande
