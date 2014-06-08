@@ -8,25 +8,27 @@ var Linea = {
 	// Html que representa a un evento dentro de la linea de tiempo
 	plantilla_evento: '<div class="evento categoria-{categoria}"><a href="#"></a></div>',
 	
-	// Html que representa la descripcion de un evento cuando se clickea sobre él
-	plantilla_popup: '<article id="timeline-popup" style="display:none;"> \
+	// Html que representa la descripcion de un evento cuando se clickea sobre ï¿½l
+	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
 							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
-							<body class="popBody">{descripcion}</body> \
-							<footer class="popFooter">{link}</footer> \
-						</article>',
+							<div class="popBody">{descripcion}</div> \
+						</div>',
+
+    plantilla_popup_footer: '<div class="popFooter ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"' +
+        ' style="font-family: AlteHaasGroteskBold;"> <span class="badge">Fuente</span> {link}</div>',
 	
-	// Html que representa la descripcion de un evento cuando se posa el mouse sobre él
-	plantilla_tooltip: '<article id="timeline-tooltip"> \
-							<div class="tipHeader">{fecha} </br> {titulo}</div> \
+	// Html que representa la descripcion de un evento cuando se posa el mouse sobre ï¿½l
+	plantilla_tooltip: '<div id="timeline-tooltip"> \
+							<div class="tipHeader"><div style="text-align: center"><span class="badge">{fecha}</span></div>{titulo}</div> \
 							<div class="tipImage"><img src="images/{imagen}"/></div> \
 							<div class="tipBody">{descripcion}</div> \
-						</article>',
+						</div>',
 
 	init: function () {
 		Linea.$lineas = $('#timeline-lineas');
 		
 		
-		Regla.init();		
+		Regla.init();
 		Regla.crearRegla();
 		
 		
@@ -39,21 +41,21 @@ var Linea = {
 		Linea.$lineas.children('div.timeline-eventos:last').data('linea', filtro);
 	},
 	
-	// Actualiza el ancho del div contenedor de las lineas, y el alto del contenedor general (scroll) según la cantidad de líneas a mostrar
+	// Actualiza el ancho del div contenedor de las lineas, y el alto del contenedor general (scroll) segï¿½n la cantidad de lï¿½neas a mostrar
 	redimensionarLineas: function () {
 		// Calculo el ancho de la linea
 		Linea.$lineas.children('div.timeline-eventos').css('width', Regla.$regla.width());
 		
-		// Calculo el alto de la regla según la cantidad de líneas y las etiquetas de los segmentos
+		// Calculo el alto de la regla segï¿½n la cantidad de lï¿½neas y las etiquetas de los segmentos
 		Regla.$scroll.css('height', 70 + 140 * Linea.$lineas.children('div.timeline-eventos').length);
 	},
 	
 	mostrarLineas: function () {
 		Linea.redimensionarLineas();
 		
-		// Muestra las líneas y les agrega un borde punteado a la parte superior para distinguirla del resto
+		// Muestra las lï¿½neas y les agrega un borde punteado a la parte superior para distinguirla del resto
 		Linea.$lineas.children('div.timeline-eventos:hidden').show('slow', 'swing' , function () {
-			$(this).css('border-top', '#000 1px dashed');
+			//$(this).css('border-top', '#000 1px dashed');
 		});
 	},
 	
@@ -70,35 +72,26 @@ var Linea = {
 	cargarEventos: function ($linea) {
 		$linea.children('div').remove();
 		
-		// Obtiene la información de filtrado de la línea
+		// Obtiene la informaciï¿½n de filtrado de la lï¿½nea
 		var filtros = $linea.data('linea');
 		// Realiza la consulta sobre el total de eventos para obtener los solicitados
 		var consulta = Eventos.filtrar(Regla.fecha_inicio, Regla.fecha_fin, Regla.zoom, filtros);
-
-		// Cuando la consulta finaliza exitosamente, recorre los eventos agregandolos a la linea
-		$.when(consulta).done(function (response) {
-
-			if (!response.success) {
-				alert(response.errors);
-			}
-			else {										
-				$.each(response.eventos, function (ind, val) {
-					if(Regla.esEventoVisible(val)) {		
-				
-						$linea.append(Linea.plantilla_evento.replace('{categoria}', val.categoria));
-					
-						// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
-						$linea.find('div.evento:last')
-							.css('top', new String ($linea.index() * 102 + 41) + 'px')
-							.css('left', Regla.calcularPosicionEvento(val))
-							.data('info', val);
-					}										  
-				});
+											
+		$.each(consulta, function (ind, val) {
+			if(Regla.esEventoVisible(val)) {		
+		
+				$linea.append(Linea.plantilla_evento.replace('{categoria}', val.categoria));
 			
-				Linea.inicializarEventosMouseHover($linea);
-				Linea.inicializarEventosMouseClick($linea);
-			}
-		});		
+				// Setea la posicion absoluta del evento y guarda en el data la informacion del mismo
+				$linea.find('div.evento:last')
+					.css('top', new String ($linea.index() * 102 + 41) + 'px')
+					.css('left', Regla.calcularPosicionEvento(val))
+					.data('info', val);
+			}										  
+		});
+	
+		Linea.inicializarEventosMouseHover($linea);
+		Linea.inicializarEventosMouseClick($linea);
 	},
 	
 	// Evento de click para mostrar el popup grande
@@ -106,7 +99,7 @@ var Linea = {
 		$linea.children('div.evento').click(Linea.mostrarDetalleEvento);
 	},
 	
-	// Agrega a los eventos existentes en una línea los eventos de mouse necesarios para mostrar/ocultar los tooltips
+	// Agrega a los eventos existentes en una lï¿½nea los eventos de mouse necesarios para mostrar/ocultar los tooltips
 	inicializarEventosMouseHover: function ($linea) {			
 		$linea.children('div.evento')
 			.mouseleave(Linea.ocultarTooltips)
@@ -123,18 +116,22 @@ var Linea = {
 		popup = Linea.plantilla_popup.replace('{fecha}', po.fecha)
 					.replace('{titulo}', po.titulo)
 					.replace('{imagen}', po.imagen)
-					.replace('{descripcion}', po.descripcionBreve)
-					.replace('{link}', '<a href="' + po.link + '" target="_blank">fuente </a>');
+					.replace('{descripcion}', po.descripcionBreve);
+
+
+        popupFooter = Linea.plantilla_popup_footer.replace('{link}', '<a href="' + po.link + '" target="_blank" style="color: #333;">Wikipedia</a>');
 		
 		$('body').append(popup);
 		$('#timeline-popup').dialog({
-			title: po.fecha + " - " + po.titulo,
+			title: '<span class="badge">' + po.fecha + '</span>' + " " + po.titulo,
 			width: 800,
 			height: 700,
 			onDialogClose: Linea.ocultarDetalleEvento(),
+            dialogClass:'timeline-popup-box'
 		});
+        $('#timeline-popup').after(popupFooter);
 		$('#timeline-popup').prev('.ui-dialog-titlebar').css('font-family', 'AlteHaasGroteskBold');
-		$('#timeline-popup').prev('.ui-dialog-titlebar').css('background','#4B4B4D');		
+		//$('#timeline-popup').prev('.ui-dialog-titlebar').css('background','#4B4B4D');
 	},
 	
 	mostrarResumen: function() {   
@@ -164,7 +161,8 @@ var Linea = {
 			
 			//le agrega el foco al tooltip
 			.focus(true)
-			.mouseleave(function(){$(this).remove();})			
+			.mouseleave(function(){$(this).remove();
+			})
 			//Muestra el div que contiene la informacion del tooltip y le asigna un nivel de opacidad
 			.fadeIn('500')
 			.fadeTo('10',0.8)

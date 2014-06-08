@@ -15,45 +15,45 @@ var Eventos = {
 						</div>'
 						,
 
+	// Variable que contiene el json con toda la data
+	data: null,
+
+	// Método que carga los datos desde el webservice y los asigna a la variable data
+	cargarDatos: function () {
+		var consulta = $.ajax({
+			url: 'http://107.170.16.162:8088/data',
+			dataType: 'jsonp',
+			jsonpCallback: "dataMemoria",
+		});
+		
+		consulta.done(function (eventos) {
+			data = eventos;
+			Linea.init();
+		});
+		
+		consulta.fail(function () {
+			alert("Se ha producido una error en la carga de datos");
+		});	
+	},
 	
 
-	filtrar: function (fecha_desde, fecha_hasta, ponderacion, filtros) {
-		var deferred = $.Deferred();
-		var consulta = $.getJSON('data/datos-demo.json');
-		
-		consulta.success(function (eventos) {
-			var query = Enumerable
-				.From(eventos)
-				.Where(function (x) {
-					var fecha = x.fecha.parseDate();
-					var rango = x.ponderacion <= ponderacion &&  fecha_desde <= fecha && fecha <= fecha_hasta;
-					
-					var categorias = filtros.categorias === null || 
-					filtros.categorias.filter(function (val) { return val === x.categoria }).length !== 0;
-					
-					var paises = filtros.paises === null || 
-					filtros.paises.filter(function (val) { return val === x.pais }).length !== 0;
-									
-					return rango && categorias && paises;
-				})
-				.ToArray();
-				
-			deferred.resolve({
-			 	success: true,
-			 	errors: null,
-				eventos: query
-			});
-		});
-		
-		consulta.error(function () {
-			deferred.resolve({
-			 	success: false,
-			 	errors: "Se ha producido una error en la carga de datos",
-				eventos: null
-			});
-		});
-		
-		return deferred.promise();
+	filtrar: function (fecha_desde, fecha_hasta, ponderacion, filtros) {		
+		var query = Enumerable
+			.From(data.data)
+			.Where(function (x) {
+				var fecha = x.fecha.parseDate();
+				var rango = x.ponderacion <= ponderacion &&  fecha_desde <= fecha && fecha <= fecha_hasta;
+			
+				var categorias = filtros.categorias === null || 
+				filtros.categorias.filter(function (val) { return val === x.categoria }).length !== 0;
+			
+				var paises = filtros.paises === null || 
+				filtros.paises.filter(function (val) { return val === x.pais }).length !== 0;
+							
+				return rango && categorias && paises;
+			})
+			.ToArray();
+		return query;
 	},
 
 
