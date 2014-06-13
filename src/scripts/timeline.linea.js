@@ -11,7 +11,7 @@ var Linea = {
 	// Html que representa la descripcion de un evento cuando se clickea sobre �l
 	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
 							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
-							<div class="popBody">{descripcion}</div> \
+							<div class="popBody"><p class="bg-success">{descripcion}</p></div> \
 						</div>',
 
     plantilla_popup_footer: '<div class="popFooter ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"' +
@@ -20,8 +20,8 @@ var Linea = {
 	// Html que representa la descripcion de un evento cuando se posa el mouse sobre �l
 	plantilla_tooltip: '<div id="timeline-tooltip"> \
 							<div class="tipHeader"><div style="text-align: center"><span class="badge">{fecha}</span></div>{titulo}</div> \
-							<div class="tipImage"><img src="images/{imagen}"/></div> \
-							<div class="tipBody">{descripcion}</div> \
+							<div class="tipImage"><img src="images/{imagen}" class="img-circle"/></div> \
+							<div class="tipBody"><p>{descripcion}</p></div> \
 						</div>',
 
 	init: function () {
