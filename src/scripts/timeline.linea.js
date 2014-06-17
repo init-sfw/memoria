@@ -10,8 +10,8 @@ var Linea = {
 	
 	// Html que representa la descripcion de un evento cuando se clickea sobre �l
 	plantilla_popup: '<div id="timeline-popup" style="display:none;"> \
-							<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
-							<div class="popBody"><p class="bg-success">{descripcion}</p></div> \
+									<div class="popImage"><img src="images/{imagen}" alt=""/></div> \
+									<div class="popBody"><p class="bg-success">{descripcion}</p></div> \
 						</div>',
 
     plantilla_popup_footer: '<div class="popFooter ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"' +
