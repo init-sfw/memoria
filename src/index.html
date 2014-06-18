@@ -43,7 +43,7 @@
 
     <div id="filtros-panel" style='display: none;'>
         <h2>Filtros</h2>
-        <table>
+        <table class="table table-striped">
             <tr>
                 <td>Titulo:</td>
                 <td><input id="filtroTitulo" type="text" maxlength="50"></td>
@@ -52,19 +52,19 @@
             </tr>
             <tr>
                 <td>Categorias:</td>
-                <td><select id="filtroCategorias" multiple="multiple" size="5"  ></select></td>
+                <td><select id="filtroCategorias" multiple="multiple" size="5" class="form-control" ></select></td>
                 <td>Paises:</td>
-                <td><select id="filtroPaises" multiple="multiple" size="5"></select></td>
+                <td><select id="filtroPaises" multiple="multiple" size="5" class="form-control"></select></td>
             </tr>
         </table>
-        <p class="botones"><button type="button" class="btn btn-success btn-lg btn-block" id="btnAgregarFiltro">Agregar</button></p>
+        <p class="botones"><button type="button" class="btn btn-success" id="btnAgregarFiltro">Agregar</button></p>
 
         <h3>Vista previa</h3>
 
 
 
         <div id="timeline-filtros"></div>
-        <p class="botones"><button id="btnGenerarLineas" class="btn btn-default" type="submit">Generar</button></p>
+        <p class="botones"><button id="btnGenerarLineas" class="btn btn-primary" type="submit">Generar</button></p>
     </div>
 
     <div id="timeline-comandos">
