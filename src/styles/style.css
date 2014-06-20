@@ -9,11 +9,16 @@
     src: url(../fonts/BebasNeue.TTF);
 }
 
+@font-face {
+    font-family: "Glyphicons";
+    src: url(../fonts/glyphicons-halflings-regular.TTF);
+}
+
 /* GENERAL */
 
 body {
     background: #f8f8f8;
-	font-family: "AlteHaasGroteskBold";
+	font-family: "Glyphicons";
 	max-width:100%;
 	max-height:100%;
 	margin: 0;
@@ -21,7 +26,7 @@ body {
 }
 
 body .h2 .h3 {
-	font-family: "BebasNeue";
+	font-family: "Glyphicons";
 }
 #encabezado {
     z-index: 200;

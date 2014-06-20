@@ -683,7 +683,7 @@ var Regla = {
     navegar : function() {
         var busqueda = Regla.validarFecha($("#FechaNavegar").val());
         if (busqueda == false) {
-            alert("Error de formato de fecha (DD/MM/AAAA, MM/AAAA o AAAA) en el valor: " + $("#FechaNavegar").val());
+			bootbox.alert("Error de formato de fecha (DD/MM/AAAA, MM/AAAA o AAAA) en el valor: " + $("#FechaNavegar").val());
         } else {
             Regla.crearRegla(busqueda);
         }
