@@ -13,7 +13,7 @@ var Regla = {
 
     $filtro: null,
     // Fecha de foco inicial
-    fecha_foco: new Date(),
+    fecha_foco: new Date(1810,0,1),
     // Fecha de inicio del primer segmento de la regla
     fecha_inicio: new Date(),
     // Fecha de fin del último segmento de la regla
