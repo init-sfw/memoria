@@ -27,7 +27,7 @@
     </div>
 </div>
 
-    
+
 
 <div id="cargarEvento" style="display: none">
         <a id="botonCargar" href="javascript:Eventos.cargar()">
@@ -35,9 +35,9 @@
 </div>
 
 
-    
+
 <!--se eliminó el href de este div que llamaba al metodo Filtro.init() y se lo remplazo por #-->
-    
+
 
     <div id="filtros-panel" style='display: none;'>
         <h2>Filtros</h2>
@@ -109,6 +109,7 @@
     <script type="text/javascript" src="scripts/timeline.regla.js"></script>
     <script type="text/javascript" src="scripts/timeline.linea.js"></script>
     <script src="scripts/timeline.accesibilidad.js"></script>
+    <script src="scripts/timeline.help.js"></script>
 
     <script type="text/javascript">
         function validarEnter(e) {
@@ -120,7 +121,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
 		//activa la introducción y centra la introduccion para cualquier tamaño de ventana
-		$("#intro").css({    
+		$("#intro").css({
 			left: ($(window).width() - $("#intro").outerWidth())/2,
 			top: ($(window).height() - $("#intro").outerHeight())/2
 		});
@@ -129,7 +130,8 @@
         $( "#intro" ).delay( 4000 ).fadeOut(2000);
 		Eventos.cargarDatos()
 		Filtros.init();
-        });
+    Help.init();
+    });
     </script>
 </body>
 </html>

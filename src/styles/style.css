@@ -449,3 +449,6 @@ margin-top: 5px;
 #accesibilidad-content{display: none; }
 #accesibilidad-content ul{list-style: none;}
 #accesibilidad-icon{width: 32px;float: right;}
+
+/* HELP */
+#help-icon{bottom: 2px;left: 2px;width: 32px;float: left;position:absolute;}
