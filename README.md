@@ -42,6 +42,7 @@ El documento referencia de Memoria puede encontrarse [aquí](https://github.com/
 
 El grupo de investigación que desarrolla __Memoria__ ha trabajado en la publicación de una serie de papers con los avances de su trabajo:
 
+- [JEIN 2014](https://www.dropbox.com/s/spvdxw3iiu5rdf3/Memoria%2C%20prototipo%20de%20linea%20de%20tiempo%20interactiva%20para%20educacion%20-%20JEIN%202014.pdf)
 - [WICC 2014](https://www.dropbox.com/s/5qyzxuqb0gg1ulm/WICC2014Memoriav1.0.pdf) + [Póster](https://www.dropbox.com/s/q5tuik0bal3mu5u/P%C3%B3ster%20WICC%202014%20Memoria.pdf)
 - [CONAIISI 2013]() + [Póster](https://www.dropbox.com/s/vfzrf768phnngoz/POSTER%20Primeras%20experiencias%20de%20estudiantes%20en%20un%20proyecto%20de%20I%2BD%20Desarrollo%20de%20una%20aplicaci%C3%B3n%20para%20Televisi%C3%B3n%20Digital.pdf)
 - [CNEISI 2013](https://www.dropbox.com/s/v4jjxmd7vbdo6f5/Poster%20TVD%20%28CNEISI%2013%29.pdf)
