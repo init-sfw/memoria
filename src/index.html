@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/jquery-ui-1.10.4.custom.css">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
         <a href="#"><img src="images/iconos/filtros.png" title="Filtros" class="filtro"></a>
     </div>
     <div class="subir" id="navegador">
-        <input id="FechaNavegar" type="text" maxlength="10" onKeyPress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
+        <input id="FechaNavegar" type="text" class="form-control" placeholder="Ingrese una fecha" maxlength="10" onKeyPress="validarEnter(event)" title="Formato: DD/MM/AAAA ó AAAA" />
         <a id="botonBuscar" href="javascript:Regla.navegar()"><img src="images/iconos/ir-a.png" title="Ir a..." class="buscar"></a>
     </div>
 </div>
@@ -41,7 +43,7 @@
 
     <div id="filtros-panel" style='display: none;'>
         <h2>Filtros</h2>
-        <table>
+        <table class="table table-striped">
             <tr>
                 <td>Titulo:</td>
                 <td><input id="filtroTitulo" type="text" maxlength="50"></td>
@@ -54,15 +56,20 @@
                 <td>Paises:</td>
                 <td><select id="filtroPaises" multiple="multiple" size="5"></select></td>
             </tr>
-        </table>
-        <p class="botones"><button type="button" id="btnAgregarFiltro">Agregar</button></p>
-
-        <h3>Vista previa</h3>
-
+			<tr>
+				<td></td>
+				<td><p align="right"><button type="button" class="btn btn-default" id="btnAgregarFiltro">Agregar</button></p></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><h3>Vista previa</h3></td>
+			</tr>
+		</table>
 
 
         <div id="timeline-filtros"></div>
-        <p class="botones"><button id="btnGenerarLineas" type="button">Generar</button></p>
+        <p align="center"><button id="btnGenerarLineas" type="button" class="btn btn-default">Generar</button></p>
     </div>
 
     <div id="timeline-comandos">
