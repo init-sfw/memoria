@@ -1,31 +1,27 @@
-#Proyecto Memoria
+#Memoria
 
-Memoria es una línea de tiempo interactiva que se destaca por:
+Memoria is an interactive timeline with the following functionalities:
 
-- Descubrir nuevas maneras de expresar e interpretar la historia
-- Generar relaciones subjetivas de acuerdo a la necesidad del usuario
-- Identificar información anteriormente inconexa y sin valor
-- Explotar al máximo datos históricos-temporales
-- Ofrecer un práctico diseño interactivo y un atractivo arte digital
-- Permitir múltiples usos en diferentes ambientes de educación
-- Ubicación constante en el tiempo
+- Discover new ways of express and interpret history
+- Create subject-oriented relationships based on the user needs
+- Identify information that was previosly unrelated and without value
+- Take the most out of historical data
+- Implementation in diferent educational environments
 
-## Objetivo
+## Goal
 
-Memoria propone aportar un modo de presentar la historia, desde una línea de tiempo interactiva, que
-permita interpretar y establecer nuevas relaciones en torno a acontecimientos temporales categorizados, con la posibilidad de filtrarlos y disponerlos comparativamente en distintas líneas de tiempo paralelas.
-El punto clave es lograr identificar relaciones y conexiones subjetivas imposibles de identificar mediante tecnología, como inteligencia artificial o minería de datos.
+Memoria proposes a new way to represent history, from an interactive timeline it will allow different interpretations and the possibility of create new relationships between historical-categorized events with the possibility to filter them and construct paralell timelines to facilitate study and comparisson.
+The key is to enable people to identify relationships and conecctions that can not be tracked by technologies as AI or data-science.
 
-### Objetivos detallados:
+### Details:
 
-- Posicionar la subjetividad de la persona frente a la tecnología
-- Aportar a una mejora y potenciación de la educación y la capacitación desde las TICs
-- Fomentar el análisis y la construcción histórica con un fin de identidad
-- Establecer procesos y metodologías de trabajo propios
+- To put first the personal judgement over technology
+- Empower education and learning with IT
+- Promote analysis and historical construction with identity
 
-## Tecnología
+## Technologies
 
-Se utilizan las siguientes tecnologías para el desarrollo actualmente:
+Here is a list of the used technologies:
 
 - HTML5
 - JavaScript
@@ -36,11 +32,11 @@ Se utilizan las siguientes tecnologías para el desarrollo actualmente:
   - [back end](https://github.com/init-sfw/memoria-b)
   - [extractor](https://github.com/init-sfw/extractor)
 
-### Publicaciones
+### Publications
 
-El documento referencia de Memoria puede encontrarse [aquí](https://github.com/init-sfw/memoria/blob/master/doc/oficial/Proyecto_Memoria_v1.1.pdf)
+Reference doc of __Memoria__ (spanish) [here](https://github.com/init-sfw/memoria/blob/master/doc/oficial/Proyecto_Memoria_v1.1.pdf)
 
-El grupo de investigación que desarrolla __Memoria__ ha trabajado en la publicación de una serie de papers con los avances de su trabajo:
+The team __Memoria__ has published the following scientific articles:
 
 - [JEIN 2014](https://www.dropbox.com/s/spvdxw3iiu5rdf3/Memoria%2C%20prototipo%20de%20linea%20de%20tiempo%20interactiva%20para%20educacion%20-%20JEIN%202014.pdf)
 - [WICC 2014](https://www.dropbox.com/s/5qyzxuqb0gg1ulm/WICC2014Memoriav1.0.pdf) + [Póster](https://www.dropbox.com/s/q5tuik0bal3mu5u/P%C3%B3ster%20WICC%202014%20Memoria.pdf)
