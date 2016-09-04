@@ -4,14 +4,13 @@ Memoria is an interactive timeline with the following functionalities:
 
 - Discover new ways of express and interpret history
 - Create subject-oriented relationships based on the user needs
-- Identify information that was previosly unrelated and without value
+- Identify information that was previously unrelated and without value
 - Take the most out of historical data
 - Implementation in diferent educational environments
 
 ## Goal
 
-Memoria proposes a new way to represent history, from an interactive timeline it will allow different interpretations and the possibility of create new relationships between historical-categorized events with the possibility to filter them and construct paralell timelines to facilitate study and comparisson.
-The key is to enable people to identify relationships and conecctions that can not be tracked by technologies as AI or data-science.
+Memoria proposes a new way to represent history, from an interactive timeline it will allow different interpretations and the possibility of create new relationships between historical-categorized events with the possibility to filter them and construct paralell timelines to facilitate study and comparison. The key is to enable people to identify relationships and connections that can not be tracked by technologies as AI or data-science.
 
 ### Details:
 
